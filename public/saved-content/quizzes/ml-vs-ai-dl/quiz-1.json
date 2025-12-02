@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Lĩnh vực nào sau đây là rộng nhất và bao gồm cả Học máy (Machine Learning) và Học sâu (Deep Learning)?",
+      "options": [
+        "A. Học sâu (Deep Learning)",
+        "B. Học máy (Machine Learning)",
+        "C. Trí tuệ Nhân tạo (Artificial Intelligence)",
+        "D. Thống kê (Statistics)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Trí tuệ Nhân tạo (AI) là một lĩnh vực rộng lớn, bao gồm cả Học máy (ML) và Học sâu (DL). ML là một nhánh của AI, và DL là một nhánh của ML. Do đó, AI là lĩnh vực rộng nhất. Các đáp án A và B là các lĩnh vực nhỏ hơn nằm trong AI, còn D không trực tiếp liên quan đến cấu trúc phân cấp đã nêu."
+    },
+    {
+      "question": "Học máy (Machine Learning) khác với lập trình truyền thống ở điểm nào?",
+      "options": [
+        "A. Học máy yêu cầu lập trình rõ ràng cho mọi nhiệm vụ.",
+        "B. Học máy cho phép máy tính học từ dữ liệu mà không cần lập trình cụ thể.",
+        "C. Học máy chỉ có thể được sử dụng để giải quyết các vấn đề đơn giản.",
+        "D. Lập trình truyền thống có thể học hỏi từ dữ liệu"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Học máy cho phép máy tính học hỏi từ dữ liệu mà không cần được lập trình một cách rõ ràng cho mọi nhiệm vụ. Thay vì được lập trình để thực hiện một nhiệm vụ cụ thể, máy tính sẽ học cách thực hiện nhiệm vụ đó thông qua việc phân tích dữ liệu. Các đáp án A, C, và D đều sai vì chúng mô tả sai bản chất của học máy và lập trình truyền thống."
+    },
+    {
+      "question": "Bộ lọc thư rác (spam filter) là một ví dụ điển hình của ứng dụng nào?",
+      "options": [
+        "A. Trí tuệ Nhân tạo (Artificial Intelligence) nói chung",
+        "B. Học sâu (Deep Learning)",
+        "C. Học máy (Machine Learning)",
+        "D. Lập trình truyền thống"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Bộ lọc thư rác là một ví dụ về Học máy (Machine Learning) vì nó học cách nhận diện thư rác dựa trên các đặc điểm của thư rác đã được gắn nhãn, thay vì được lập trình cụ thể để nhận diện từng loại thư rác. Học sâu (Deep Learning) thường được sử dụng cho các tác vụ phức tạp hơn như nhận dạng hình ảnh. Lập trình truyền thống không có khả năng tự học từ dữ liệu."
+    },
+    {
+      "question": "Trong phương trình Linear Regression 'y = mx + b', 'm' đại diện cho yếu tố nào?",
+      "options": [
+        "A. Biến phụ thuộc",
+        "B. Biến độc lập",
+        "C. Hệ số góc (slope)",
+        "D. Giao điểm với trục y (intercept)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Trong phương trình Linear Regression 'y = mx + b', 'm' đại diện cho hệ số góc (slope) của đường thẳng. 'y' là biến phụ thuộc, 'x' là biến độc lập, và 'b' là giao điểm với trục y (intercept)."
+    },
+    {
+      "question": "Mạng nơ-ron nhân tạo (artificial neural networks) với nhiều lớp (deep) là đặc điểm chính của lĩnh vực nào?",
+      "options": [
+        "A. Trí tuệ Nhân tạo (Artificial Intelligence)",
+        "B. Học máy (Machine Learning)",
+        "C. Học sâu (Deep Learning)",
+        "D. Thống kê (Statistics)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Học sâu (Deep Learning) sử dụng các mạng nơ-ron nhân tạo với nhiều lớp (deep) để phân tích dữ liệu. Đây là đặc điểm phân biệt chính của DL so với các phương pháp ML truyền thống. AI là lĩnh vực rộng hơn, còn thống kê là một công cụ được sử dụng trong cả ML và DL."
+    },
+    {
+      "question": "Ứng dụng nào sau đây là một ví dụ điển hình của Học sâu (Deep Learning)?",
+      "options": [
+        "A. Dự đoán giá nhà",
+        "B. Bộ lọc thư rác",
+        "C. Nhận dạng khuôn mặt",
+        "D. Đề xuất sản phẩm"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Nhận dạng khuôn mặt thường sử dụng các mạng nơ-ron sâu để phân tích hình ảnh và xác định khuôn mặt. Các tùy chọn khác như dự đoán giá nhà và bộ lọc thư rác thường sử dụng các thuật toán Học máy (Machine Learning) truyền thống. Đề xuất sản phẩm có thể sử dụng cả Học máy và Học sâu tùy thuộc vào độ phức tạp của hệ thống."
+    },
+    {
+      "question": "Cho đoạn code Python sau: `model = LinearRegression(); model.fit(X, y)`. Đoạn code này thực hiện thao tác gì?",
+      "options": [
+        "A. Dự đoán giá trị dựa trên mô hình Linear Regression.",
+        "B. Tạo một mô hình Linear Regression và huấn luyện nó trên dữ liệu X và y.",
+        "C. Vẽ đồ thị dữ liệu X và y.",
+        "D. Đánh giá hiệu suất của mô hình Linear Regression."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đoạn code `model = LinearRegression()` tạo một thể hiện của mô hình Linear Regression. `model.fit(X, y)` huấn luyện mô hình này trên dữ liệu đầu vào X (biến độc lập) và dữ liệu mục tiêu y (biến phụ thuộc). Các đáp án còn lại mô tả các hành động khác nhau không được thực hiện bởi đoạn code này."
+    },
+    {
+      "question": "Ưu điểm chính của Học sâu (Deep Learning) so với Học máy (Machine Learning) truyền thống là gì?",
+      "options": [
+        "A. Yêu cầu ít dữ liệu hơn.",
+        "B. Dễ dàng giải thích kết quả hơn.",
+        "C. Khả năng tự động trích xuất đặc trưng từ dữ liệu.",
+        "D. Tốc độ huấn luyện nhanh hơn."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Một trong những ưu điểm chính của Học sâu là khả năng tự động trích xuất các đặc trưng phức tạp từ dữ liệu thô, điều mà các thuật toán Học máy truyền thống thường yêu cầu kỹ sư phải thực hiện thủ công. Học sâu thường yêu cầu lượng dữ liệu lớn hơn, khó giải thích kết quả hơn và có thể chậm hơn trong quá trình huấn luyện so với Học máy truyền thống."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "ml-vs-ai-dl",
+    "createdAt": "2025-12-02T11:29:30.688Z"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Machine Learning là gì?",
+      "options": [
+        "A. Một cách lập trình máy tính một cách rõ ràng.",
+        "B. Một lĩnh vực của trí tuệ nhân tạo cho phép máy tính học hỏi từ dữ liệu mà không cần được lập trình một cách rõ ràng.",
+        "C. Một phương pháp phân tích dữ liệu thủ công.",
+        "D. Một loại ngôn ngữ lập trình mới."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Machine Learning cho phép máy tính học từ dữ liệu mà không cần lập trình rõ ràng. A sai vì Machine Learning ngược lại với lập trình rõ ràng. C sai vì Machine Learning tự động hóa phân tích dữ liệu. D sai vì Machine Learning là một lĩnh vực, không phải ngôn ngữ lập trình."
+    },
+    {
+      "question": "Loại Machine Learning nào sử dụng dữ liệu đã được gán nhãn (labeled data) để huấn luyện mô hình?",
+      "options": [
+        "A. Unsupervised Learning",
+        "B. Reinforcement Learning",
+        "C. Supervised Learning",
+        "D. Semi-supervised Learning"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Supervised Learning sử dụng dữ liệu đã được gán nhãn (labeled data). A sai vì Unsupervised Learning sử dụng dữ liệu chưa được gán nhãn. B sai vì Reinforcement Learning học thông qua phần thưởng và hình phạt. D sai vì Semi-supervised Learning sử dụng cả dữ liệu đã gán nhãn và chưa gán nhãn."
+    },
+    {
+      "question": "Bài toán nào sau đây thuộc loại Regression trong Supervised Learning?",
+      "options": [
+        "A. Phân loại email là spam hay không spam.",
+        "B. Dự đoán giá nhà dựa trên diện tích và vị trí.",
+        "C. Phân loại ảnh một con vật là chó hay mèo.",
+        "D. Chẩn đoán một bệnh nhân có mắc bệnh hay không."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Regression dự đoán một giá trị số liên tục (giá nhà). A, C, và D là các bài toán phân loại (Classification)."
+    },
+    {
+      "question": "Thuật toán nào sau đây thường được sử dụng trong bài toán phân loại?",
+      "options": [
+        "A. Linear Regression",
+        "B. K-Means Clustering",
+        "C. Logistic Regression",
+        "D. Principal Component Analysis (PCA)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Logistic Regression là một thuật toán phổ biến cho bài toán phân loại. A là thuật toán hồi quy. B là thuật toán phân cụm (Unsupervised Learning). D là thuật toán giảm chiều dữ liệu."
+    },
+    {
+      "question": "Trong Supervised Learning, thuật ngữ 'label' có nghĩa là gì?",
+      "options": [
+        "A. Dữ liệu đầu vào (input).",
+        "B. Dữ liệu đầu ra (output) hoặc kết quả mong muốn.",
+        "C. Thuật toán được sử dụng để huấn luyện mô hình.",
+        "D. Quá trình điều chỉnh các tham số của mô hình."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. 'Label' trong Supervised Learning chỉ dữ liệu đầu ra (output) hoặc kết quả mong muốn, được sử dụng để huấn luyện mô hình. A là 'feature' hoặc 'input'. C và D không liên quan trực tiếp đến định nghĩa của 'label'."
+    },
+    {
+      "question": "Ưu điểm chính của việc sử dụng Random Forest so với một Decision Tree đơn lẻ là gì?",
+      "options": [
+        "A. Random Forest nhanh hơn trong quá trình huấn luyện.",
+        "B. Random Forest dễ diễn giải hơn.",
+        "C. Random Forest có độ chính xác cao hơn và giảm overfitting.",
+        "D. Random Forest yêu cầu ít dữ liệu hơn."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Random Forest, là một tập hợp các cây quyết định, giúp cải thiện độ chính xác và giảm overfitting so với một cây quyết định đơn lẻ. A thường không đúng vì Random Forest phức tạp hơn. B thường không đúng vì Decision Tree đơn lẻ dễ diễn giải hơn. D thường không đúng vì Random Forest thường cần nhiều dữ liệu hơn."
+    },
+    {
+      "question": "Trong bài toán phát hiện gian lận thẻ tín dụng, thuật toán Machine Learning nào thường được sử dụng và thuộc loại bài toán nào?",
+      "options": [
+        "A. Linear Regression, Regression",
+        "B. K-Means Clustering, Unsupervised Learning",
+        "C. Logistic Regression, Classification",
+        "D. Reinforcement Learning, Reinforcement Learning"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Logistic Regression thường được sử dụng để phân loại giao dịch là gian lận hoặc không gian lận, đây là một bài toán phân loại (Classification). A sai vì Linear Regression là thuật toán hồi quy. B sai vì K-Means Clustering là thuật toán phân cụm không giám sát. D sai vì Reinforcement Learning không phù hợp với bài toán này."
+    },
+    {
+      "question": "Mục tiêu chính của Machine Learning là gì?",
+      "options": [
+        "A. Thay thế hoàn toàn con người trong mọi tác vụ.",
+        "B. Tạo ra các hệ thống có khả năng học hỏi từ dữ liệu và đưa ra dự đoán hoặc quyết định mà không cần được lập trình một cách rõ ràng.",
+        "C. Viết các quy tắc cụ thể cho mọi tình huống.",
+        "D. Lưu trữ và quản lý dữ liệu một cách hiệu quả."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Mục tiêu chính của Machine Learning là để máy tính học hỏi từ dữ liệu và đưa ra dự đoán hoặc quyết định một cách tự động. A không đúng vì Machine Learning không nhất thiết phải thay thế con người hoàn toàn. C sai vì Machine Learning không dựa trên việc viết quy tắc cụ thể. D tuy quan trọng nhưng không phải là mục tiêu chính của Machine Learning."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "learning-types",
+    "createdAt": "2025-12-02T11:31:09.862Z"
+  }
+}

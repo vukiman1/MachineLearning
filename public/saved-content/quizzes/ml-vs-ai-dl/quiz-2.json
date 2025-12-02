@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Lĩnh vực nào sau đây bao trùm cả Machine Learning và Deep Learning?",
+      "options": [
+        "A. Robotics",
+        "B. Artificial Intelligence (AI)",
+        "C. Data Science",
+        "D. Computer Vision"
+      ],
+      "correctAnswer": 1,
+      "explanation": "AI là một lĩnh vực rộng lớn bao gồm cả Machine Learning và Deep Learning. Machine Learning và Deep Learning là các nhánh con của AI, tập trung vào các phương pháp cụ thể để đạt được trí thông minh nhân tạo. Robotics, Data Science và Computer Vision là các lĩnh vực liên quan nhưng không bao trùm cả ML và DL."
+    },
+    {
+      "question": "Machine Learning khác biệt so với lập trình truyền thống như thế nào?",
+      "options": [
+        "A. Yêu cầu ít dữ liệu hơn",
+        "B. Cần lập trình rõ ràng cho từng nhiệm vụ",
+        "C. Học hỏi từ dữ liệu mà không cần lập trình rõ ràng",
+        "D. Không sử dụng thuật toán"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Machine Learning cho phép máy tính học hỏi từ dữ liệu để thực hiện nhiệm vụ mà không cần được lập trình một cách rõ ràng cho từng trường hợp. Trong lập trình truyền thống, chúng ta phải xác định rõ các bước mà máy tính cần thực hiện. Các đáp án khác đều sai vì ML cần nhiều dữ liệu, sử dụng thuật toán, và không yêu cầu lập trình rõ ràng cho từng nhiệm vụ."
+    },
+    {
+      "question": "Mục tiêu chính của Linear Regression là gì?",
+      "options": [
+        "A. Phân loại dữ liệu thành các nhóm khác nhau",
+        "B. Tìm đường thẳng phù hợp nhất với dữ liệu",
+        "C. Tạo ra các mạng nơ-ron phức tạp",
+        "D. Tìm kiếm thông tin trên internet"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linear Regression là một thuật toán Machine Learning nhằm tìm đường thẳng (hoặc siêu phẳng trong không gian nhiều chiều) phù hợp nhất với dữ liệu, từ đó có thể dự đoán giá trị của biến phụ thuộc dựa trên biến độc lập. Các đáp án khác không liên quan đến mục tiêu của Linear Regression."
+    },
+    {
+      "question": "Ví dụ nào sau đây KHÔNG phải là ứng dụng của Trí tuệ Nhân tạo (AI)?",
+      "options": [
+        "A. Robot Sophia có khả năng trò chuyện",
+        "B. Hệ thống đề xuất sản phẩm của Amazon",
+        "C. Máy tính bỏ túi thực hiện phép tính cộng trừ nhân chia",
+        "D. Xe tự lái Tesla"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Máy tính bỏ túi thực hiện phép tính cộng trừ nhân chia là một ứng dụng của lập trình truyền thống, không sử dụng các kỹ thuật AI để học hỏi hoặc đưa ra quyết định phức tạp. Các lựa chọn khác đều thể hiện các ứng dụng của AI với khả năng học hỏi và mô phỏng trí thông minh của con người."
+    },
+    {
+      "question": "Đâu là đặc điểm chính của Deep Learning so với các thuật toán Machine Learning khác?",
+      "options": [
+        "A. Sử dụng ít dữ liệu hơn",
+        "B. Sử dụng mạng nơ-ron nhân tạo với nhiều lớp",
+        "C. Chỉ áp dụng cho bài toán phân loại",
+        "D. Dễ dàng giải thích kết quả hơn"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Deep Learning sử dụng các mạng nơ-ron nhân tạo với nhiều lớp (deep) để phân tích dữ liệu và học các biểu diễn phức tạp. Điều này cho phép nó giải quyết các bài toán phức tạp hơn so với các thuật toán ML truyền thống. DL thường cần rất nhiều dữ liệu, có thể dùng cho nhiều loại bài toán và thường khó giải thích kết quả hơn các thuật toán ML đơn giản."
+    },
+    {
+      "question": "Trong công thức Linear Regression `y = mx + b`, 'm' đại diện cho yếu tố nào?",
+      "options": [
+        "A. Biến phụ thuộc",
+        "B. Biến độc lập",
+        "C. Hệ số góc (slope)",
+        "D. Giao điểm với trục y (intercept)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Trong công thức `y = mx + b`, 'm' đại diện cho hệ số góc (slope) của đường thẳng. Hệ số góc cho biết sự thay đổi của biến phụ thuộc (y) khi biến độc lập (x) thay đổi một đơn vị. 'b' là giao điểm với trục y, 'y' là biến phụ thuộc và 'x' là biến độc lập."
+    },
+    {
+      "question": "Giả sử bạn muốn xây dựng một hệ thống dự đoán giá nhà. Bạn có một tập dữ liệu lớn với nhiều yếu tố (diện tích, vị trí, số phòng ngủ,...) và muốn mô hình tự học cách dự đoán giá nhà. Phương pháp nào sau đây là phù hợp nhất?",
+      "options": [
+        "A. Lập trình một loạt các quy tắc 'if-else' để xác định giá",
+        "B. Sử dụng Machine Learning, cụ thể là Linear Regression (hoặc các thuật toán regression khác)",
+        "C. Sử dụng một chương trình tìm kiếm trên internet để tìm giá nhà tương tự",
+        "D. Yêu cầu một chuyên gia bất động sản xác định giá cho từng căn nhà"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Machine Learning, đặc biệt là các thuật toán regression (như Linear Regression), là phương pháp phù hợp nhất để dự đoán giá nhà dựa trên một tập dữ liệu lớn. Các thuật toán này có thể học các mối quan hệ giữa các yếu tố ảnh hưởng đến giá nhà và dự đoán giá cho các căn nhà mới. Lập trình 'if-else' sẽ rất phức tạp và khó duy trì, tìm kiếm trên internet không đảm bảo tính chính xác, và yêu cầu chuyên gia cho từng căn nhà là không khả thi."
+    },
+    {
+      "question": "Ứng dụng nào sau đây thể hiện sự khác biệt rõ rệt giữa Deep Learning và Machine Learning truyền thống?",
+      "options": [
+        "A. Bộ lọc thư rác (spam filter)",
+        "B. Dự đoán giá cổ phiếu",
+        "C. Nhận dạng khuôn mặt trên ảnh với độ chính xác rất cao",
+        "D. Đề xuất sản phẩm trực tuyến"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Nhận dạng khuôn mặt với độ chính xác rất cao là một ứng dụng mà Deep Learning vượt trội hơn hẳn so với Machine Learning truyền thống. Khả năng học các biểu diễn phức tạp từ dữ liệu hình ảnh của Deep Learning cho phép nó đạt được độ chính xác cao hơn trong các bài toán nhận dạng. Các ứng dụng khác (lọc thư rác, dự đoán giá cổ phiếu, đề xuất sản phẩm) có thể được thực hiện hiệu quả bằng cả Machine Learning truyền thống và Deep Learning."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "ml-vs-ai-dl",
+    "createdAt": "2025-12-02T11:29:50.535Z"
+  }
+}

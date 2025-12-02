@@ -1,0 +1,92 @@
+{
+  "questions": [
+    {
+      "question": "Machine Learning là gì?",
+      "options": [
+        "A. Một phương pháp lập trình truyền thống",
+        "B. Một nhánh của Trí tuệ Nhân tạo cho phép máy tính học hỏi từ dữ liệu mà không cần được lập trình rõ ràng",
+        "C. Một ngôn ngữ lập trình mới",
+        "D. Một hệ thống phần cứng tiên tiến"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án B đúng vì định nghĩa chính xác về Machine Learning là cho phép máy tính học hỏi từ dữ liệu. A sai vì ML không phải là lập trình truyền thống. C sai vì ML không phải là ngôn ngữ lập trình. D sai vì ML là một lĩnh vực phần mềm, không phải phần cứng."
+    },
+    {
+      "question": "Điều gì là quan trọng nhất trong Machine Learning?",
+      "options": [
+        "A. Viết code thật nhanh",
+        "B. Thu thập và xử lý dữ liệu",
+        "C. Sử dụng các thuật toán phức tạp nhất",
+        "D. Mua phần cứng mạnh nhất"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án B đúng vì dữ liệu là yếu tố then chốt để máy học có thể học hỏi và đưa ra dự đoán chính xác. A sai vì code chỉ là công cụ. C sai vì thuật toán phức tạp không phải lúc nào cũng tốt hơn. D sai vì phần cứng chỉ là phương tiện, dữ liệu mới là quan trọng."
+    },
+    {
+      "question": "Thuật toán nào sau đây đánh dấu sự khởi đầu của Machine Learning?",
+      "options": [
+        "A. Deep Neural Networks",
+        "B. Support Vector Machines (SVM)",
+        "C. Perceptron",
+        "D. Decision Trees"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì Perceptron được phát triển vào những năm 1950, đánh dấu sự khởi đầu của ML. A, B, và D là các thuật toán phát triển sau này."
+    },
+    {
+      "question": "Lĩnh vực nào sau đây KHÔNG phải là một ứng dụng phổ biến của Machine Learning?",
+      "options": [
+        "A. Y tế",
+        "B. Tài chính",
+        "C. Bán lẻ",
+        "D. Lập trình game"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án D đúng vì mặc dù ML có thể được sử dụng trong lập trình game, nó không phải là một ứng dụng phổ biến như y tế, tài chính và bán lẻ. Các lĩnh vực y tế, tài chính và bán lẻ đều có nhiều ứng dụng thực tế đã được chứng minh của ML."
+    },
+    {
+      "question": "Sự bùng nổ của Deep Learning trong những năm 2010 được thúc đẩy bởi yếu tố nào?",
+      "options": [
+        "A. Sự phát triển của ngôn ngữ lập trình Python",
+        "B. Sự ra đời của điện toán đám mây",
+        "C. Sự phát triển của mạng nơ-ron sâu (Deep Neural Networks) và sự sẵn có của dữ liệu lớn (Big Data)",
+        "D. Sự phổ biến của các thiết bị di động"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì sự phát triển của mạng nơ-ron sâu và sự sẵn có của dữ liệu lớn là hai yếu tố chính thúc đẩy sự bùng nổ của Deep Learning. A, B và D là những yếu tố hỗ trợ nhưng không phải là yếu tố quyết định."
+    },
+    {
+      "question": "Ưu điểm chính của Machine Learning là gì?",
+      "options": [
+        "A. Luôn đưa ra kết quả chính xác 100%",
+        "B. Có thể học hỏi từ dữ liệu và cải thiện hiệu suất theo thời gian",
+        "C. Không cần dữ liệu để hoạt động",
+        "D. Dễ dàng lập trình và triển khai"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án B đúng vì khả năng học hỏi và cải thiện hiệu suất là ưu điểm nổi bật của ML. A sai vì ML không phải lúc nào cũng chính xác tuyệt đối. C sai vì ML cần dữ liệu để học. D sai vì việc lập trình và triển khai ML có thể phức tạp."
+    },
+    {
+      "question": "Machine Learning giúp giải quyết vấn đề gì trong lĩnh vực tài chính?",
+      "options": [
+        "A. Tự động hóa việc gửi email quảng cáo",
+        "B. Phát hiện gian lận và dự đoán thị trường chứng khoán",
+        "C. Thiết kế giao diện người dùng đẹp mắt",
+        "D. Quản lý cơ sở dữ liệu khách hàng"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án B đúng vì ML được sử dụng để phát hiện các giao dịch gian lận và dự đoán xu hướng thị trường chứng khoán. A, C và D không phải là các ứng dụng chính của ML trong tài chính."
+    },
+    {
+      "question": "Điều gì xảy ra khi một mô hình Machine Learning được cung cấp thêm dữ liệu?",
+      "options": [
+        "A. Mô hình sẽ trở nên kém chính xác hơn",
+        "B. Mô hình sẽ không thay đổi",
+        "C. Mô hình có thể cải thiện độ chính xác và hiệu suất",
+        "D. Mô hình sẽ bị hỏng"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì khi được cung cấp thêm dữ liệu, mô hình ML có thể học hỏi thêm và cải thiện khả năng dự đoán của mình. A, B và D đều sai vì dữ liệu bổ sung thường giúp mô hình tốt hơn, trừ khi dữ liệu đó bị nhiễu hoặc không liên quan."
+    }
+  ]
+}

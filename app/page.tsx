@@ -1,16 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Sidebar } from "@/components/sidebar"
-import { ContentDisplay } from "@/components/content-display"
-import { Header } from "@/components/header"
+import { useState } from "react";
+import { Sidebar } from "@/components/sidebar";
+import { ContentDisplay } from "@/components/content-display";
+import { Header } from "@/components/header";
+import { FloatingActionButton } from "@/components/floating-action-button";
+import { VisualizationModal } from "@/components/visualization-modal";
+import { QuizAnalyticsDashboard } from "@/components/quiz-analytics-dashboard";
 
 export type Topic = {
-  id: string
-  title: string
-  icon: string
-  prompt: string
-}
+  id: string;
+  title: string;
+  icon: string;
+  prompt: string;
+};
 
 export const topics: Topic[] = [
   {
@@ -97,20 +100,50 @@ export const topics: Topic[] = [
     prompt:
       "Hướng dẫn chi tiết cách xây dựng một dự án ML hoàn chỉnh từ đầu: chọn bài toán, thu thập dữ liệu, EDA, preprocessing, model selection, training, tuning hyperparameters, deployment. Viết bằng tiếng Việt với code Python đầy đủ có thể chạy được.",
   },
-]
+];
 
 export default function Home() {
-  const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null)
+  const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showVisualization, setShowVisualization] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
+  const [showQuiz, setShowQuiz] = useState(false);
 
   return (
     <div className="relative flex min-h-screen w-full flex-col bg-background">
       <Header />
       <div className="flex flex-1 pt-16">
-        <Sidebar topics={topics} selectedTopic={selectedTopic} onSelectTopic={setSelectedTopic} />
+        <Sidebar
+          topics={topics}
+          selectedTopic={selectedTopic}
+          onSelectTopic={setSelectedTopic}
+        />
         <main className="ml-72 flex-1 p-8">
-          <ContentDisplay selectedTopic={selectedTopic} />
+          <ContentDisplay
+            selectedTopic={selectedTopic}
+            showQuiz={showQuiz}
+            onOpenQuiz={() => setShowQuiz(true)}
+            onCloseQuiz={() => setShowQuiz(false)}
+            onShowVisualization={() => setShowVisualization(true)}
+          />
         </main>
       </div>
+
+      {/* Floating Action Button */}
+      <FloatingActionButton
+        onQuizClick={selectedTopic ? () => setShowQuiz(true) : undefined}
+        selectedTopicTitle={selectedTopic?.title}
+      />
+
+      {/* Visualization Modal */}
+      {showVisualization && (
+        <VisualizationModal onClose={() => setShowVisualization(false)} />
+      )}
+
+      {/* Analytics Dashboard */}
+      {showAnalytics && (
+        <QuizAnalyticsDashboard onClose={() => setShowAnalytics(false)} />
+      )}
     </div>
-  )
+  );
 }

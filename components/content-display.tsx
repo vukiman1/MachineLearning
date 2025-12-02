@@ -2,17 +2,37 @@
 
 import { useState, useEffect } from "react";
 import type { Topic } from "@/app/page";
-import { Loader2, BookOpen, Sparkles, RefreshCw } from "lucide-react";
+import {
+  Loader2,
+  BookOpen,
+  Sparkles,
+  RefreshCw,
+  FileQuestion,
+} from "lucide-react";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { MermaidDiagram } from "./mermaid-diagram";
 import { CodeBlock } from "./code-block";
+import { QuizGenerator } from "./quiz-generator";
 
 interface ContentDisplayProps {
   selectedTopic: Topic | null;
+  showQuiz: boolean;
+  onOpenQuiz: () => void;
+  onCloseQuiz: () => void;
+  onShowVisualization: () => void;
 }
 
-export function ContentDisplay({ selectedTopic }: ContentDisplayProps) {
+export function ContentDisplay({
+  selectedTopic,
+  showQuiz,
+  onOpenQuiz,
+  onCloseQuiz,
+  onShowVisualization,
+}: ContentDisplayProps) {
   const [content, setContent] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -41,21 +61,20 @@ export function ContentDisplay({ selectedTopic }: ContentDisplayProps) {
       const data = await response.json();
       return data.content;
     } catch (err) {
-      console.error("Error loading content:", err);
+      console.error("Error loading saved content:", err);
       return null;
     }
   };
 
-  // Function to generate new content
   const generateContent = async (forceRegenerate = false) => {
     if (!selectedTopic) return;
 
     setIsLoading(true);
     setError(null);
-    setContent("");
+    setIsSaved(false);
 
     try {
-      // Check for saved content first (unless forcing regenerate)
+      // Try to load saved content first if not forcing regenerate
       if (!forceRegenerate) {
         const savedContent = await loadSavedContent(selectedTopic.id);
         if (savedContent) {
@@ -66,7 +85,6 @@ export function ContentDisplay({ selectedTopic }: ContentDisplayProps) {
         }
       }
 
-      // Generate new content from API
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
@@ -76,29 +94,28 @@ export function ContentDisplay({ selectedTopic }: ContentDisplayProps) {
       });
 
       if (!response.ok) {
-        throw new Error("Không thể tải nội dung. Vui lòng thử lại.");
+        throw new Error("Failed to generate content");
       }
 
       const data = await response.json();
       setContent(data.content);
 
-      // Save content to file
+      // Auto-save generated content
       await saveContent(selectedTopic.id, data.content);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Đã xảy ra lỗi");
+      setError("Có lỗi xảy ra khi tạo nội dung. Vui lòng thử lại.");
+      console.error(err);
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    if (!selectedTopic) {
+    if (selectedTopic) {
+      generateContent();
+    } else {
       setContent("");
-      setIsSaved(false);
-      return;
     }
-
-    generateContent();
   }, [selectedTopic]);
 
   const handleReload = () => {
@@ -107,229 +124,197 @@ export function ContentDisplay({ selectedTopic }: ContentDisplayProps) {
 
   if (!selectedTopic) {
     return (
-      <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
-          <div className="size-20 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6">
-            <BookOpen className="size-10 text-blue-600" />
-          </div>
-          <h2 className="text-2xl font-bold mb-3">
-            Chào mừng đến với ML Learning Hub
-          </h2>
-          <p className="text-muted-foreground max-w-md mb-8">
-            Chọn một chủ đề từ sidebar để bắt đầu học Machine Learning. Nội dung
-            sẽ được tạo bởi AI Gemini với giải thích chi tiết và ví dụ thực tế.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-2xl">
-            <div className="p-4 rounded-xl bg-muted/50 text-left">
-              <Sparkles className="size-5 text-blue-600 mb-2" />
-              <h3 className="font-semibold text-sm mb-1">Nội dung AI</h3>
-              <p className="text-xs text-muted-foreground">
-                Được tạo bởi Gemini API với nội dung chi tiết
-              </p>
-            </div>
-            <div className="p-4 rounded-xl bg-muted/50 text-left">
-              <BookOpen className="size-5 text-blue-600 mb-2" />
-              <h3 className="font-semibold text-sm mb-1">12+ Chủ đề</h3>
-              <p className="text-xs text-muted-foreground">
-                Từ cơ bản đến nâng cao về ML
-              </p>
-            </div>
-            <div className="p-4 rounded-xl bg-muted/50 text-left">
-              <svg
-                className="size-5 text-blue-600 mb-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                />
-              </svg>
-              <h3 className="font-semibold text-sm mb-1">Ví dụ Code</h3>
-              <p className="text-xs text-muted-foreground">
-                Kèm theo code Python thực hành
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="flex h-full flex-col items-center justify-center text-center">
+        <BookOpen className="mb-4 size-16 text-gray-300" />
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+          Chào mừng đến với ML Learning Hub
+        </h2>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">
+          Chọn một chủ đề từ menu bên trái để bắt đầu học.
+        </p>
       </div>
     );
   }
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="mb-6">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-          <a href="#" className="hover:text-foreground">
-            Trang chủ
-          </a>
-          <span>/</span>
-          <a href="#" className="hover:text-foreground">
-            Intro to ML
-          </a>
-          <span>/</span>
-          <span className="text-foreground">{selectedTopic.title}</span>
-        </div>
-        <div className="flex items-center justify-between mb-2">
-          <h1 className="text-3xl font-bold tracking-tight">
+      <div className="mb-8 flex items-center justify-between">
+        <div>
+          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+            <span>Machine Learning</span>
+            <span>/</span>
+            <span>Topics</span>
+          </div>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
             {selectedTopic.title}
           </h1>
-          <div className="flex items-center gap-3">
-            {isSaved && !isLoading && (
-              <span className="text-sm text-green-600 dark:text-green-400 flex items-center gap-1">
-                <svg
-                  className="size-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                Đã lưu
-              </span>
-            )}
-            <button
-              onClick={handleReload}
-              disabled={isLoading}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white text-sm font-medium transition-colors"
-              title="Tạo lại nội dung"
-            >
-              <RefreshCw
-                className={`size-4 ${isLoading ? "animate-spin" : ""}`}
-              />
-              Reload
-            </button>
-          </div>
         </div>
-        <p className="text-muted-foreground">Nội dung được tạo bởi Gemini AI</p>
-      </div>
+        <div className="flex items-center gap-3">
+          {isSaved && (
+            <div className="flex items-center gap-1 text-green-600 dark:text-green-500 text-sm font-medium bg-green-50 dark:bg-green-900/20 px-3 py-1.5 rounded-full">
+              <Sparkles className="size-4" />
+              <span>Đã lưu</span>
+            </div>
+          )}
 
-      {isLoading && (
-        <div className="flex flex-col items-center justify-center py-20">
-          <Loader2 className="size-10 text-blue-600 animate-spin mb-4" />
-          <p className="text-muted-foreground">Đang tạo nội dung học tập...</p>
-          <p className="text-sm text-muted-foreground mt-1">
-            Gemini đang phân tích và viết nội dung chi tiết
-          </p>
-        </div>
-      )}
-
-      {error && (
-        <div className="p-6 rounded-xl bg-destructive/10 border border-destructive/20">
-          <p className="text-destructive font-medium">Lỗi: {error}</p>
           <button
-            onClick={() => window.location.reload()}
-            className="mt-3 text-sm text-destructive underline"
+            onClick={onShowVisualization}
+            disabled={isLoading || !content}
+            className="flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 hover:bg-purple-200 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-lg font-medium transition-colors disabled:opacity-50"
+            title="Visualize Concepts"
           >
-            Thử lại
+            <Sparkles className="size-4" />
+            Visualize
+          </button>
+
+          <button
+            onClick={onOpenQuiz}
+            disabled={isLoading || !content}
+            className="flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 hover:bg-green-200 dark:hover:bg-green-900/50 text-green-700 dark:text-green-300 rounded-lg font-medium transition-colors disabled:opacity-50"
+          >
+            <FileQuestion className="size-4" />
+            Làm Quiz
+          </button>
+
+          <button
+            onClick={handleReload}
+            disabled={isLoading}
+            className="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            title="Tạo lại nội dung"
+          >
+            <RefreshCw
+              className={`size-5 ${isLoading ? "animate-spin" : ""}`}
+            />
           </button>
         </div>
-      )}
+      </div>
 
-      {content && !isLoading && (
-        <div className="prose prose-neutral dark:prose-invert max-w-none">
-          <div className="rounded-xl border border-border bg-card p-6 md:p-8">
+      {error ? (
+        <div className="rounded-lg bg-red-50 dark:bg-red-900/20 p-4 text-red-600 dark:text-red-400">
+          {error}
+        </div>
+      ) : (
+        <div className="prose prose-lg dark:prose-invert max-w-none">
+          {isLoading ? (
+            <div className="flex flex-col items-center justify-center py-12">
+              <Loader2 className="mb-4 size-8 animate-spin text-blue-600" />
+              <p className="text-gray-500">Đang tạo nội dung bài học...</p>
+            </div>
+          ) : (
             <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
+              remarkPlugins={[remarkGfm, remarkMath]}
+              rehypePlugins={[rehypeKatex]}
               components={{
-                h1: ({ children }) => (
-                  <h1 className="text-2xl font-bold mt-6 mb-4 first:mt-0 text-foreground">
-                    {children}
-                  </h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="text-xl font-bold mt-6 mb-3 text-blue-600">
-                    {children}
-                  </h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-lg font-semibold mt-4 mb-2 text-foreground">
-                    {children}
-                  </h3>
-                ),
-                p: ({ children }) => (
-                  <p className="mb-4 leading-relaxed text-foreground/90">
-                    {children}
-                  </p>
-                ),
-                ul: ({ children }) => (
-                  <ul className="list-disc pl-6 mb-4 space-y-2">{children}</ul>
-                ),
-                ol: ({ children }) => (
-                  <ol className="list-decimal pl-6 mb-4 space-y-2">
-                    {children}
-                  </ol>
-                ),
-                li: ({ children }) => (
-                  <li className="text-foreground/90">{children}</li>
-                ),
-                code: ({ className, children }) => {
-                  const isInline = !className;
-                  const language = className?.replace("language-", "") || "";
-                  const code = String(children).replace(/\n$/, "");
-
-                  // Check if it's a Mermaid diagram
-                  if (language === "mermaid") {
-                    return <MermaidDiagram chart={code} />;
-                  }
-
-                  // Inline code
-                  if (isInline) {
+                code({ node, inline, className, children, ...props }: any) {
+                  const match = /language-(\w+)/.exec(className || "");
+                  if (!inline && match) {
+                    if (match[1] === "mermaid") {
+                      return (
+                        <MermaidDiagram
+                          chart={String(children).replace(/\n$/, "")}
+                        />
+                      );
+                    }
                     return (
-                      <code className="bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 rounded text-sm font-mono text-blue-700 dark:text-blue-300">
-                        {children}
-                      </code>
+                      <CodeBlock language={match[1]}>
+                        {String(children).replace(/\n$/, "")}
+                      </CodeBlock>
                     );
                   }
-
-                  // Code block with syntax highlighting
-                  return <CodeBlock language={language}>{code}</CodeBlock>;
+                  return (
+                    <code
+                      className={`${className} bg-gray-100 dark:bg-gray-800 rounded px-1.5 py-0.5 text-sm font-mono text-pink-600 dark:text-pink-400`}
+                      {...props}
+                    >
+                      {children}
+                    </code>
+                  );
                 },
-                pre: ({ children }) => (
-                  <pre className="code-block rounded-lg overflow-hidden mb-4">
-                    {children}
-                  </pre>
-                ),
-                blockquote: ({ children }) => (
-                  <blockquote className="border-l-4 border-blue-600 pl-4 italic my-4 text-muted-foreground">
-                    {children}
-                  </blockquote>
-                ),
                 table: ({ children }) => (
-                  <div className="overflow-x-auto mb-4">
-                    <table className="w-full border-collapse border border-border">
+                  <div className="overflow-x-auto my-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                       {children}
                     </table>
                   </div>
                 ),
+                thead: ({ children }) => (
+                  <thead className="bg-gray-50 dark:bg-gray-800/50">
+                    {children}
+                  </thead>
+                ),
+                tbody: ({ children }) => (
+                  <tbody className="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900">
+                    {children}
+                  </tbody>
+                ),
+                tr: ({ children }) => (
+                  <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                    {children}
+                  </tr>
+                ),
                 th: ({ children }) => (
-                  <th className="border border-border bg-muted px-4 py-2 text-left font-semibold">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     {children}
                   </th>
                 ),
                 td: ({ children }) => (
-                  <td className="border border-border px-4 py-2">{children}</td>
-                ),
-                strong: ({ children }) => (
-                  <strong className="font-semibold text-foreground">
+                  <td className="px-6 py-4 whitespace-normal text-sm text-gray-700 dark:text-gray-300">
                     {children}
-                  </strong>
+                  </td>
                 ),
-                hr: () => <hr className="my-6 border-border" />,
+                blockquote: ({ children }) => (
+                  <blockquote className="border-l-4 border-blue-500 pl-4 italic my-4 text-gray-600 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/10 py-2 pr-2 rounded-r">
+                    {children}
+                  </blockquote>
+                ),
+                h1: ({ children }) => (
+                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
+                    {children}
+                  </h1>
+                ),
+                h2: ({ children }) => (
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4 flex items-center gap-2">
+                    <span className="w-1.5 h-8 bg-blue-600 rounded-full"></span>
+                    {children}
+                  </h2>
+                ),
+                h3: ({ children }) => (
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-6 mb-3">
+                    {children}
+                  </h3>
+                ),
+                p: ({ children }) => (
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                    {children}
+                  </p>
+                ),
+                ul: ({ children }) => (
+                  <ul className="list-disc list-outside ml-6 mb-4 space-y-2 text-gray-700 dark:text-gray-300">
+                    {children}
+                  </ul>
+                ),
+                ol: ({ children }) => (
+                  <ol className="list-decimal list-outside ml-6 mb-4 space-y-2 text-gray-700 dark:text-gray-300">
+                    {children}
+                  </ol>
+                ),
+                li: ({ children }) => <li className="pl-1">{children}</li>,
               }}
             >
               {content}
             </ReactMarkdown>
-          </div>
+          )}
         </div>
+      )}
+
+      {/* Quiz Modal */}
+      {showQuiz && selectedTopic && (
+        <QuizGenerator
+          topicId={selectedTopic.id}
+          topicTitle={selectedTopic.title}
+          content={content}
+          onClose={onCloseQuiz}
+        />
       )}
     </div>
   );
