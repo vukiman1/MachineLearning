@@ -1,0 +1,237 @@
+Tuyệt vời! Đây là nội dung học tập chi tiết về Neural Networks được thiết kế cho sinh viên, sử dụng Markdown, hình ảnh minh họa (nếu có thể chèn trực tiếp), công thức toán học và ví dụ code.
+
+# Mạng Neural (Neural Networks)
+
+Mạng Neural, hay Mạng Nơ-ron, là một mô hình tính toán được lấy cảm hứng từ cấu trúc và chức năng của não bộ con người. Chúng là nền tảng của nhiều ứng dụng Machine Learning hiện đại, bao gồm nhận dạng hình ảnh, xử lý ngôn ngữ tự nhiên và robotics.
+
+## 1. Cấu trúc cơ bản của Mạng Neural
+
+Mạng Neural bao gồm các thành phần chính sau:
+
+### 1.1. Neurons (Nơ-ron)
+
+*   **Định nghĩa:** Nơ-ron là đơn vị tính toán cơ bản của mạng Neural. Nó nhận đầu vào, thực hiện một phép toán và tạo ra đầu ra.
+*   **Chức năng:** Mô phỏng hoạt động của nơ-ron sinh học trong não.
+*   **Cấu trúc:**
+    *   **Đầu vào (Inputs):** Nhận dữ liệu từ các nơ-ron khác hoặc từ dữ liệu đầu vào.
+    *   **Trọng số (Weights):** Mỗi đầu vào có một trọng số liên kết. Trọng số quyết định mức độ quan trọng của đầu vào đó.
+    *   **Tổng trọng số (Weighted Sum):** Tổng của các đầu vào nhân với trọng số tương ứng.
+    *   **Bias (Độ lệch):** Một giá trị được cộng vào tổng trọng số. Bias giúp nơ-ron kích hoạt ngay cả khi tất cả các đầu vào bằng 0.
+    *   **Hàm kích hoạt (Activation Function):** Áp dụng một hàm phi tuyến tính lên tổng trọng số (sau khi đã cộng bias) để tạo ra đầu ra của nơ-ron.
+
+**Công thức:**
+
+`output = activation_function(sum(weight_i * input_i) + bias)`
+
+### 1.2. Layers (Lớp)
+
+*   **Định nghĩa:** Các nơ-ron được tổ chức thành các lớp.
+*   **Các loại lớp:**
+    *   **Lớp đầu vào (Input Layer):** Nhận dữ liệu đầu vào. Số lượng nơ-ron trong lớp này tương ứng với số lượng đặc trưng (features) của dữ liệu đầu vào.
+    *   **Lớp ẩn (Hidden Layer):** Thực hiện các phép toán trung gian. Mạng Neural có thể có nhiều lớp ẩn.
+    *   **Lớp đầu ra (Output Layer):** Tạo ra kết quả dự đoán. Số lượng nơ-ron trong lớp này phụ thuộc vào loại bài toán (ví dụ: 1 nơ-ron cho bài toán hồi quy, nhiều nơ-ron cho bài toán phân loại).
+
+### 1.3. Weights (Trọng số)
+
+*   **Định nghĩa:** Các tham số liên kết giữa các nơ-ron trong các lớp khác nhau.
+*   **Chức năng:** Quyết định mức độ ảnh hưởng của một nơ-ron đến nơ-ron khác.
+*   **Quá trình học:** Các trọng số được điều chỉnh trong quá trình huấn luyện để mạng Neural có thể đưa ra dự đoán chính xác.
+
+### 1.4. Biases (Độ lệch)
+
+*   **Định nghĩa:** Các tham số được cộng vào tổng trọng số của mỗi nơ-ron.
+*   **Chức năng:** Giúp nơ-ron kích hoạt ngay cả khi tất cả các đầu vào bằng 0.
+*   **Quá trình học:** Các biases cũng được điều chỉnh trong quá trình huấn luyện.
+
+## 2. Hàm kích hoạt (Activation Functions)
+
+*   **Định nghĩa:** Hàm phi tuyến tính được áp dụng lên tổng trọng số của nơ-ron.
+*   **Chức năng:** Giới thiệu tính phi tuyến tính vào mạng Neural, cho phép nó học các mối quan hệ phức tạp trong dữ liệu. Nếu không có hàm kích hoạt phi tuyến tính, mạng Neural chỉ có thể mô hình hóa các mối quan hệ tuyến tính.
+
+**Các hàm kích hoạt phổ biến:**
+
+*   **Sigmoid:** `f(x) = 1 / (1 + exp(-x))`
+    *   Đầu ra nằm trong khoảng (0, 1).
+    *   Thường được sử dụng cho lớp đầu ra trong bài toán phân loại nhị phân.
+    *   **Nhược điểm:** Vanishing gradient problem (gradient biến mất khi x rất lớn hoặc rất nhỏ).
+*   **Tanh (Hyperbolic Tangent):** `f(x) = (exp(x) - exp(-x)) / (exp(x) + exp(-x))`
+    *   Đầu ra nằm trong khoảng (-1, 1).
+    *   Tốt hơn Sigmoid vì có đầu ra âm.
+    *   **Nhược điểm:** Vanishing gradient problem.
+*   **ReLU (Rectified Linear Unit):** `f(x) = max(0, x)`
+    *   Đầu ra là x nếu x > 0, ngược lại là 0.
+    *   Phổ biến nhất vì đơn giản và hiệu quả.
+    *   **Ưu điểm:** Giải quyết vanishing gradient problem (đối với x > 0).
+    *   **Nhược điểm:** Dying ReLU problem (nơ-ron "chết" nếu đầu vào luôn âm).
+*   **Leaky ReLU:** `f(x) = x if x > 0 else alpha * x` (alpha là một số nhỏ, ví dụ 0.01)
+    *   Tương tự ReLU, nhưng cho phép một gradient nhỏ khi x < 0, giúp giải quyết Dying ReLU problem.
+*   **Softmax:** `f(x_i) = exp(x_i) / sum(exp(x_j))` (tổng cho tất cả j)
+    *   Đầu ra là một phân phối xác suất trên các lớp.
+    *   Thường được sử dụng cho lớp đầu ra trong bài toán phân loại đa lớp.
+
+**Bảng so sánh các hàm kích hoạt:**
+
+| Hàm kích hoạt | Ưu điểm                                                                   | Nhược điểm                                                                                                                                     | Sử dụng phù hợp                                                                      |
+| ------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Sigmoid       | Đầu ra nằm trong khoảng (0, 1), dễ dàng diễn giải xác suất.                | Vanishing gradient problem, không tâm (not zero-centered).                                                                                    | Phân loại nhị phân (lớp đầu ra).                                                       |
+| Tanh          | Đầu ra nằm trong khoảng (-1, 1), tâm là 0.                                 | Vanishing gradient problem.                                                                                                                     | Lớp ẩn.                                                                              |
+| ReLU          | Đơn giản, hiệu quả, giải quyết vanishing gradient problem (đối với x > 0). | Dying ReLU problem.                                                                                                                          | Lớp ẩn.                                                                              |
+| Leaky ReLU    | Giải quyết Dying ReLU problem.                                              |                                                                                                                                              | Lớp ẩn.                                                                              |
+| Softmax       | Đầu ra là phân phối xác suất.                                              |                                                                                                                                              | Phân loại đa lớp (lớp đầu ra).                                                       |
+
+## 3. Forward Propagation (Lan truyền tiến)
+
+*   **Định nghĩa:** Quá trình tính toán đầu ra của mạng Neural bằng cách truyền dữ liệu từ lớp đầu vào đến lớp đầu ra.
+*   **Các bước:**
+    1.  Nhận dữ liệu đầu vào.
+    2.  Tính tổng trọng số của mỗi nơ-ron trong lớp ẩn đầu tiên.
+    3.  Áp dụng hàm kích hoạt lên tổng trọng số để tạo ra đầu ra của nơ-ron.
+    4.  Lặp lại các bước 2 và 3 cho các lớp ẩn tiếp theo.
+    5.  Tính tổng trọng số của mỗi nơ-ron trong lớp đầu ra.
+    6.  Áp dụng hàm kích hoạt lên tổng trọng số để tạo ra kết quả dự đoán.
+
+**Ví dụ code (Python với NumPy):**
+
+```python
+import numpy as np
+
+def sigmoid(x):
+  return 1 / (1 + np.exp(-x))
+
+def forward_propagation(X, weights, biases):
+  """
+  Thực hiện lan truyền tiến.
+
+  Args:
+    X: Dữ liệu đầu vào (mẫu x đặc trưng).
+    weights: Danh sách các ma trận trọng số (mỗi phần tử cho một lớp).
+    biases: Danh sách các vectơ bias (mỗi phần tử cho một lớp).
+
+  Returns:
+    A: Danh sách các kích hoạt của mỗi lớp.
+  """
+  A = [X] # Lưu trữ kích hoạt của mỗi lớp, bắt đầu với lớp đầu vào
+  L = len(weights) # Số lượng lớp (không bao gồm lớp đầu vào)
+
+  for l in range(L):
+    Z = np.dot(A[l], weights[l]) + biases[l]
+    A_next = sigmoid(Z)  # Sử dụng sigmoid làm hàm kích hoạt
+    A.append(A_next)
+
+  return A
+```
+
+## 4. Backpropagation (Lan truyền ngược)
+
+*   **Định nghĩa:** Quá trình tính toán gradient của hàm mất mát (loss function) đối với các trọng số và biases.
+*   **Chức năng:** Sử dụng gradient để cập nhật các trọng số và biases, giúp mạng Neural học hỏi.
+*   **Các bước:**
+    1.  Tính toán lỗi (error) giữa kết quả dự đoán và kết quả thực tế.
+    2.  Tính toán gradient của hàm mất mát đối với đầu ra của lớp cuối cùng.
+    3.  Lan truyền gradient ngược từ lớp cuối cùng đến lớp đầu tiên, tính toán gradient của hàm mất mát đối với các trọng số và biases của mỗi lớp.
+    4.  Sử dụng gradient để cập nhật các trọng số và biases.
+
+**Công thức (đơn giản hóa cho một lớp):**
+
+*   `dL/dW = (dL/dZ) * A_prev.T` (gradient của loss function đối với trọng số)
+*   `dL/db = dL/dZ` (gradient của loss function đối với bias)
+*   `dL/dA_prev = np.dot(dL/dZ, W.T)` (gradient của loss function đối với kích hoạt của lớp trước)
+*   `dL/dZ = dL/dA * g'(Z)` (gradient của loss function đối với tổng trọng số, g'(Z) là đạo hàm của hàm kích hoạt)
+
+**Ví dụ code (Python với NumPy):**
+
+```python
+def sigmoid_derivative(x):
+  return sigmoid(x) * (1 - sigmoid(x))
+
+def backpropagation(A, Y, weights):
+  """
+  Thực hiện lan truyền ngược.
+
+  Args:
+    A: Danh sách các kích hoạt của mỗi lớp (đầu ra của forward propagation).
+    Y: Nhãn thực tế.
+    weights: Danh sách các ma trận trọng số.
+
+  Returns:
+    dW: Danh sách các gradient của loss function đối với trọng số.
+    db: Danh sách các gradient của loss function đối với bias.
+  """
+  L = len(weights)  # Số lượng lớp
+  m = Y.shape[0]  # Số lượng mẫu
+
+  dZ = A[-1] - Y # Lỗi ở lớp đầu ra
+  dW = [np.dot(A[-2].T, dZ) / m]
+  db = [np.sum(dZ, axis=0, keepdims=True) / m]
+  dA_prev = np.dot(dZ, weights[-1].T)
+
+  for l in reversed(range(L - 1)): # Lặp ngược từ lớp áp chót đến lớp đầu tiên
+    dZ = dA_prev * sigmoid_derivative(np.dot(A[l], weights[l]) + biases[l]) # Đạo hàm của sigmoid ở đây
+    dW.insert(0, np.dot(A[l].T, dZ) / m)
+    db.insert(0, np.sum(dZ, axis=0, keepdims=True) / m)
+    dA_prev = np.dot(dZ, weights[l].T)
+
+  return dW, db
+```
+
+## 5. Gradient Descent (Thuật toán Gradient Descent)
+
+*   **Định nghĩa:** Thuật toán tối ưu hóa được sử dụng để tìm giá trị nhỏ nhất của hàm mất mát.
+*   **Cách hoạt động:**
+    1.  Tính toán gradient của hàm mất mát đối với các trọng số và biases.
+    2.  Cập nhật các trọng số và biases theo hướng ngược lại với gradient.
+    3.  Lặp lại các bước 1 và 2 cho đến khi hàm mất mát đạt đến một giá trị đủ nhỏ.
+
+**Công thức:**
+
+*   `W = W - learning_rate * dL/dW`
+*   `b = b - learning_rate * dL/db`
+
+**Ví dụ code (Python với NumPy):**
+
+```python
+def update_parameters(weights, biases, dW, db, learning_rate):
+  """
+  Cập nhật các trọng số và biases sử dụng gradient descent.
+
+  Args:
+    weights: Danh sách các ma trận trọng số.
+    biases: Danh sách các vectơ bias.
+    dW: Danh sách các gradient của loss function đối với trọng số.
+    db: Danh sách các gradient của loss function đối với bias.
+    learning_rate: Tốc độ học.
+
+  Returns:
+    weights: Danh sách các ma trận trọng số đã được cập nhật.
+    biases: Danh sách các vectơ bias đã được cập nhật.
+  """
+  L = len(weights)
+  for l in range(L):
+    weights[l] = weights[l] - learning_rate * dW[l]
+    biases[l] = biases[l] - learning_rate * db[l]
+  return weights, biases
+```
+
+## 6. Các loại Mạng Neural
+
+### 6.1. MLP (Multilayer Perceptron)
+
+*   **Định nghĩa:** Mạng Neural với một hoặc nhiều lớp ẩn.
+*   **Cấu trúc:** Các lớp được kết nối đầy đủ (fully connected), tức là mỗi nơ-ron trong một lớp được kết nối với tất cả các nơ-ron trong lớp tiếp theo.
+*   **Ứng dụng:** Phân loại, hồi quy, nhận dạng mẫu.
+
+### 6.2. CNN (Convolutional Neural Network)
+
+*   **Định nghĩa:** Mạng Neural được thiết kế đặc biệt để xử lý dữ liệu có cấu trúc lưới, ví dụ như hình ảnh.
+*   **Cấu trúc:** Sử dụng các lớp tích chập (convolutional layers) và lớp gộp (pooling layers) để trích xuất các đặc trưng từ dữ liệu.
+*   **Ưu điểm:** Hiệu quả trong việc nhận dạng hình ảnh, giảm số lượng tham số so với MLP.
+*   **Ứng dụng:** Nhận dạng hình ảnh, phân loại hình ảnh, phát hiện đối tượng.
+
+### 6.3. RNN (Recurrent Neural Network)
+
+*   **Định nghĩa:** Mạng Neural được thiết kế để xử lý dữ liệu tuần tự, ví dụ như văn bản, chuỗi thời gian.
+*   **Cấu trúc:** Có các kết nối vòng lặp (recurrent connections) cho phép thông tin từ các bước thời gian trước đó được lưu trữ và sử dụng trong các bước thời gian tiếp theo.
+*   **Ưu điểm:** Có thể học các phụ thuộc dài hạn trong dữ liệu tuần tự.
+*   **Ứng dụng:** Xử lý ngôn ngữ tự nhiên, dịch máy, nhận dạng giọng nói, dự báo chuỗi thời gian.  Các biến thể phổ biến là LSTM (Long Short-Term Memory) và GRU (Gated Recurrent Unit) để giải quyết vấn đề vanishing gradient trong RNN tiêu chuẩn.
+
+Đây là một khởi đầu chi tiết. Bạn có thể mở rộng từng phần, thêm các ví dụ code phức tạp hơn, và thảo luận về các kỹ thuật tối ưu hóa khác (ví dụ: Adam, RMSprop) để làm cho nội dung trở nên phong phú hơn. Chúc bạn thành công!

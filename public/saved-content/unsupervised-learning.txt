@@ -1,0 +1,280 @@
+Tuyệt vời! Đây là nội dung học tập chi tiết về Unsupervised Learning, được thiết kế để dễ hiểu cho sinh viên, với các ví dụ code và giải thích cặn kẽ.
+
+# Unsupervised Learning: Khám phá thế giới dữ liệu không nhãn
+
+Chào mừng các bạn đến với thế giới của Unsupervised Learning! Trong lĩnh vực Machine Learning, chúng ta thường chia thành hai nhánh chính: Supervised Learning (học có giám sát) và Unsupervised Learning (học không giám sát). Nếu như Supervised Learning dựa vào dữ liệu đã được gán nhãn để huấn luyện mô hình, thì Unsupervised Learning lại khám phá cấu trúc ẩn trong dữ liệu *chưa được gán nhãn*. Điều này có nghĩa là chúng ta không cung cấp cho thuật toán bất kỳ thông tin nào về kết quả mong muốn. Thay vào đó, thuật toán tự tìm kiếm các mẫu, nhóm hoặc mối quan hệ trong dữ liệu.
+
+## 1. Định nghĩa Unsupervised Learning
+
+Unsupervised Learning là một loại thuật toán Machine Learning được sử dụng để suy ra các kết luận từ dữ liệu đầu vào *không có nhãn*. Mục tiêu là khám phá cấu trúc tiềm ẩn trong dữ liệu, chẳng hạn như:
+
+*   **Clustering (Phân cụm):** Nhóm các điểm dữ liệu tương tự lại với nhau.
+*   **Dimensionality Reduction (Giảm chiều):** Giảm số lượng biến trong dữ liệu trong khi vẫn giữ lại thông tin quan trọng.
+*   **Association Rule Learning (Học luật kết hợp):** Tìm các mối quan hệ giữa các biến trong dữ liệu.
+
+## 2. Các thuật toán Unsupervised Learning phổ biến
+
+### 2.1. K-Means Clustering
+
+**Định nghĩa:** K-Means là một thuật toán phân cụm dựa trên khoảng cách. Nó cố gắng chia dữ liệu thành *k* cụm, trong đó mỗi điểm dữ liệu thuộc về cụm có trung bình gần nhất (centroid).
+
+**Thuật toán:**
+
+1.  **Khởi tạo:** Chọn ngẫu nhiên *k* centroids ban đầu.
+2.  **Gán cụm:** Gán mỗi điểm dữ liệu cho centroid gần nhất (thường sử dụng khoảng cách Euclidean).
+3.  **Cập nhật centroid:** Tính toán lại centroid của mỗi cụm bằng cách lấy trung bình của tất cả các điểm dữ liệu trong cụm đó.
+4.  **Lặp lại:** Lặp lại bước 2 và 3 cho đến khi các centroid không thay đổi đáng kể hoặc đạt đến số lần lặp tối đa.
+
+**Công thức:**
+
+*   **Khoảng cách Euclidean:**  `d(x, y) = sqrt(sum((xi - yi)^2))`  (trong đó x và y là hai điểm dữ liệu)
+*   **Centroid:** Trung bình của các điểm dữ liệu trong cụm.
+
+**Ví dụ Code (Python):**
+
+```python
+from sklearn.cluster import KMeans
+import numpy as np
+
+# Tạo dữ liệu mẫu
+X = np.array([[1, 2], [1.5, 1.8], [5, 8], [8, 8], [1, 0.6], [9, 11]])
+
+# Khởi tạo K-Means với 2 cụm
+kmeans = KMeans(n_clusters=2, random_state=0, n_init='auto')
+
+# Huấn luyện mô hình
+kmeans.fit(X)
+
+# Dự đoán cụm cho mỗi điểm dữ liệu
+labels = kmeans.labels_
+print("Nhãn cụm:", labels)
+
+# Tọa độ của các centroid
+centroids = kmeans.cluster_centers_
+print("Tọa độ centroid:", centroids)
+```
+
+**Ưu điểm:**
+
+*   Đơn giản và dễ hiểu.
+*   Hiệu quả về mặt tính toán (đặc biệt với dữ liệu số).
+
+**Nhược điểm:**
+
+*   Yêu cầu xác định số lượng cụm *k* trước.
+*   Nhạy cảm với việc khởi tạo centroid ban đầu.
+*   Giả định rằng các cụm có dạng hình cầu và kích thước tương tự.
+*   Có thể bị ảnh hưởng bởi outliers.
+
+### 2.2. Hierarchical Clustering
+
+**Định nghĩa:** Hierarchical Clustering (phân cụm phân cấp) xây dựng một hệ thống phân cấp các cụm. Có hai phương pháp chính:
+
+*   **Agglomerative (Bottom-up):** Bắt đầu với mỗi điểm dữ liệu là một cụm riêng lẻ, sau đó hợp nhất các cụm gần nhau nhất cho đến khi chỉ còn lại một cụm duy nhất.
+*   **Divisive (Top-down):** Bắt đầu với tất cả các điểm dữ liệu trong một cụm duy nhất, sau đó chia cụm thành các cụm nhỏ hơn cho đến khi mỗi điểm dữ liệu là một cụm riêng lẻ.
+
+**Các phương pháp liên kết (linkage methods):**
+
+*   **Single Linkage:** Khoảng cách giữa hai cụm là khoảng cách ngắn nhất giữa bất kỳ hai điểm nào trong hai cụm đó.
+*   **Complete Linkage:** Khoảng cách giữa hai cụm là khoảng cách dài nhất giữa bất kỳ hai điểm nào trong hai cụm đó.
+*   **Average Linkage:** Khoảng cách giữa hai cụm là khoảng cách trung bình giữa tất cả các cặp điểm trong hai cụm đó.
+*   **Ward's method:**  Tìm cách giảm thiểu phương sai trong các cụm.
+
+**Ví dụ Code (Python):**
+
+```python
+from sklearn.cluster import AgglomerativeClustering
+import numpy as np
+
+# Tạo dữ liệu mẫu
+X = np.array([[1, 2], [1.5, 1.8], [5, 8], [8, 8], [1, 0.6], [9, 11]])
+
+# Khởi tạo Agglomerative Clustering với 2 cụm và complete linkage
+clustering = AgglomerativeClustering(n_clusters=2, linkage='complete')
+
+# Huấn luyện mô hình
+clustering.fit(X)
+
+# Dự đoán cụm cho mỗi điểm dữ liệu
+labels = clustering.labels_
+print("Nhãn cụm:", labels)
+```
+
+**Ưu điểm:**
+
+*   Không yêu cầu xác định số lượng cụm trước.
+*   Cung cấp một cấu trúc phân cấp của các cụm, cho phép khám phá các mức độ chi tiết khác nhau.
+
+**Nhược điểm:**
+
+*   Có thể tốn kém về mặt tính toán, đặc biệt với dữ liệu lớn.
+*   Khó xử lý outliers.
+*   Quyết định về phương pháp liên kết có thể ảnh hưởng lớn đến kết quả.
+
+### 2.3. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+
+**Định nghĩa:** DBSCAN là một thuật toán phân cụm dựa trên mật độ. Nó nhóm các điểm dữ liệu lại với nhau dựa trên mật độ của chúng. Các điểm được coi là thuộc về cùng một cụm nếu chúng nằm gần nhau và có nhiều điểm khác ở gần chúng.
+
+**Tham số:**
+
+*   **eps (epsilon):** Bán kính xung quanh một điểm để tìm các điểm lân cận.
+*   **min_samples:** Số lượng điểm tối thiểu cần thiết để tạo thành một cụm.
+
+**Thuật toán:**
+
+1.  **Chọn một điểm:** Chọn một điểm chưa được thăm.
+2.  **Tìm lân cận:** Tìm tất cả các điểm trong bán kính *eps* xung quanh điểm đó.
+3.  **Kiểm tra mật độ:** Nếu có ít nhất *min_samples* điểm trong lân cận, thì điểm đó được coi là điểm lõi (core point) và một cụm mới được tạo.
+4.  **Mở rộng cụm:** Tìm tất cả các điểm có thể đạt được từ điểm lõi (density-reachable) và thêm chúng vào cụm.
+5.  **Lặp lại:** Lặp lại bước 1-4 cho đến khi tất cả các điểm đã được thăm.
+
+**Ví dụ Code (Python):**
+
+```python
+from sklearn.cluster import DBSCAN
+import numpy as np
+
+# Tạo dữ liệu mẫu
+X = np.array([[1, 2], [1.5, 1.8], [5, 8], [8, 8], [1, 0.6], [9, 11]])
+
+# Khởi tạo DBSCAN với eps=0.5 và min_samples=2
+dbscan = DBSCAN(eps=1, min_samples=2)
+
+# Huấn luyện mô hình
+dbscan.fit(X)
+
+# Dự đoán cụm cho mỗi điểm dữ liệu
+labels = dbscan.labels_
+print("Nhãn cụm:", labels)  # -1 là noise/outlier
+```
+
+**Ưu điểm:**
+
+*   Không yêu cầu xác định số lượng cụm trước.
+*   Có thể tìm thấy các cụm có hình dạng bất kỳ.
+*   Khả năng xử lý outliers tốt.
+
+**Nhược điểm:**
+
+*   Nhạy cảm với các tham số *eps* và *min_samples*.
+*   Khó khăn trong việc phân cụm dữ liệu có mật độ khác nhau đáng kể.
+
+### 2.4. PCA (Principal Component Analysis)
+
+**Định nghĩa:** PCA là một kỹ thuật giảm chiều tuyến tính. Nó tìm các thành phần chính (principal components) của dữ liệu, là các hướng mà dữ liệu biến đổi nhiều nhất. Bằng cách giữ lại một số lượng nhỏ các thành phần chính, chúng ta có thể giảm số lượng biến trong dữ liệu trong khi vẫn giữ lại phần lớn thông tin quan trọng.
+
+**Thuật toán:**
+
+1.  **Chuẩn hóa dữ liệu:** Đảm bảo rằng mỗi biến có trung bình bằng 0 và phương sai bằng 1.
+2.  **Tính ma trận hiệp phương sai (covariance matrix):** Mô tả mối quan hệ giữa các biến.
+3.  **Tính các trị riêng (eigenvalues) và vector riêng (eigenvectors):** Các vector riêng là các thành phần chính, và các trị riêng cho biết lượng phương sai được giải thích bởi mỗi thành phần.
+4.  **Chọn các thành phần chính:** Sắp xếp các vector riêng theo thứ tự giảm dần của trị riêng tương ứng và chọn *k* vector riêng hàng đầu.
+5.  **Chuyển đổi dữ liệu:** Nhân dữ liệu ban đầu với các vector riêng đã chọn để tạo ra dữ liệu giảm chiều.
+
+**Ví dụ Code (Python):**
+
+```python
+from sklearn.decomposition import PCA
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+
+# Tạo dữ liệu mẫu
+X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+
+# Chuẩn hóa dữ liệu
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# Khởi tạo PCA với 2 thành phần
+pca = PCA(n_components=2)
+
+# Huấn luyện mô hình và chuyển đổi dữ liệu
+X_pca = pca.fit_transform(X_scaled)
+
+print("Dữ liệu giảm chiều:", X_pca)
+print("Phương sai được giải thích bởi mỗi thành phần:", pca.explained_variance_ratio_)
+```
+
+**Ưu điểm:**
+
+*   Giảm chiều dữ liệu hiệu quả.
+*   Có thể cải thiện hiệu suất của các thuật toán Machine Learning khác.
+*   Dễ dàng trực quan hóa dữ liệu.
+
+**Nhược điểm:**
+
+*   Chỉ hoạt động tốt với các mối quan hệ tuyến tính.
+*   Có thể mất thông tin quan trọng nếu số lượng thành phần chính được chọn quá ít.
+
+### 2.5. t-SNE (t-distributed Stochastic Neighbor Embedding)
+
+**Định nghĩa:** t-SNE là một kỹ thuật giảm chiều phi tuyến tính. Nó được sử dụng để trực quan hóa dữ liệu có chiều cao trong không gian hai hoặc ba chiều. t-SNE cố gắng giữ lại cấu trúc lân cận của dữ liệu trong không gian có chiều thấp.
+
+**Ví dụ Code (Python):**
+
+```python
+from sklearn.manifold import TSNE
+import numpy as np
+
+# Tạo dữ liệu mẫu
+X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+
+# Khởi tạo t-SNE với 2 thành phần
+tsne = TSNE(n_components=2, random_state=0, perplexity=2)
+
+# Huấn luyện mô hình và chuyển đổi dữ liệu
+X_tsne = tsne.fit_transform(X)
+
+print("Dữ liệu giảm chiều:", X_tsne)
+```
+
+**Ưu điểm:**
+
+*   Hiệu quả trong việc trực quan hóa dữ liệu có chiều cao.
+*   Có thể phát hiện các cụm và cấu trúc phức tạp trong dữ liệu.
+
+**Nhược điểm:**
+
+*   Tốn kém về mặt tính toán.
+*   Nhạy cảm với các tham số, đặc biệt là *perplexity*.
+*   Không giữ lại khoảng cách chính xác giữa các điểm dữ liệu.
+
+## 3. Ứng dụng thực tế của Unsupervised Learning
+
+### 3.1. Customer Segmentation (Phân khúc khách hàng)
+
+Sử dụng các thuật toán phân cụm để nhóm khách hàng dựa trên hành vi mua hàng, nhân khẩu học hoặc các đặc điểm khác. Điều này giúp các doanh nghiệp hiểu rõ hơn về khách hàng của mình và phát triển các chiến lược marketing hiệu quả hơn.
+
+### 3.2. Anomaly Detection (Phát hiện bất thường)
+
+Tìm các điểm dữ liệu khác biệt đáng kể so với phần còn lại của dữ liệu. Ứng dụng trong phát hiện gian lận, lỗi sản xuất hoặc các sự kiện bất thường trong hệ thống mạng.
+
+### 3.3. Recommendation Systems (Hệ thống gợi ý)
+
+Sử dụng các thuật toán như PCA hoặc Association Rule Learning để tìm các mối quan hệ giữa các sản phẩm hoặc người dùng. Điều này có thể được sử dụng để đề xuất các sản phẩm hoặc nội dung phù hợp cho người dùng.
+
+### 3.4. Image Compression (Nén ảnh)
+
+PCA có thể được sử dụng để giảm chiều dữ liệu ảnh, từ đó giảm kích thước tệp.
+
+## 4. Đánh giá kết quả Unsupervised Learning
+
+Việc đánh giá kết quả của Unsupervised Learning khó hơn so với Supervised Learning vì không có nhãn thực tế để so sánh. Tuy nhiên, có một số phương pháp đánh giá phổ biến:
+
+*   **Silhouette Score:** Đo mức độ tương đồng của một điểm dữ liệu với cụm của nó so với các cụm khác. Giá trị càng cao (gần 1) thì cụm càng tốt.
+*   **Davies-Bouldin Index:** Đo độ tương tự trung bình giữa mỗi cụm và cụm tương tự nhất của nó. Giá trị càng thấp thì cụm càng tốt.
+*   **Calinski-Harabasz Index:** Đo tỷ lệ giữa phương sai giữa các cụm và phương sai trong các cụm. Giá trị càng cao thì cụm càng tốt.
+*   **Visual Inspection:** Trực quan hóa các cụm (ví dụ: sử dụng t-SNE) và đánh giá chất lượng của chúng bằng mắt thường.
+*   **Domain Expertise:** Tham khảo ý kiến của các chuyên gia trong lĩnh vực liên quan để đánh giá xem kết quả phân cụm có ý nghĩa hay không.
+
+**Bảng so sánh các thuật toán Unsupervised Learning:**
+
+| Thuật toán          | Ưu điểm                                                                                                                            | Nhược điểm                                                                                                                                                                | Ứng dụng                                                                                                                                                                |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| K-Means             | Đơn giản, dễ hiểu, hiệu quả về mặt tính toán                                                                                                | Yêu cầu xác định *k* trước, nhạy cảm với khởi tạo, giả định cụm hình cầu, dễ bị ảnh hưởng bởi outliers                                                                        | Phân khúc khách hàng, phân tích ảnh                                                                                                                                       |
+| Hierarchical        | Không yêu cầu xác định *k* trước, cung cấp cấu trúc phân cấp                                                                                    | Tốn kém về mặt tính toán, khó xử lý outliers, lựa chọn linkage method ảnh hưởng lớn                                                                                 | Phân tích hệ gen, phân tích mạng xã hội                                                                                                                               |
+| DBSCAN              | Không yêu cầu xác định *k* trước, tìm được cụm hình dạng bất kỳ, xử lý outliers tốt                                                                 | Nhạy cảm với tham số, khó khăn khi mật độ khác biệt                                                                                                                          | Phát hiện bất thường, phân tích không gian                                                                                                                            |
+| PCA                 | Giảm chiều hiệu quả, cải thiện hiệu suất, dễ trực quan hóa                                                                                             | Chỉ hoạt động tốt với quan hệ tuyến tính, có thể mất thông tin                                                                                                            | Nén ảnh, giảm chiều dữ liệu                                                                                                                                       |
+| t-SNE               | Hiệu quả trong trực quan hóa dữ liệu chiều cao, phát hiện cấu trúc phức tạp                                                                           | Tốn kém, nhạy cảm với tham số, không giữ lại khoảng cách chính xác                                                                                                   | Trực quan hóa dữ liệu, khám phá cấu trúc dữ liệu                                                                                                                              |
+
+Hy vọng nội dung này cung cấp cho bạn một cái nhìn tổng quan đầy đủ và dễ hiểu về Unsupervised Learning. Chúc các bạn học tốt!

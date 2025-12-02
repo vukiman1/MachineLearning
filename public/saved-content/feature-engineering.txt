@@ -1,0 +1,241 @@
+Tuyệt vời! Dưới đây là nội dung học tập chi tiết về Feature Engineering, được thiết kế cho sinh viên Machine Learning, bao gồm giải thích, ví dụ code và so sánh các phương pháp.
+
+# Feature Engineering: Chìa Khóa Vàng Của Machine Learning
+
+Feature Engineering, hay Kỹ thuật Đặc trưng, là quá trình sử dụng kiến thức về nghiệp vụ (domain knowledge) để trích xuất, biến đổi và chọn lọc các đặc trưng (features) từ dữ liệu thô. Mục tiêu là tạo ra các đặc trưng mới, phù hợp hơn, giúp các mô hình Machine Learning học hỏi và dự đoán chính xác hơn.
+
+## Tại Sao Feature Engineering Quan Trọng?
+
+*   **Cải thiện hiệu suất mô hình:** Các đặc trưng được thiết kế tốt có thể giúp mô hình học nhanh hơn, chính xác hơn và tổng quát hóa tốt hơn trên dữ liệu mới.
+*   **Giảm độ phức tạp của mô hình:** Bằng cách trích xuất các đặc trưng quan trọng, bạn có thể giảm số lượng đặc trưng cần thiết, đơn giản hóa mô hình và giảm nguy cơ overfitting.
+*   **Cung cấp thông tin cho mô hình:** Feature Engineering có thể giúp mô hình hiểu rõ hơn về dữ liệu, đặc biệt là khi dữ liệu thô không trực quan hoặc khó diễn giải.
+*   **Tiết kiệm chi phí:** Mô hình đơn giản hơn, huấn luyện nhanh hơn đồng nghĩa với việc tiết kiệm tài nguyên tính toán và thời gian.
+
+## Các Kỹ Thuật Feature Engineering
+
+Dưới đây là một số kỹ thuật Feature Engineering phổ biến, được minh họa bằng code Python/Pandas:
+
+### 1. Xử Lý Dữ Liệu Thiếu (Handling Missing Values)
+
+Dữ liệu thiếu là một vấn đề phổ biến trong thực tế. Có nhiều cách để xử lý, tùy thuộc vào bản chất của dữ liệu và mục tiêu của bài toán.
+
+*   **Xóa các hàng/cột chứa giá trị thiếu:** Đơn giản, nhưng có thể dẫn đến mất mát thông tin quan trọng.
+
+    ```python
+    import pandas as pd
+    import numpy as np
+
+    # Tạo DataFrame với dữ liệu thiếu
+    data = {'A': [1, 2, np.nan, 4, 5],
+            'B': [6, np.nan, 8, 9, 10],
+            'C': [11, 12, 13, 14, np.nan]}
+    df = pd.DataFrame(data)
+
+    # Xóa các hàng chứa giá trị thiếu
+    df_dropna_rows = df.dropna()
+    print("DataFrame sau khi xóa các hàng chứa giá trị thiếu:\n", df_dropna_rows)
+
+    # Xóa các cột chứa giá trị thiếu
+    df_dropna_cols = df.dropna(axis=1)
+    print("\nDataFrame sau khi xóa các cột chứa giá trị thiếu:\n", df_dropna_cols)
+    ```
+
+*   **Điền giá trị thiếu (Imputation):** Thay thế giá trị thiếu bằng một giá trị khác.  Các phương pháp phổ biến bao gồm:
+    *   **Điền bằng giá trị trung bình (Mean Imputation):** Phù hợp với dữ liệu phân phối gần chuẩn.
+    *   **Điền bằng giá trị trung vị (Median Imputation):** Phù hợp với dữ liệu có outlier.
+    *   **Điền bằng giá trị thường xuyên nhất (Mode Imputation):** Phù hợp với dữ liệu categorical.
+    *   **Điền bằng hằng số (Constant Imputation):** Điền bằng một giá trị cụ thể.
+    *   **Sử dụng thuật toán Machine Learning (K-Nearest Neighbors Imputation):** Dự đoán giá trị thiếu dựa trên các hàng tương tự.
+
+    ```python
+    from sklearn.impute import SimpleImputer
+
+    # Điền giá trị thiếu bằng giá trị trung bình
+    imputer_mean = SimpleImputer(strategy='mean')
+    df['A'] = imputer_mean.fit_transform(df[['A']])
+    print("\nDataFrame sau khi điền giá trị thiếu bằng giá trị trung bình:\n", df)
+
+    # Điền giá trị thiếu bằng giá trị trung vị
+    imputer_median = SimpleImputer(strategy='median')
+    df['B'] = imputer_median.fit_transform(df[['B']])
+    print("\nDataFrame sau khi điền giá trị thiếu bằng giá trị trung vị:\n", df)
+
+    # Điền giá trị thiếu bằng giá trị thường xuyên nhất
+    df['C'] = df['C'].fillna(df['C'].mode()[0])
+    print("\nDataFrame sau khi điền giá trị thiếu bằng giá trị thường xuyên nhất:\n", df)
+    ```
+
+    **Khi nào nên dùng phương pháp nào?**
+
+    | Phương pháp                  | Ưu điểm                                  | Nhược điểm                                   | Phù hợp với                               |
+    | --------------------------- | ---------------------------------------- | --------------------------------------------- | ----------------------------------------- |
+    | Xóa hàng/cột                 | Đơn giản, dễ thực hiện                     | Mất mát thông tin, giảm kích thước dữ liệu    | Khi số lượng dữ liệu thiếu ít, không quan trọng |
+    | Mean Imputation              | Dễ thực hiện, giữ nguyên trung bình tổng thể | Nhạy cảm với outliers, giảm phương sai          | Dữ liệu phân phối gần chuẩn, ít outliers   |
+    | Median Imputation            | Ít nhạy cảm với outliers                   | Không giữ nguyên trung bình tổng thể            | Dữ liệu có outliers                      |
+    | Mode Imputation              | Phù hợp với dữ liệu categorical           | Có thể tạo ra sự mất cân bằng trong dữ liệu | Dữ liệu categorical                      |
+    | KNN Imputation              | Chính xác hơn so với các phương pháp đơn giản | Tốn nhiều thời gian tính toán                | Khi cần độ chính xác cao, có tài nguyên   |
+    | Constant Imputation         | Đơn giản, dễ hiểu                         | Có thể tạo ra sai lệch lớn                   | Khi biết rõ giá trị thiếu nên là gì        |
+
+### 2. Mã Hóa Biến Phân Loại (Encoding Categorical Variables)
+
+Các mô hình Machine Learning thường chỉ làm việc với dữ liệu số. Do đó, cần phải mã hóa các biến phân loại (categorical variables) thành dạng số.
+
+*   **One-Hot Encoding:** Tạo ra một cột mới cho mỗi giá trị duy nhất trong biến phân loại.
+
+    ```python
+    from sklearn.preprocessing import OneHotEncoder
+
+    # Tạo DataFrame với biến phân loại
+    data = {'Color': ['Red', 'Green', 'Blue', 'Red', 'Green']}
+    df = pd.DataFrame(data)
+
+    # One-Hot Encoding
+    encoder = OneHotEncoder(handle_unknown='ignore')
+    encoded_data = encoder.fit_transform(df[['Color']]).toarray()
+    encoded_df = pd.DataFrame(encoded_data, columns=encoder.get_feature_names_out(['Color']))
+
+    print("DataFrame gốc:\n", df)
+    print("\nDataFrame sau khi One-Hot Encoding:\n", encoded_df)
+    ```
+
+*   **Label Encoding:** Gán một số duy nhất cho mỗi giá trị duy nhất trong biến phân loại.
+
+    ```python
+    from sklearn.preprocessing import LabelEncoder
+
+    # Label Encoding
+    encoder = LabelEncoder()
+    df['Color_Encoded'] = encoder.fit_transform(df['Color'])
+    print("\nDataFrame sau khi Label Encoding:\n", df)
+    ```
+
+*   **Ordinal Encoding:** Gán một số duy nhất cho mỗi giá trị duy nhất trong biến phân loại, dựa trên thứ tự (nếu có).
+
+    ```python
+    from sklearn.preprocessing import OrdinalEncoder
+
+    # Tạo DataFrame với biến phân loại có thứ tự
+    data = {'Size': ['Small', 'Medium', 'Large', 'Small', 'Medium']}
+    df = pd.DataFrame(data)
+
+    # Xác định thứ tự
+    categories = [['Small', 'Medium', 'Large']]
+
+    # Ordinal Encoding
+    encoder = OrdinalEncoder(categories=categories)
+    df['Size_Encoded'] = encoder.fit_transform(df[['Size']])
+    print("\nDataFrame sau khi Ordinal Encoding:\n", df)
+    ```
+
+*   **Target Encoding (Mean Encoding):** Thay thế mỗi giá trị trong biến phân loại bằng giá trị trung bình của biến mục tiêu (target variable) tương ứng. Cần cẩn thận để tránh data leakage.
+
+    ```python
+    # Ví dụ Target Encoding (đơn giản, cần cẩn thận với data leakage)
+    data = {'City': ['London', 'Paris', 'London', 'Tokyo', 'Paris'],
+            'Price': [200, 300, 250, 400, 350]}
+    df = pd.DataFrame(data)
+
+    means = df.groupby('City')['Price'].mean().to_dict()
+    df['City_Encoded'] = df['City'].map(means)
+    print("\nDataFrame sau khi Target Encoding (Mean Encoding):\n", df)
+    ```
+
+### 3. Co Giãn và Chuẩn Hóa Đặc Trưng (Scaling and Normalization)
+
+Scaling và Normalization là các kỹ thuật biến đổi dữ liệu để đưa các đặc trưng về cùng một phạm vi giá trị. Điều này giúp các mô hình Machine Learning hoạt động tốt hơn, đặc biệt là các mô hình dựa trên khoảng cách (ví dụ: KNN, SVM).
+
+*   **Min-Max Scaling:** Chuyển đổi dữ liệu về phạm vi [0, 1].
+
+    Công thức:  `X_scaled = (X - X_min) / (X_max - X_min)`
+
+    ```python
+    from sklearn.preprocessing import MinMaxScaler
+
+    # Tạo DataFrame
+    data = {'A': [1, 5, 2, 8, 3]}
+    df = pd.DataFrame(data)
+
+    # Min-Max Scaling
+    scaler = MinMaxScaler()
+    df['A_Scaled'] = scaler.fit_transform(df[['A']])
+    print("DataFrame sau khi Min-Max Scaling:\n", df)
+    ```
+
+*   **StandardScaler (Z-score Normalization):** Chuẩn hóa dữ liệu về phân phối chuẩn (mean = 0, standard deviation = 1).
+
+    Công thức: `X_scaled = (X - mean) / std`
+
+    ```python
+    from sklearn.preprocessing import StandardScaler
+
+    # StandardScaler
+    scaler = StandardScaler()
+    df['A_Standardized'] = scaler.fit_transform(df[['A']])
+    print("\nDataFrame sau khi StandardScaler:\n", df)
+    ```
+
+*   **RobustScaler:** Tương tự như StandardScaler, nhưng sử dụng median và IQR (Interquartile Range) thay vì mean và standard deviation, giúp giảm ảnh hưởng của outliers.
+
+*   **Normalization (L1/L2):** Chuẩn hóa các hàng của ma trận đặc trưng để có độ dài bằng 1.
+
+    *   **L1 Normalization:** `X_normalized = X / sum(abs(X))`
+    *   **L2 Normalization:** `X_normalized = X / sqrt(sum(X^2))`
+
+    ```python
+    from sklearn.preprocessing import Normalizer
+
+    # L2 Normalization
+    normalizer = Normalizer(norm='l2')
+    df['A_Normalized'] = normalizer.fit_transform(df[['A']])
+    print("\nDataFrame sau khi L2 Normalization:\n", df)
+    ```
+
+### 4. Chọn Lọc Đặc Trưng (Feature Selection)
+
+Chọn lọc đặc trưng là quá trình chọn ra một tập con các đặc trưng quan trọng nhất từ tập đặc trưng ban đầu.
+
+*   **Variance Threshold:** Loại bỏ các đặc trưng có phương sai thấp (tức là ít thay đổi).
+
+*   **Univariate Feature Selection:** Sử dụng các kiểm định thống kê (ví dụ: chi-square, ANOVA) để đánh giá mối quan hệ giữa mỗi đặc trưng và biến mục tiêu, sau đó chọn ra các đặc trưng có mối quan hệ mạnh nhất.
+
+*   **Recursive Feature Elimination (RFE):** Huấn luyện mô hình với tất cả các đặc trưng, sau đó loại bỏ đặc trưng kém quan trọng nhất và lặp lại quá trình cho đến khi đạt được số lượng đặc trưng mong muốn.
+
+*   **SelectFromModel:** Sử dụng một mô hình đã được huấn luyện để đánh giá tầm quan trọng của các đặc trưng và chọn ra các đặc trưng quan trọng nhất.
+
+*   **Feature Importance from Tree-based Models:** Các mô hình dựa trên cây (ví dụ: Random Forest, Gradient Boosting) có thể cung cấp thông tin về tầm quan trọng của các đặc trưng.
+
+### 5. Trích Xuất Đặc Trưng (Feature Extraction)
+
+Trích xuất đặc trưng là quá trình tạo ra các đặc trưng mới từ các đặc trưng hiện có.
+
+*   **Polynomial Features:** Tạo ra các đặc trưng đa thức từ các đặc trưng hiện có (ví dụ: x^2, x*y).
+
+    ```python
+    from sklearn.preprocessing import PolynomialFeatures
+
+    # Tạo DataFrame
+    data = {'A': [1, 2, 3, 4, 5]}
+    df = pd.DataFrame(data)
+
+    # Polynomial Features (bậc 2)
+    poly = PolynomialFeatures(degree=2, include_bias=False)
+    poly_features = poly.fit_transform(df[['A']])
+    poly_df = pd.DataFrame(poly_features, columns=poly.get_feature_names_out(['A']))
+
+    print("DataFrame gốc:\n", df)
+    print("\nDataFrame sau khi tạo Polynomial Features:\n", poly_df)
+    ```
+
+*   **Interaction Features:** Tạo ra các đặc trưng tương tác bằng cách kết hợp các đặc trưng hiện có (ví dụ: x*y).
+
+*   **Aggregation Features:** Tính toán các giá trị thống kê (ví dụ: trung bình, tổng, min, max) trên một nhóm dữ liệu.
+
+*   **Text Features:** Sử dụng các kỹ thuật xử lý ngôn ngữ tự nhiên (NLP) để trích xuất các đặc trưng từ văn bản (ví dụ: TF-IDF, word embeddings).
+
+### 6. Đặc Trưng Đa Thức (Polynomial Features)
+
+Đặc trưng đa thức tạo ra các đặc trưng mới bằng cách lấy lũy thừa của các đặc trưng hiện có hoặc kết hợp chúng bằng phép nhân. Điều này có thể giúp mô hình nắm bắt các mối quan hệ phi tuyến tính trong dữ liệu.
+
+## Tổng Kết
+
+Feature Engineering là một quá trình lặp đi lặp lại, đòi hỏi sự sáng tạo và kiến thức về nghiệp vụ. Không có công thức chung nào áp dụng cho tất cả các bài toán. Điều quan trọng là hiểu rõ dữ liệu, mục tiêu của bài toán và thử nghiệm các kỹ thuật khác nhau để tìm ra các đặc trưng tốt nhất. Chúc bạn thành công!
