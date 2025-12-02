@@ -1,0 +1,399 @@
+Tuyệt vời! Chúng ta sẽ cùng nhau khám phá các phương pháp đánh giá mô hình Machine Learning một cách chi tiết và dễ hiểu.
+
+## Đánh Giá Mô Hình Machine Learning: Hướng Dẫn Toàn Diện
+
+Việc đánh giá mô hình (model evaluation) là một bước cực kỳ quan trọng trong quy trình xây dựng và triển khai các mô hình Machine Learning. Nó giúp chúng ta xác định hiệu suất của mô hình, so sánh các mô hình khác nhau và đảm bảo rằng mô hình hoạt động tốt trên dữ liệu thực tế. Chúng ta sẽ đi qua các phương pháp đánh giá phổ biến nhất, bao gồm cả các độ đo (metrics) cho bài toán phân loại (classification) và hồi quy (regression).
+
+### 1. Đánh Giá Mô Hình Phân Loại (Classification)
+
+#### 1.1. Confusion Matrix (Ma Trận Nhầm Lẫn)
+
+Confusion Matrix là một bảng tóm tắt hiệu suất của mô hình phân loại bằng cách hiển thị số lượng dự đoán đúng và sai cho từng lớp.
+
+*   **True Positive (TP):** Số lượng mẫu được dự đoán là dương tính và thực tế là dương tính.
+*   **True Negative (TN):** Số lượng mẫu được dự đoán là âm tính và thực tế là âm tính.
+*   **False Positive (FP):** Số lượng mẫu được dự đoán là dương tính nhưng thực tế là âm tính (Lỗi Loại I).
+*   **False Negative (FN):** Số lượng mẫu được dự đoán là âm tính nhưng thực tế là dương tính (Lỗi Loại II).
+
+**Ví dụ:**
+
+Giả sử chúng ta có một mô hình dự đoán bệnh ung thư. Confusion Matrix có thể trông như sau:
+
+|                     | Dự Đoán Dương Tính | Dự Đoán Âm Tính |
+| ------------------- | ------------------- | ------------------- |
+| **Thực Tế Dương Tính** | TP = 90             | FN = 10             |
+| **Thực Tế Âm Tính** | FP = 5              | TN = 95             |
+
+**Python Code:**
+
+```python
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+# Dữ liệu thực tế và dự đoán
+y_true = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
+y_pred = [1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
+
+# Tính Confusion Matrix
+cm = confusion_matrix(y_true, y_pred)
+
+# Hiển thị Confusion Matrix
+print(cm)
+
+# Directly creating a heatmap for better visualization
+class_names = ['Âm Tính', 'Dương Tính'] # Adjust based on your classes
+
+fig, ax = plt.subplots()
+tick_marks = np.arange(len(class_names))
+plt.xticks(tick_marks, class_names)
+plt.yticks(tick_marks, class_names)
+
+sns.heatmap(pd.DataFrame(cm), annot=True, cmap="YlGnBu" ,fmt='g')
+ax.xaxis.set_label_position("top")
+plt.tight_layout()
+plt.title('Confusion matrix', y=1.1)
+plt.ylabel('Thực Tế')
+plt.xlabel('Dự Đoán')
+plt.show()
+```
+
+#### 1.2. Accuracy (Độ Chính Xác)
+
+Accuracy là tỷ lệ dự đoán đúng trên tổng số dự đoán.
+
+**Công thức:**
+
+```
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+```
+
+**Ưu điểm:** Dễ hiểu và tính toán.
+
+**Nhược điểm:** Không phù hợp khi dữ liệu mất cân bằng (imbalanced dataset).  Nếu một lớp chiếm phần lớn trong dữ liệu, mô hình có thể đạt accuracy cao chỉ bằng cách dự đoán lớp đó cho tất cả các mẫu.
+
+**Ví dụ:**
+
+Trong ví dụ về ung thư ở trên:
+
+```
+Accuracy = (90 + 95) / (90 + 95 + 5 + 10) = 0.925 (92.5%)
+```
+
+**Python Code:**
+
+```python
+from sklearn.metrics import accuracy_score
+
+y_true = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
+y_pred = [1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
+
+accuracy = accuracy_score(y_true, y_pred)
+print(f"Accuracy: {accuracy}")
+```
+
+#### 1.3. Precision (Độ Chính Xác)
+
+Precision là tỷ lệ số lượng mẫu được dự đoán là dương tính và thực tế là dương tính trên tổng số mẫu được dự đoán là dương tính.  Nó đo lường khả năng của mô hình trong việc tránh dự đoán sai dương tính (false positive).
+
+**Công thức:**
+
+```
+Precision = TP / (TP + FP)
+```
+
+**Khi nào sử dụng:** Quan trọng khi chi phí của false positive là cao. Ví dụ: trong dự đoán email spam, bạn muốn đảm bảo rằng email không spam không bị đánh dấu là spam.
+
+**Ví dụ:**
+
+```
+Precision = 90 / (90 + 5) = 0.947 (94.7%)
+```
+
+**Python Code:**
+
+```python
+from sklearn.metrics import precision_score
+
+y_true = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
+y_pred = [1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
+
+precision = precision_score(y_true, y_pred)
+print(f"Precision: {precision}")
+```
+
+#### 1.4. Recall (Độ Phủ)
+
+Recall là tỷ lệ số lượng mẫu được dự đoán là dương tính và thực tế là dương tính trên tổng số mẫu thực tế là dương tính. Nó đo lường khả năng của mô hình trong việc tìm ra tất cả các mẫu dương tính.
+
+**Công thức:**
+
+```
+Recall = TP / (TP + FN)
+```
+
+**Khi nào sử dụng:** Quan trọng khi chi phí của false negative là cao. Ví dụ: trong dự đoán bệnh ung thư, bạn muốn đảm bảo rằng không bỏ sót bất kỳ trường hợp nào.
+
+**Ví dụ:**
+
+```
+Recall = 90 / (90 + 10) = 0.9 (90%)
+```
+
+**Python Code:**
+
+```python
+from sklearn.metrics import recall_score
+
+y_true = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
+y_pred = [1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
+
+recall = recall_score(y_true, y_pred)
+print(f"Recall: {recall}")
+```
+
+#### 1.5. F1-Score
+
+F1-Score là trung bình điều hòa (harmonic mean) của Precision và Recall. Nó cung cấp một cách duy nhất để cân bằng giữa Precision và Recall.
+
+**Công thức:**
+
+```
+F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
+```
+
+**Khi nào sử dụng:** Khi bạn muốn cân bằng giữa Precision và Recall.
+
+**Ví dụ:**
+
+```
+F1-Score = 2 * (0.947 * 0.9) / (0.947 + 0.9) = 0.923
+```
+
+**Python Code:**
+
+```python
+from sklearn.metrics import f1_score
+
+y_true = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
+y_pred = [1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
+
+f1 = f1_score(y_true, y_pred)
+print(f"F1-Score: {f1}")
+```
+
+#### 1.6. ROC-AUC (Receiver Operating Characteristic - Area Under the Curve)
+
+ROC-AUC đo lường khả năng của mô hình trong việc phân biệt giữa các lớp khác nhau. ROC curve vẽ true positive rate (TPR) so với false positive rate (FPR) ở các ngưỡng phân loại khác nhau. AUC là diện tích dưới đường cong ROC.
+
+*   **TPR (True Positive Rate) = Recall = TP / (TP + FN)**
+*   **FPR (False Positive Rate) = FP / (FP + TN)**
+
+**Giá trị AUC:**
+
+*   AUC = 0.5: Mô hình dự đoán ngẫu nhiên.
+*   AUC > 0.5: Mô hình có khả năng phân biệt tốt hơn so với dự đoán ngẫu nhiên.
+*   AUC = 1: Mô hình hoàn hảo.
+
+**Khi nào sử dụng:**  Khi bạn muốn đánh giá khả năng phân biệt giữa các lớp của mô hình, đặc biệt là khi dữ liệu mất cân bằng.
+
+**Python Code:**
+
+```python
+from sklearn.metrics import roc_auc_score, roc_curve
+import matplotlib.pyplot as plt
+
+y_true = [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
+y_scores = [0.9, 0.2, 0.8, 0.6, 0.1, 0.7, 0.3, 0.4, 0.8, 0.2] #Probabilities
+
+auc = roc_auc_score(y_true, y_scores)
+print(f"AUC: {auc}")
+
+fpr, tpr, thresholds = roc_curve(y_true, y_scores)
+
+plt.plot(fpr, tpr, label=f"AUC = {auc:.2f}")
+plt.plot([0, 1], [0, 1], 'k--') # Diagonal line for random guessing
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve")
+plt.legend()
+plt.show()
+
+```
+
+#### 1.7. Bảng So Sánh Các Metrics Phân Loại
+
+| Metric       | Công Thức                               | Ưu Điểm                                                                 | Nhược Điểm                                                                  | Khi Nào Sử Dụng                                                                                                                                |
+| ------------ | -------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accuracy     | (TP + TN) / (TP + TN + FP + FN)          | Dễ hiểu, dễ tính toán                                                    | Không phù hợp với dữ liệu mất cân bằng                                       | Khi dữ liệu cân bằng và bạn cần một cái nhìn tổng quan về hiệu suất.                                                                         |
+| Precision    | TP / (TP + FP)                           | Tập trung vào giảm thiểu false positive                                   | Bỏ qua false negative                                                       | Khi chi phí của false positive cao (ví dụ: dự đoán email spam).                                                                              |
+| Recall       | TP / (TP + FN)                           | Tập trung vào giảm thiểu false negative                                   | Bỏ qua false positive                                                       | Khi chi phí của false negative cao (ví dụ: dự đoán bệnh).                                                                                    |
+| F1-Score     | 2 * (Precision * Recall) / (Precision + Recall) | Cân bằng giữa Precision và Recall                                      | Khó diễn giải hơn so với Precision và Recall                                | Khi bạn muốn cân bằng giữa Precision và Recall.                                                                                                |
+| ROC-AUC      | Diện tích dưới đường cong ROC              | Đánh giá khả năng phân biệt giữa các lớp, phù hợp với dữ liệu mất cân bằng | Khó diễn giải hơn so với các metrics khác, không cung cấp thông tin về ngưỡng phân loại cụ thể | Khi bạn muốn đánh giá khả năng phân biệt giữa các lớp và không quan tâm đến ngưỡng phân loại cụ thể.                                              |
+
+### 2. Đánh Giá Mô Hình Hồi Quy (Regression)
+
+#### 2.1. Mean Squared Error (MSE)
+
+MSE là trung bình của bình phương sai số giữa giá trị dự đoán và giá trị thực tế.
+
+**Công thức:**
+
+```
+MSE = (1/n) * Σ(yᵢ - ŷᵢ)²
+```
+
+Trong đó:
+
+*   n là số lượng mẫu
+*   yᵢ là giá trị thực tế của mẫu thứ i
+*   ŷᵢ là giá trị dự đoán của mẫu thứ i
+
+**Ưu điểm:** Dễ tính toán và nhạy cảm với các sai số lớn.
+
+**Nhược điểm:** Đơn vị của MSE là bình phương đơn vị của biến mục tiêu, gây khó khăn trong việc diễn giải.
+
+**Python Code:**
+
+```python
+from sklearn.metrics import mean_squared_error
+
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2.1, 7.8]
+
+mse = mean_squared_error(y_true, y_pred)
+print(f"MSE: {mse}")
+```
+
+#### 2.2. Root Mean Squared Error (RMSE)
+
+RMSE là căn bậc hai của MSE.
+
+**Công thức:**
+
+```
+RMSE = √(MSE) = √((1/n) * Σ(yᵢ - ŷᵢ)²)
+```
+
+**Ưu điểm:** Dễ diễn giải hơn MSE vì có cùng đơn vị với biến mục tiêu. Nhạy cảm với các sai số lớn.
+
+**Nhược điểm:** Vẫn nhạy cảm với outliers.
+
+**Python Code:**
+
+```python
+from sklearn.metrics import mean_squared_error
+import numpy as np
+
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2.1, 7.8]
+
+mse = mean_squared_error(y_true, y_pred)
+rmse = np.sqrt(mse)
+print(f"RMSE: {rmse}")
+```
+
+#### 2.3. Mean Absolute Error (MAE)
+
+MAE là trung bình của giá trị tuyệt đối của sai số giữa giá trị dự đoán và giá trị thực tế.
+
+**Công thức:**
+
+```
+MAE = (1/n) * Σ|yᵢ - ŷᵢ|
+```
+
+**Ưu điểm:** Dễ hiểu và ít nhạy cảm với outliers hơn MSE và RMSE.
+
+**Nhược điểm:** Không nhạy cảm với các sai số lớn.
+
+**Python Code:**
+
+```python
+from sklearn.metrics import mean_absolute_error
+
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2.1, 7.8]
+
+mae = mean_absolute_error(y_true, y_pred)
+print(f"MAE: {mae}")
+```
+
+#### 2.4. R-squared (Hệ Số Xác Định)
+
+R-squared đo lường tỷ lệ phương sai trong biến mục tiêu được giải thích bởi mô hình. Nó có giá trị từ 0 đến 1.
+
+**Công thức:**
+
+```
+R² = 1 - (SS_res / SS_tot)
+```
+
+Trong đó:
+
+*   SS_res là tổng bình phương phần dư (sum of squares of residuals) = Σ(yᵢ - ŷᵢ)²
+*   SS_tot là tổng bình phương tổng (total sum of squares) = Σ(yᵢ - mean(y))²
+
+**Ý nghĩa:**
+
+*   R² = 1: Mô hình giải thích hoàn toàn phương sai trong biến mục tiêu.
+*   R² = 0: Mô hình không giải thích được phương sai nào trong biến mục tiêu.
+
+**Ưu điểm:** Dễ diễn giải và cung cấp một cái nhìn tổng quan về hiệu suất của mô hình.
+
+**Nhược điểm:** Có thể bị ảnh hưởng bởi việc thêm các biến không liên quan vào mô hình.
+
+**Python Code:**
+
+```python
+from sklearn.metrics import r2_score
+
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2.1, 7.8]
+
+r2 = r2_score(y_true, y_pred)
+print(f"R-squared: {r2}")
+```
+
+#### 2.5. Bảng So Sánh Các Metrics Hồi Quy
+
+| Metric       | Công Thức                               | Ưu Điểm                                                                 | Nhược Điểm                                                                 | Khi Nào Sử Dụng                                                                                                                                |
+| ------------ | -------------------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| MSE          | (1/n) * Σ(yᵢ - ŷᵢ)²                      | Dễ tính toán, nhạy cảm với sai số lớn                                    | Khó diễn giải, đơn vị là bình phương đơn vị của biến mục tiêu             | Khi bạn muốn tập trung vào giảm thiểu các sai số lớn.                                                                                         |
+| RMSE         | √(MSE)                                | Dễ diễn giải hơn MSE, cùng đơn vị với biến mục tiêu                      | Vẫn nhạy cảm với outliers                                                  | Khi bạn muốn tập trung vào giảm thiểu các sai số lớn và cần một metric dễ diễn giải.                                                              |
+| MAE          | (1/n) * Σ|yᵢ - ŷᵢ|                       | Dễ hiểu, ít nhạy cảm với outliers                                        | Không nhạy cảm với các sai số lớn                                         | Khi bạn muốn đánh giá hiệu suất tổng thể của mô hình và không muốn bị ảnh hưởng bởi outliers.                                                     |
+| R-squared    | 1 - (SS_res / SS_tot)                  | Dễ diễn giải, cung cấp cái nhìn tổng quan về hiệu suất của mô hình          | Có thể bị ảnh hưởng bởi việc thêm các biến không liên quan vào mô hình      | Khi bạn muốn biết tỷ lệ phương sai trong biến mục tiêu được giải thích bởi mô hình.                                                              |
+
+### 3. Cross-Validation (Kiểm Định Chéo)
+
+Cross-validation là một kỹ thuật để đánh giá hiệu suất của mô hình bằng cách chia dữ liệu thành nhiều phần (folds), huấn luyện mô hình trên một số folds và đánh giá trên các fold còn lại. Quá trình này được lặp lại nhiều lần, với mỗi fold được sử dụng làm tập kiểm tra một lần. Kết quả được trung bình để có được một ước tính chính xác hơn về hiệu suất của mô hình.
+
+**Các loại Cross-validation:**
+
+*   **K-Fold Cross-validation:** Dữ liệu được chia thành K folds. Mô hình được huấn luyện trên K-1 folds và đánh giá trên fold còn lại. Quá trình này được lặp lại K lần.
+*   **Stratified K-Fold Cross-validation:** Tương tự như K-Fold, nhưng đảm bảo rằng mỗi fold có tỷ lệ các lớp tương tự như trong toàn bộ dữ liệu. Thường được sử dụng cho bài toán phân loại với dữ liệu mất cân bằng.
+*   **Leave-One-Out Cross-validation (LOOCV):** Mỗi mẫu được sử dụng làm tập kiểm tra một lần, và mô hình được huấn luyện trên tất cả các mẫu còn lại.
+
+**Khi nào sử dụng:** Luôn nên sử dụng cross-validation để đánh giá mô hình, đặc biệt là khi dữ liệu có kích thước nhỏ.
+
+**Python Code:**
+
+```python
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LinearRegression
+
+X = [[1], [2], [3], [4], [5]]
+y = [2, 4, 5, 4, 5]
+
+model = LinearRegression()
+
+# K-Fold Cross-validation
+scores = cross_val_score(model, X, y, cv=5, scoring='r2') #cv=5 is 5-fold CV
+print(f"Cross-validation scores: {scores}")
+print(f"Mean cross-validation score: {scores.mean()}")
+```
+
+### 4. Kết Luận
+
+Việc lựa chọn phương pháp đánh giá mô hình phù hợp phụ thuộc vào loại bài toán (phân loại hay hồi quy), đặc điểm của dữ liệu (cân bằng hay mất cân bằng) và mục tiêu cụ thể của bạn. Hãy luôn cân nhắc các yếu tố này để đảm bảo rằng bạn đang đánh giá mô hình một cách chính xác và đưa ra các quyết định đúng đắn. Hy vọng hướng dẫn này sẽ giúp bạn hiểu rõ hơn về các phương pháp đánh giá mô hình Machine Learning. Chúc bạn thành công!

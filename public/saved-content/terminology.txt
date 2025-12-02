@@ -1,0 +1,234 @@
+Tuyệt vời! Dưới đây là nội dung học tập chi tiết về các thuật ngữ quan trọng trong Machine Learning, được trình bày một cách dễ hiểu và có ví dụ minh họa.
+
+## Tổng Quan về Machine Learning và Các Thuật Ngữ Quan Trọng
+
+Chào mừng các bạn đến với bài học về các thuật ngữ quan trọng nhất trong Machine Learning (ML). Hiểu rõ các thuật ngữ này là nền tảng vững chắc để các bạn tiếp thu kiến thức ML một cách hiệu quả. Chúng ta sẽ đi qua hơn 20 thuật ngữ, mỗi thuật ngữ sẽ được giải thích chi tiết kèm theo ví dụ minh họa và code (nếu phù hợp).
+
+### 1. Model (Mô Hình)
+
+**Định nghĩa:** Mô hình là một biểu diễn toán học của một tập dữ liệu, được huấn luyện để dự đoán hoặc đưa ra quyết định dựa trên dữ liệu mới.
+
+**Ví dụ:** Một mô hình có thể là một hàm số tuyến tính dự đoán giá nhà dựa trên diện tích, số phòng ngủ và vị trí.
+
+**Giải thích:** Trong ML, chúng ta sử dụng thuật toán để "huấn luyện" một mô hình trên dữ liệu. Quá trình huấn luyện này điều chỉnh các tham số của mô hình để nó có thể dự đoán chính xác nhất có thể.
+
+### 2. Features (Đặc Trưng)
+
+**Định nghĩa:** Đặc trưng là các thuộc tính hoặc biến đầu vào được sử dụng để huấn luyện mô hình.
+
+**Ví dụ:** Trong bài toán dự đoán giá nhà, các đặc trưng có thể là diện tích (square footage), số phòng ngủ (number of bedrooms), số phòng tắm (number of bathrooms), vị trí (location).
+
+**Giải thích:** Đặc trưng là những "dữ kiện" mà mô hình sử dụng để đưa ra dự đoán. Việc lựa chọn đặc trưng phù hợp là rất quan trọng để mô hình hoạt động tốt.
+
+### 3. Labels (Nhãn) / Targets (Mục Tiêu)
+
+**Định nghĩa:** Nhãn là kết quả hoặc giá trị mục tiêu mà chúng ta muốn mô hình dự đoán.
+
+**Ví dụ:** Trong bài toán dự đoán giá nhà, nhãn là giá của ngôi nhà. Trong bài toán phân loại ảnh mèo và chó, nhãn là "mèo" hoặc "chó".
+
+**Giải thích:** Nhãn là "câu trả lời đúng" mà mô hình đang cố gắng học để dự đoán.
+
+### 4. Training Set (Tập Huấn Luyện)
+
+**Định nghĩa:** Tập huấn luyện là tập dữ liệu được sử dụng để huấn luyện mô hình.
+
+**Ví dụ:** Một tập huấn luyện có thể bao gồm thông tin về 1000 ngôi nhà (diện tích, số phòng, vị trí) và giá của chúng.
+
+**Giải thích:** Mô hình "học" bằng cách phân tích tập huấn luyện và điều chỉnh các tham số của nó để giảm thiểu sai số giữa dự đoán của nó và nhãn thực tế.
+
+### 5. Test Set (Tập Kiểm Tra)
+
+**Định nghĩa:** Tập kiểm tra là tập dữ liệu được sử dụng để đánh giá hiệu suất của mô hình sau khi đã được huấn luyện.
+
+**Ví dụ:** Sau khi huấn luyện mô hình trên 1000 ngôi nhà, chúng ta sử dụng thông tin về 200 ngôi nhà khác (mà mô hình chưa từng thấy) để xem nó dự đoán giá chính xác đến mức nào.
+
+**Giải thích:** Tập kiểm tra giúp chúng ta đánh giá xem mô hình có khả năng tổng quát hóa tốt hay không, tức là liệu nó có thể dự đoán chính xác trên dữ liệu mới mà nó chưa từng thấy hay không.
+
+### 6. Validation Set (Tập Xác Thực)
+
+**Định nghĩa:** Tập xác thực là tập dữ liệu được sử dụng để điều chỉnh các siêu tham số (hyperparameters) của mô hình trong quá trình huấn luyện.
+
+**Giải thích:** Trong quá trình huấn luyện, chúng ta có thể cần điều chỉnh các tham số của thuật toán huấn luyện (ví dụ: learning rate). Tập xác thực giúp chúng ta đánh giá hiệu quả của các giá trị siêu tham số khác nhau và chọn ra giá trị tốt nhất.
+
+### 7. Loss Function (Hàm Mất Mát) / Cost Function (Hàm Chi Phí)
+
+**Định nghĩa:** Hàm mất mát là một hàm số đo lường sai số giữa dự đoán của mô hình và nhãn thực tế.
+
+**Ví dụ:** Mean Squared Error (MSE) là một hàm mất mát phổ biến, tính trung bình bình phương sai số giữa dự đoán và thực tế.
+
+**Công thức:**  MSE = (1/n) * Σ(y_i - ŷ_i)^2, trong đó y_i là nhãn thực tế và ŷ_i là dự đoán của mô hình.
+
+**Giải thích:** Mục tiêu của quá trình huấn luyện là giảm thiểu giá trị của hàm mất mát.
+
+**Code Example (Python):**
+
+```python
+import numpy as np
+
+def mean_squared_error(y_true, y_predicted):
+  """Tính Mean Squared Error."""
+  return np.mean((y_true - y_predicted)**2)
+
+# Ví dụ sử dụng
+y_true = np.array([1, 2, 3, 4, 5])
+y_predicted = np.array([1.2, 1.8, 3.1, 3.9, 5.2])
+
+mse = mean_squared_error(y_true, y_predicted)
+print(f"Mean Squared Error: {mse}")
+```
+
+### 8. Gradient Descent (Độ Dốc Giảm Dần)
+
+**Định nghĩa:** Gradient Descent là một thuật toán tối ưu hóa được sử dụng để tìm giá trị nhỏ nhất của hàm mất mát.
+
+**Giải thích:**  Thuật toán này hoạt động bằng cách lặp đi lặp lại, di chuyển theo hướng ngược lại với gradient (độ dốc) của hàm mất mát tại điểm hiện tại.  Tưởng tượng bạn đang ở trên một ngọn đồi và muốn xuống thung lũng thấp nhất. Gradient Descent giống như việc bạn luôn bước xuống theo hướng dốc nhất.
+
+**Code Example (Python):**
+
+```python
+def gradient_descent(X, y, learning_rate=0.01, iterations=1000):
+  """Thực hiện Gradient Descent để tìm hệ số (coefficient) cho mô hình tuyến tính."""
+  n = len(y)
+  # Khởi tạo hệ số (coefficient)
+  b = 0  # Bias (sai số)
+  m = 0  # Slope (độ dốc)
+
+  for _ in range(iterations):
+    # Tính toán dự đoán
+    y_predicted = m * X + b
+
+    # Tính toán đạo hàm (gradient)
+    dm = -(2/n) * sum(X * (y - y_predicted))
+    db = -(2/n) * sum(y - y_predicted)
+
+    # Cập nhật hệ số
+    m -= learning_rate * dm
+    b -= learning_rate * db
+
+  return m, b
+
+# Ví dụ sử dụng
+X = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 5, 4, 5])
+
+slope, bias = gradient_descent(X, y)
+print(f"Slope: {slope}, Bias: {bias}")
+```
+
+### 9. Learning Rate (Tốc Độ Học)
+
+**Định nghĩa:** Learning rate là một siêu tham số (hyperparameter) quyết định kích thước của bước di chuyển trong quá trình Gradient Descent.
+
+**Giải thích:** Nếu learning rate quá lớn, thuật toán có thể "bỏ qua" điểm tối ưu và không hội tụ. Nếu learning rate quá nhỏ, thuật toán có thể mất rất nhiều thời gian để hội tụ.
+
+### 10. Hyperparameters (Siêu Tham Số)
+
+**Định nghĩa:** Siêu tham số là các tham số của thuật toán học máy mà chúng ta phải thiết lập trước khi bắt đầu quá trình huấn luyện.
+
+**Ví dụ:** Learning rate, số lượng cây trong Random Forest, độ sâu tối đa của cây quyết định.
+
+**Giải thích:** Siêu tham số không được học từ dữ liệu, mà được thiết lập bởi người làm ML. Việc lựa chọn siêu tham số phù hợp là rất quan trọng để đạt được hiệu suất tốt nhất.
+
+### 11. Overfitting (Quá Khớp)
+
+**Định nghĩa:** Overfitting xảy ra khi mô hình học quá kỹ dữ liệu huấn luyện, dẫn đến việc nó hoạt động tốt trên dữ liệu huấn luyện nhưng kém trên dữ liệu mới.
+
+**Ví dụ:** Một mô hình học thuộc lòng tất cả các ví dụ trong tập huấn luyện, bao gồm cả nhiễu, thay vì học các quy luật chung.
+
+**Giải thích:** Overfitting giống như việc bạn học thuộc lòng một bài giải toán mà không hiểu bản chất, khi gặp một bài toán tương tự nhưng khác một chút, bạn sẽ không giải được.
+
+### 12. Underfitting (Thiếu Khớp)
+
+**Định nghĩa:** Underfitting xảy ra khi mô hình quá đơn giản và không thể học được các quy luật trong dữ liệu huấn luyện.
+
+**Ví dụ:** Một mô hình tuyến tính cố gắng mô tả một mối quan hệ phi tuyến tính phức tạp.
+
+**Giải thích:** Underfitting giống như việc bạn cố gắng giải một bài toán phức tạp bằng một công cụ quá đơn giản.
+
+### 13. Regularization (Chính Quy Hóa)
+
+**Định nghĩa:** Regularization là một kỹ thuật được sử dụng để ngăn chặn overfitting bằng cách thêm một "hình phạt" vào hàm mất mát.
+
+**Ví dụ:** L1 regularization (Lasso), L2 regularization (Ridge).
+
+**Giải thích:** Regularization khuyến khích mô hình sử dụng các tham số nhỏ hơn, giúp nó trở nên đơn giản hơn và ít bị overfitting hơn.
+
+### 14. Cross-validation (Kiểm Định Chéo)
+
+**Định nghĩa:** Cross-validation là một kỹ thuật đánh giá mô hình bằng cách chia dữ liệu thành nhiều phần (folds) và huấn luyện và kiểm tra mô hình trên các tổ hợp khác nhau của các phần này.
+
+**Ví dụ:** K-fold cross-validation, trong đó dữ liệu được chia thành K phần, và mô hình được huấn luyện K lần, mỗi lần sử dụng K-1 phần để huấn luyện và 1 phần để kiểm tra.
+
+**Giải thích:** Cross-validation giúp chúng ta có được ước tính chính xác hơn về hiệu suất của mô hình so với việc chỉ sử dụng một tập kiểm tra duy nhất.
+
+### 15. Precision (Độ Chính Xác)
+
+**Định nghĩa:** Precision đo lường tỷ lệ các dự đoán dương tính thực sự là dương tính.
+
+**Công thức:** Precision = TP / (TP + FP), trong đó TP là True Positive (dự đoán đúng là dương tính) và FP là False Positive (dự đoán sai là dương tính).
+
+**Ví dụ:** Nếu mô hình dự đoán 10 email là spam, và 8 trong số đó thực sự là spam, thì precision là 8/10 = 80%.
+
+### 16. Recall (Độ Phủ)
+
+**Định nghĩa:** Recall đo lường tỷ lệ các trường hợp dương tính thực tế được mô hình dự đoán đúng.
+
+**Công thức:** Recall = TP / (TP + FN), trong đó TP là True Positive và FN là False Negative (dự đoán sai là âm tính).
+
+**Ví dụ:** Nếu có 10 email spam, và mô hình dự đoán đúng 7 trong số đó là spam, thì recall là 7/10 = 70%.
+
+### 17. F1-score
+
+**Định nghĩa:** F1-score là trung bình điều hòa của precision và recall.
+
+**Công thức:** F1-score = 2 * (Precision * Recall) / (Precision + Recall)
+
+**Giải thích:** F1-score là một thước đo hữu ích khi bạn muốn cân bằng giữa precision và recall.
+
+### 18. Confusion Matrix (Ma Trận Nhầm Lẫn)
+
+**Định nghĩa:** Confusion Matrix là một bảng tóm tắt hiệu suất của mô hình phân loại, hiển thị số lượng dự đoán đúng và sai cho mỗi lớp.
+
+**Ví dụ:**
+
+|             | Predicted Positive | Predicted Negative |
+|-------------|--------------------|--------------------|
+| Actual Positive | True Positive (TP) | False Negative (FN) |
+| Actual Negative | False Positive (FP) | True Negative (TN) |
+
+### 19. Bias (Độ Lệch)
+
+**Định nghĩa:** Bias là sai số hệ thống trong dự đoán của mô hình. Mô hình có bias cao thường bỏ qua các thông tin quan trọng trong dữ liệu.
+
+**Giải thích:** Mô hình có bias cao thường dẫn đến underfitting.
+
+### 20. Variance (Phương Sai)
+
+**Định nghĩa:** Variance là mức độ thay đổi trong dự đoán của mô hình khi dữ liệu huấn luyện thay đổi. Mô hình có variance cao rất nhạy cảm với những thay đổi nhỏ trong dữ liệu huấn luyện.
+
+**Giải thích:** Mô hình có variance cao thường dẫn đến overfitting.
+
+### 21. Activation Function (Hàm Kích Hoạt)
+
+**Định nghĩa:** Hàm kích hoạt là một hàm được sử dụng trong các mạng nơ-ron để đưa ra quyết định xem một nơ-ron có nên "kích hoạt" hay không.
+
+**Ví dụ:** Sigmoid, ReLU, Tanh.
+
+**Giải thích:** Hàm kích hoạt giới thiệu tính phi tuyến vào mạng nơ-ron, cho phép nó học các mối quan hệ phức tạp hơn.
+
+### 22. Epoch (Kỷ Nguyên)
+
+**Định nghĩa:** Một epoch là một lần lặp đầy đủ qua toàn bộ tập huấn luyện trong quá trình huấn luyện mô hình.
+
+**Giải thích:**  Thông thường, chúng ta cần nhiều epoch để mô hình học được các quy luật trong dữ liệu.
+
+## Bảng So Sánh Overfitting và Underfitting
+
+| Đặc điểm        | Overfitting                                  | Underfitting                                 |
+|----------------|----------------------------------------------|---------------------------------------------|
+| Nguyên nhân     | Mô hình quá phức tạp, học thuộc dữ liệu huấn luyện | Mô hình quá đơn giản, không đủ khả năng học |
+| Hiệu suất trên tập huấn luyện | Tốt                                         | Kém                                        |
+| Hiệu suất trên tập kiểm tra  | Kém                                         | Kém                                        |
+| Giải pháp       | Regularization, tăng dữ liệu huấn luyện, giảm số lượng đặc trưng | Tăng độ phức tạp của mô hình, thêm đặc trưng |
+
+Hy vọng bài học này đã cung cấp cho bạn một nền tảng vững chắc về các thuật ngữ quan trọng trong Machine Learning. Chúc các bạn học tốt!
