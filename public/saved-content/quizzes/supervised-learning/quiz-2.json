@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Đâu là đặc điểm chính của Supervised Learning?",
+      "options": [
+        "A. Dữ liệu không được gắn nhãn.",
+        "B. Sử dụng dữ liệu được gắn nhãn để huấn luyện mô hình.",
+        "C. Không cần tập huấn luyện và tập kiểm tra.",
+        "D. Chỉ sử dụng để phân loại dữ liệu văn bản."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Supervised Learning sử dụng dữ liệu đã được gắn nhãn (có đầu vào và đầu ra mong muốn) để huấn luyện mô hình. A sai vì Supervised Learning cần dữ liệu được gán nhãn. C sai vì Supervised Learning cần cả tập huấn luyện và kiểm tra. D sai vì Supervised Learning có thể được sử dụng cho nhiều loại dữ liệu, không chỉ văn bản."
+    },
+    {
+      "question": "Trong quy trình Supervised Learning, mục đích của việc chia dữ liệu thành tập huấn luyện và tập kiểm tra là gì?",
+      "options": [
+        "A. Để tăng kích thước dữ liệu.",
+        "B. Để đảm bảo dữ liệu được xáo trộn ngẫu nhiên.",
+        "C. Để huấn luyện mô hình và đánh giá hiệu suất của nó trên dữ liệu mới.",
+        "D. Để đơn giản hóa quá trình tính toán."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Tập huấn luyện được dùng để 'dạy' mô hình, còn tập kiểm tra dùng để đánh giá khả năng tổng quát hóa của mô hình trên dữ liệu chưa từng thấy. A sai vì việc chia dữ liệu không làm tăng kích thước dữ liệu. B sai vì việc xáo trộn dữ liệu là một bước chuẩn bị khác, không phải mục đích chính của việc chia tập. D sai vì mục đích chính là đánh giá hiệu suất, không phải đơn giản hóa tính toán."
+    },
+    {
+      "question": "Ví dụ nào sau đây KHÔNG phải là một bài toán Supervised Learning?",
+      "options": [
+        "A. Dự đoán thời tiết dựa trên dữ liệu lịch sử.",
+        "B. Phân cụm khách hàng thành các nhóm khác nhau dựa trên hành vi mua sắm.",
+        "C. Xác định xem một email là spam hay không spam.",
+        "D. Dự đoán giá cổ phiếu dựa trên dữ liệu thị trường."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Phân cụm khách hàng là một bài toán Unsupervised Learning vì không có nhãn (target) được cung cấp. A, C, và D đều là các bài toán Supervised Learning vì có nhãn (thời tiết, spam/không spam, giá cổ phiếu)."
+    },
+    {
+      "question": "Trong Linear Regression, 'm' trong phương trình y = mx + b đại diện cho gì?",
+      "options": [
+        "A. Giao điểm của đường thẳng với trục x.",
+        "B. Giao điểm của đường thẳng với trục y.",
+        "C. Độ dốc của đường thẳng.",
+        "D. Giá trị y dự đoán."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. 'm' là độ dốc của đường thẳng, thể hiện mức độ thay đổi của y khi x thay đổi. A sai vì giao điểm với trục x không được đại diện bởi 'm'. B là giao điểm với trục y ('b'). D là giá trị được tính toán từ phương trình."
+    },
+    {
+      "question": "Điều gì xảy ra nếu hiệu suất của mô hình Supervised Learning không đạt yêu cầu sau khi đánh giá?",
+      "options": [
+        "A. Triển khai mô hình ngay lập tức.",
+        "B. Xóa dữ liệu và bắt đầu lại từ đầu.",
+        "C. Điều chỉnh tham số, thử thuật toán khác, hoặc thu thập thêm dữ liệu.",
+        "D. Bỏ qua bước đánh giá và tiếp tục với các bước tiếp theo."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Khi hiệu suất chưa đạt, cần tinh chỉnh mô hình bằng cách điều chỉnh tham số, thử thuật toán khác hoặc thu thập thêm dữ liệu để cải thiện hiệu suất. A sai vì triển khai mô hình khi hiệu suất kém là không hiệu quả. B là không cần thiết và lãng phí. D bỏ qua bước quan trọng nhất là đánh giá."
+    },
+    {
+      "question": "Ưu điểm chính của Linear Regression là gì?",
+      "options": [
+        "A. Có thể xử lý dữ liệu phi tuyến tính phức tạp.",
+        "B. Dễ hiểu, dễ triển khai và tính toán nhanh.",
+        "C. Luôn cho kết quả chính xác tuyệt đối.",
+        "D. Không yêu cầu dữ liệu đầu vào phải được chuẩn hóa."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Linear Regression có ưu điểm là dễ hiểu, dễ triển khai và tính toán nhanh, làm cho nó phù hợp với nhiều bài toán đơn giản. A sai vì Linear Regression chỉ hoạt động tốt với dữ liệu có quan hệ tuyến tính. C sai vì không có thuật toán nào luôn cho kết quả chính xác tuyệt đối. D sai vì việc chuẩn hóa dữ liệu đầu vào có thể cải thiện hiệu suất của Linear Regression."
+    },
+    {
+      "question": "Trong Supervised Learning, metrics đánh giá nào được sử dụng để đo lường hiệu quả của mô hình?",
+      "options": [
+        "A. Accuracy, Precision, Recall, F1-score, RMSE.",
+        "B. Chỉ có Accuracy.",
+        "C. Chỉ có Precision và Recall.",
+        "D. Không cần metrics đánh giá, chỉ cần quan sát trực quan."
+      ],
+      "correctAnswer": 0,
+      "explanation": "Đáp án đúng là A. Accuracy, Precision, Recall, F1-score, và RMSE là các metrics phổ biến được sử dụng để đánh giá hiệu quả của mô hình Supervised Learning. B và C sai vì chỉ sử dụng một hoặc hai metrics là không đủ để đánh giá toàn diện. D sai vì metrics đánh giá là cần thiết để định lượng hiệu quả của mô hình."
+    },
+    {
+      "question": "Hàm ánh xạ trong Supervised Learning có vai trò gì?",
+      "options": [
+        "A. Tạo ra dữ liệu ngẫu nhiên.",
+        "B. Biến đổi dữ liệu thành dạng dễ đọc hơn.",
+        "C. Ánh xạ từ đầu vào (features) đến đầu ra (target).",
+        "D. Loại bỏ các dữ liệu nhiễu."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Mục tiêu của mô hình Supervised Learning là học một hàm ánh xạ từ đầu vào (features) đến đầu ra (target) đã biết. A sai vì hàm ánh xạ không tạo dữ liệu ngẫu nhiên. B sai vì vai trò chính không phải là biến đổi dữ liệu cho dễ đọc. D sai vì loại bỏ dữ liệu nhiễu là một bước tiền xử lý dữ liệu."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "supervised-learning",
+    "createdAt": "2025-12-02T12:37:53.845Z"
+  }
+}

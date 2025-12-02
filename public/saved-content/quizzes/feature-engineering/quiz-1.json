@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Mục tiêu chính của Feature Engineering trong Machine Learning là gì?",
+      "options": [
+        "A. Giảm thiểu thời gian huấn luyện mô hình.",
+        "B. Tăng số lượng dữ liệu huấn luyện.",
+        "C. Tạo ra các đặc trưng phù hợp hơn để cải thiện hiệu suất mô hình.",
+        "D. Chọn mô hình Machine Learning phù hợp nhất."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Feature Engineering tập trung vào việc trích xuất, biến đổi và chọn lọc các đặc trưng để giúp mô hình học hỏi và dự đoán chính xác hơn. Các đáp án khác liên quan đến các khía cạnh khác của Machine Learning, nhưng không phải là mục tiêu chính của Feature Engineering."
+    },
+    {
+      "question": "Tại sao Feature Engineering lại quan trọng trong quá trình xây dựng mô hình Machine Learning?",
+      "options": [
+        "A. Vì nó luôn làm tăng độ chính xác của mô hình, bất kể dữ liệu đầu vào.",
+        "B. Vì nó giúp giảm chi phí tính toán và cải thiện hiệu suất mô hình.",
+        "C. Vì nó thay thế hoàn toàn việc lựa chọn mô hình phù hợp.",
+        "D. Vì nó tự động loại bỏ tất cả các lỗi trong dữ liệu."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Feature Engineering giúp giảm độ phức tạp của mô hình, huấn luyện nhanh hơn và do đó tiết kiệm chi phí tính toán. Nó cũng cải thiện hiệu suất mô hình bằng cách cung cấp thông tin tốt hơn. A sai vì không phải lúc nào cũng tăng độ chính xác nếu thực hiện không đúng cách. C sai vì không thay thế việc chọn mô hình. D sai vì FE không loại bỏ hết lỗi."
+    },
+    {
+      "question": "Kỹ thuật nào sau đây được sử dụng để xử lý dữ liệu thiếu trong Feature Engineering?",
+      "options": [
+        "A. Feature Scaling",
+        "B. Dimensionality Reduction",
+        "C. Imputation",
+        "D. Model Selection"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Imputation là kỹ thuật điền giá trị thiếu. Feature Scaling là chuẩn hóa đặc trưng, Dimensionality Reduction là giảm số chiều, Model Selection là chọn mô hình phù hợp."
+    },
+    {
+      "question": "Khi nào thì nên sử dụng phương pháp điền giá trị thiếu bằng giá trị trung vị (Median Imputation)?",
+      "options": [
+        "A. Khi dữ liệu phân phối chuẩn.",
+        "B. Khi dữ liệu có outlier.",
+        "C. Khi dữ liệu là categorical.",
+        "D. Khi dữ liệu không có giá trị thiếu."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Giá trị trung vị ít bị ảnh hưởng bởi outlier hơn giá trị trung bình, do đó Median Imputation phù hợp khi dữ liệu có outlier. Mean Imputation phù hợp với dữ liệu phân phối chuẩn. Mode Imputation phù hợp với dữ liệu categorical. Đáp án D sai vì nếu không có giá trị thiếu thì không cần điền."
+    },
+    {
+      "question": "Phương pháp nào sau đây có thể gây mất mát thông tin quan trọng trong dữ liệu?",
+      "options": [
+        "A. Điền giá trị thiếu bằng giá trị trung bình.",
+        "B. Điền giá trị thiếu bằng giá trị trung vị.",
+        "C. Xóa các hàng/cột chứa giá trị thiếu.",
+        "D. Điền giá trị thiếu bằng giá trị thường xuyên nhất."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Xóa các hàng/cột chứa giá trị thiếu có thể dẫn đến mất mát thông tin quan trọng, đặc biệt khi số lượng giá trị thiếu lớn. Các phương pháp điền giá trị thiếu cố gắng giữ lại thông tin bằng cách thay thế giá trị thiếu bằng một giá trị ước tính."
+    },
+    {
+      "question": "Trong xử lý dữ liệu thiếu, phương pháp 'Constant Imputation' nghĩa là gì?",
+      "options": [
+        "A. Điền giá trị thiếu bằng một giá trị ngẫu nhiên.",
+        "B. Điền giá trị thiếu bằng một giá trị hằng số cụ thể.",
+        "C. Điền giá trị thiếu bằng giá trị lớn nhất trong cột.",
+        "D. Không điền giá trị thiếu."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Constant Imputation là việc thay thế các giá trị thiếu bằng một giá trị hằng số được xác định trước. Ví dụ, thay thế tất cả các giá trị thiếu bằng 0 hoặc -1. Các đáp án khác không chính xác."
+    },
+    {
+      "question": "Khi nào thì việc xóa các cột chứa giá trị thiếu (dropna(axis=1)) là một lựa chọn hợp lý?",
+      "options": [
+        "A. Khi có rất ít giá trị thiếu trong cột.",
+        "B. Khi số lượng cột chứa giá trị thiếu quá lớn, và các cột này không mang nhiều thông tin quan trọng.",
+        "C. Khi cần tăng kích thước của tập dữ liệu.",
+        "D. Không bao giờ nên xóa các cột vì sẽ làm mất thông tin."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Việc xóa các cột chỉ nên được thực hiện khi có nhiều cột chứa quá nhiều giá trị thiếu và các cột này không quan trọng đối với bài toán. Nếu có ít giá trị thiếu (A), nên sử dụng imputation. C sai vì xóa cột làm giảm kích thước. D sai vì đôi khi xóa cột là cần thiết."
+    },
+    {
+      "question": "Thuật toán Machine Learning nào có thể được sử dụng để điền giá trị thiếu (Imputation)?",
+      "options": [
+        "A. Linear Regression",
+        "B. K-Means Clustering",
+        "C. K-Nearest Neighbors",
+        "D. Principal Component Analysis"
+      ],
+      "correctAnswer": 2,
+      "explanation": "K-Nearest Neighbors (KNN) có thể được sử dụng để dự đoán giá trị thiếu dựa trên các hàng tương tự. Các thuật toán khác (Linear Regression, K-Means Clustering, PCA) không được thiết kế trực tiếp để điền giá trị thiếu."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "feature-engineering",
+    "createdAt": "2025-12-02T12:52:03.865Z"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Unsupervised Learning khác biệt với Supervised Learning như thế nào?",
+      "options": [
+        "A. Unsupervised Learning sử dụng dữ liệu đã được gán nhãn, còn Supervised Learning thì không.",
+        "B. Supervised Learning sử dụng dữ liệu đã được gán nhãn, còn Unsupervised Learning thì không.",
+        "C. Cả hai đều sử dụng dữ liệu đã được gán nhãn.",
+        "D. Cả hai đều không sử dụng dữ liệu đã được gán nhãn."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Supervised Learning (học có giám sát) dựa vào dữ liệu đã được gán nhãn để huấn luyện mô hình, trong khi Unsupervised Learning (học không giám sát) lại khám phá cấu trúc ẩn trong dữ liệu chưa được gán nhãn. A sai vì ngược lại. C và D sai vì không phản ánh đúng bản chất của cả hai loại học."
+    },
+    {
+      "question": "Đâu là một ứng dụng phổ biến của Unsupervised Learning?",
+      "options": [
+        "A. Dự đoán giá nhà dựa trên các đặc điểm của ngôi nhà.",
+        "B. Phân loại email vào spam hoặc không spam.",
+        "C. Phân cụm khách hàng thành các nhóm khác nhau dựa trên hành vi mua sắm.",
+        "D. Dự đoán kết quả của một trận đấu bóng đá."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Phân cụm khách hàng là một ví dụ điển hình của Clustering, một kỹ thuật của Unsupervised Learning. A và B là ví dụ của Supervised Learning (regression và classification, tương ứng). D có thể là Supervised Learning nếu có dữ liệu lịch sử."
+    },
+    {
+      "question": "Thuật toán K-Means Clustering hoạt động dựa trên nguyên tắc nào?",
+      "options": [
+        "A. Tìm đường biên phân chia tốt nhất giữa các lớp dữ liệu.",
+        "B. Phân chia dữ liệu thành k cụm dựa trên khoảng cách đến các centroids.",
+        "C. Xây dựng cây quyết định để phân loại dữ liệu.",
+        "D. Tìm các luật kết hợp giữa các biến trong dữ liệu."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là B. K-Means cố gắng chia dữ liệu thành *k* cụm, trong đó mỗi điểm dữ liệu thuộc về cụm có trung bình (centroid) gần nhất. A là nguyên tắc của các thuật toán phân loại Supervised Learning. C là nguyên tắc của Decision Tree. D là nguyên tắc của Association Rule Learning."
+    },
+    {
+      "question": "Trong thuật toán K-Means, 'k' đại diện cho điều gì?",
+      "options": [
+        "A. Số lượng đặc trưng (features) trong dữ liệu.",
+        "B. Số lượng điểm dữ liệu trong tập dữ liệu.",
+        "C. Số lượng cụm mà dữ liệu sẽ được chia thành.",
+        "D. Khoảng cách tối đa giữa hai điểm dữ liệu."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. 'k' trong K-Means đại diện cho số lượng cụm mà thuật toán sẽ cố gắng phân chia dữ liệu thành. A là số lượng chiều của dữ liệu. B là kích thước của dataset. D không liên quan đến 'k'."
+    },
+    {
+      "question": "Công thức `d(x, y) = sqrt(sum((xi - yi)^2))` biểu diễn điều gì trong thuật toán K-Means?",
+      "options": [
+        "A. Trung bình của tất cả các điểm dữ liệu.",
+        "B. Phương sai của dữ liệu.",
+        "C. Khoảng cách Euclidean giữa hai điểm dữ liệu x và y.",
+        "D. Sai số bình phương trung bình."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Công thức này là công thức tính khoảng cách Euclidean giữa hai điểm dữ liệu x và y, được sử dụng để xác định điểm dữ liệu nào gần centroid nào nhất. A là cách tính centroid. B và D không trực tiếp liên quan đến công thức này trong ngữ cảnh K-Means."
+    },
+    {
+      "question": "Một trong những nhược điểm của thuật toán K-Means là gì?",
+      "options": [
+        "A. Luôn tìm ra kết quả tối ưu toàn cục.",
+        "B. Không yêu cầu bất kỳ tham số đầu vào nào.",
+        "C. Yêu cầu xác định số lượng cụm 'k' trước khi chạy thuật toán.",
+        "D. Hoạt động tốt với dữ liệu phi số."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. K-Means yêu cầu người dùng xác định số lượng cụm 'k' trước khi chạy, điều này có thể khó khăn nếu không có thông tin trước về cấu trúc dữ liệu. A sai vì K-Means dễ bị mắc kẹt ở local optima. B sai vì 'k' là một tham số đầu vào quan trọng. D sai vì K-Means hoạt động tốt nhất với dữ liệu số."
+    },
+    {
+      "question": "Giả sử bạn chạy thuật toán K-Means hai lần trên cùng một tập dữ liệu, nhưng với các khởi tạo centroid ban đầu khác nhau. Điều gì có khả năng xảy ra?",
+      "options": [
+        "A. Kết quả phân cụm sẽ luôn giống nhau.",
+        "B. Kết quả phân cụm có thể khác nhau.",
+        "C. Thuật toán sẽ không hội tụ.",
+        "D. Thuật toán sẽ luôn hội tụ sau cùng một số lượng vòng lặp."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. K-Means nhạy cảm với việc khởi tạo centroid ban đầu, vì vậy các khởi tạo khác nhau có thể dẫn đến các kết quả phân cụm khác nhau. A sai vì K-Means không đảm bảo kết quả giống nhau. C có thể xảy ra, nhưng không phải lúc nào cũng vậy. D không đúng vì số vòng lặp cũng có thể thay đổi."
+    },
+    {
+      "question": "Trong ví dụ code Python, tham số `n_init='auto'` trong KMeans có ý nghĩa gì?",
+      "options": [
+        "A. Xác định số lượng centroids được khởi tạo ngẫu nhiên.",
+        "B. Chạy thuật toán K-Means tự động xác định số lượng cụm tối ưu.",
+        "C. Để thuật toán K-Means tự động chọn số lần khởi tạo thuật toán để đạt kết quả tốt nhất.",
+        "D. Tắt quá trình khởi tạo centroid ngẫu nhiên."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. `n_init='auto'` cho phép KMeans tự động chọn số lần khởi tạo thuật toán để đạt kết quả tốt nhất, giảm thiểu ảnh hưởng của việc chọn điểm khởi tạo ngẫu nhiên không tối ưu. A sai vì số lượng centroids được xác định bởi `n_clusters`. B sai vì KMeans không tự động xác định số cụm, nó yêu cầu người dùng chỉ định. D sai vì `n_init='auto'` không tắt quá trình khởi tạo ngẫu nhiên mà chỉ tối ưu nó."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "unsupervised-learning",
+    "createdAt": "2025-12-02T12:37:16.183Z"
+  }
+}

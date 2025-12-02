@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Bước đầu tiên và quan trọng nhất trong việc xây dựng một dự án Machine Learning là gì?",
+      "options": [
+        "A. Thu thập dữ liệu",
+        "B. Xây dựng mô hình",
+        "C. Xác định bài toán và mục tiêu",
+        "D. Triển khai mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Xác định bài toán và mục tiêu là bước đầu tiên để đảm bảo dự án đi đúng hướng và giải quyết được vấn đề thực tế. Các đáp án khác (A, B, D) là các bước tiếp theo sau khi đã xác định được bài toán."
+    },
+    {
+      "question": "Đâu KHÔNG phải là một nguồn dữ liệu phổ biến cho các dự án Machine Learning?",
+      "options": [
+        "A. Cơ sở dữ liệu (MySQL, PostgreSQL)",
+        "B. REST API",
+        "C. Bộ phim hoạt hình",
+        "D. File CSV, Excel"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Bộ phim hoạt hình không phải là một nguồn dữ liệu phổ biến cho Machine Learning. Các đáp án khác (A, B, D) đều là các nguồn dữ liệu phổ biến và có cấu trúc phù hợp để xử lý bằng các thuật toán Machine Learning."
+    },
+    {
+      "question": "MAE (Mean Absolute Error) được sử dụng để làm gì trong ví dụ dự đoán giá nhà?",
+      "options": [
+        "A. Xác định các đặc điểm quan trọng của ngôi nhà",
+        "B. Đo lường sai số trung bình của mô hình dự đoán",
+        "C. Thu thập dữ liệu về giá nhà",
+        "D. Trực quan hóa dữ liệu giá nhà"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. MAE (Mean Absolute Error) là một chỉ số để đo lường sai số trung bình giữa giá trị dự đoán và giá trị thực tế. Trong ví dụ, mục tiêu là xây dựng mô hình có MAE dưới 10%. Các đáp án khác (A, C, D) không liên quan trực tiếp đến mục đích sử dụng của MAE."
+    },
+    {
+      "question": "Thư viện Python nào thường được sử dụng để đọc dữ liệu từ file CSV?",
+      "options": [
+        "A. BeautifulSoup",
+        "B. Scrapy",
+        "C. pandas",
+        "D. matplotlib"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. pandas là thư viện Python mạnh mẽ để thao tác và phân tích dữ liệu, bao gồm cả việc đọc dữ liệu từ file CSV. BeautifulSoup và Scrapy (A, B) được sử dụng cho web scraping, còn matplotlib (D) dùng để trực quan hóa dữ liệu."
+    },
+    {
+      "question": "Mục đích chính của giai đoạn Khám Phá Dữ Liệu (EDA) là gì?",
+      "options": [
+        "A. Xây dựng mô hình Machine Learning",
+        "B. Triển khai mô hình",
+        "C. Hiểu rõ hơn về cấu trúc, phân phối và mối quan hệ giữa các biến trong dữ liệu",
+        "D. Tối ưu hóa hiệu suất của mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. EDA giúp chúng ta hiểu rõ hơn về dữ liệu, tìm ra các vấn đề tiềm ẩn (ví dụ: missing values, outliers) và xác định các biến quan trọng. Các đáp án khác (A, B, D) là các giai đoạn khác trong quy trình xây dựng dự án Machine Learning."
+    },
+    {
+      "question": "Công cụ nào sau đây thường được sử dụng để trực quan hóa dữ liệu trong quá trình EDA?",
+      "options": [
+        "A. MySQL",
+        "B. REST API",
+        "C. Histogram",
+        "D. MongoDB"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Histogram là một loại biểu đồ được sử dụng để trực quan hóa phân phối của dữ liệu. MySQL và MongoDB (A, D) là các hệ quản trị cơ sở dữ liệu, còn REST API (B) là một giao thức để giao tiếp giữa các ứng dụng."
+    },
+    {
+      "question": "Trong quá trình EDA, việc phân tích 'missing values' nhằm mục đích gì?",
+      "options": [
+        "A. Tìm ra các giá trị lớn nhất trong dữ liệu",
+        "B. Xác định và xử lý các giá trị bị thiếu trong dữ liệu",
+        "C. Tính toán độ lệch chuẩn của dữ liệu",
+        "D. Xây dựng mô hình Machine Learning để dự đoán giá trị bị thiếu"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Phân tích missing values giúp chúng ta xác định các giá trị bị thiếu, hiểu nguyên nhân và quyết định cách xử lý chúng (ví dụ: điền giá trị, loại bỏ hàng/cột). Các đáp án khác (A, C, D) không phải là mục đích chính của việc phân tích missing values."
+    },
+    {
+      "question": "Nếu mục tiêu của dự án là dự đoán giá nhà với sai số trung bình (MAE) dưới 10%, điều gì xảy ra nếu mô hình Machine Learning đạt MAE là 15%?",
+      "options": [
+        "A. Dự án đã thành công vì MAE nhỏ hơn 20%",
+        "B. Cần phải xem xét lại mô hình, dữ liệu hoặc các bước xử lý để cải thiện độ chính xác",
+        "C. Triển khai mô hình ngay lập tức vì MAE không quan trọng",
+        "D. Thay đổi mục tiêu ban đầu thành MAE dưới 20%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Khi MAE vượt quá mục tiêu ban đầu, điều đó cho thấy mô hình chưa đạt yêu cầu về độ chính xác. Cần phải xem xét lại các yếu tố như lựa chọn thuật toán, chất lượng dữ liệu, kỹ thuật feature engineering để cải thiện hiệu suất. Các đáp án khác (A, C, D) không phù hợp trong tình huống này."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "practical-project",
+    "createdAt": "2025-12-02T12:55:15.960Z"
+  }
+}

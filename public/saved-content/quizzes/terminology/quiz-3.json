@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Đâu là định nghĩa chính xác nhất về 'Mô hình' trong Machine Learning?",
+      "options": [
+        "A. Một tập dữ liệu lớn được sử dụng để huấn luyện.",
+        "B. Một hàm số ngẫu nhiên trả về các giá trị dự đoán.",
+        "C. Một biểu diễn toán học của dữ liệu, được huấn luyện để dự đoán hoặc đưa ra quyết định.",
+        "D. Một thuật toán phức tạp không cần dữ liệu để hoạt động."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. 'Mô hình' là một biểu diễn toán học được huấn luyện từ dữ liệu để dự đoán hoặc quyết định. A sai vì đó là 'Training Set'. B sai vì mô hình không ngẫu nhiên, mà được huấn luyện để tối ưu dự đoán. D sai vì mô hình cần dữ liệu để huấn luyện."
+    },
+    {
+      "question": "Trong bài toán dự đoán giá nhà, yếu tố nào sau đây có thể được coi là 'Đặc trưng'?",
+      "options": [
+        "A. Giá của ngôi nhà.",
+        "B. Loại nhà (chung cư, biệt thự).",
+        "C. Mô hình dự đoán giá nhà.",
+        "D. Hiệu suất của mô hình."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. 'Đặc trưng' là các thuộc tính đầu vào được sử dụng để huấn luyện mô hình. Loại nhà là một thuộc tính của ngôi nhà. A là 'Nhãn' (giá trị mục tiêu). C là bản thân mô hình. D không phải là thuộc tính của dữ liệu."
+    },
+    {
+      "question": "Tập dữ liệu nào được sử dụng để đánh giá hiệu suất của mô hình sau khi huấn luyện?",
+      "options": [
+        "A. Training Set.",
+        "B. Validation Set.",
+        "C. Test Set.",
+        "D. Feature Set."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. 'Test Set' được sử dụng để đánh giá khả năng tổng quát hóa của mô hình trên dữ liệu mới. A được dùng để huấn luyện. B được dùng để điều chỉnh siêu tham số. D không phải là một thuật ngữ chỉ tập dữ liệu."
+    },
+    {
+      "question": "Mục đích chính của việc sử dụng 'Training Set' là gì?",
+      "options": [
+        "A. Đánh giá hiệu suất của mô hình.",
+        "B. Huấn luyện mô hình để dự đoán hoặc đưa ra quyết định.",
+        "C. Điều chỉnh siêu tham số của mô hình.",
+        "D. Làm sạch và tiền xử lý dữ liệu."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. 'Training Set' được sử dụng để huấn luyện mô hình, giúp nó học các mối quan hệ trong dữ liệu. A là mục đích của 'Test Set'. C là mục đích của 'Validation Set'. D là một bước tiền xử lý, không phải mục đích của 'Training Set'."
+    },
+    {
+      "question": "Trong bài toán phân loại email (spam hoặc không spam), đâu là 'Nhãn'?",
+      "options": [
+        "A. Nội dung của email.",
+        "B. Địa chỉ người gửi.",
+        "C. Từ khóa trong email.",
+        "D. 'Spam' hoặc 'Không Spam'."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D. 'Nhãn' là kết quả hoặc giá trị mục tiêu mà mô hình cần dự đoán. Trong trường hợp này, email được phân loại là 'Spam' hoặc 'Không Spam'. A, B và C là các 'Đặc trưng'."
+    },
+    {
+      "question": "Điều gì xảy ra trong quá trình 'huấn luyện' một mô hình?",
+      "options": [
+        "A. Dữ liệu được thu thập và làm sạch.",
+        "B. Các tham số của mô hình được điều chỉnh để giảm thiểu sai số.",
+        "C. Mô hình được triển khai trên hệ thống thực tế.",
+        "D. Các đặc trưng được lựa chọn cẩn thận."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Quá trình 'huấn luyện' là việc điều chỉnh các tham số của mô hình dựa trên dữ liệu huấn luyện, nhằm giảm thiểu sai số giữa dự đoán và nhãn thực tế. A là bước chuẩn bị dữ liệu. C là bước sau khi huấn luyện. D là một phần của Feature Engineering, diễn ra trước huấn luyện."
+    },
+    {
+      "question": "Tại sao cần phải có 'Test Set' tách biệt với 'Training Set'?",
+      "options": [
+        "A. Để tăng tốc độ huấn luyện mô hình.",
+        "B. Để tránh overfitting và đánh giá khả năng tổng quát hóa của mô hình.",
+        "C. Để đơn giản hóa quá trình huấn luyện.",
+        "D. Để cải thiện khả năng diễn giải của mô hình."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. 'Test Set' giúp đánh giá khả năng của mô hình khi đối mặt với dữ liệu mới (chưa từng thấy), tránh overfitting (mô hình học quá tốt trên dữ liệu huấn luyện nhưng kém trên dữ liệu mới). A, C, và D không phải là lý do chính."
+    },
+    {
+      "question": "Trong quá trình huấn luyện mô hình, tập dữ liệu nào được sử dụng để tinh chỉnh các 'siêu tham số' (hyperparameters)?",
+      "options": [
+        "A. Training Set",
+        "B. Test Set",
+        "C. Validation Set",
+        "D. Data Set"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. 'Validation Set' được sử dụng để đánh giá hiệu suất của mô hình với các siêu tham số khác nhau và chọn ra cấu hình tốt nhất. 'Training Set' dùng để huấn luyện, 'Test Set' dùng để đánh giá cuối cùng và 'Data Set' quá chung chung."
+    }
+  ],
+  "metadata": {
+    "version": 3,
+    "topicId": "terminology",
+    "createdAt": "2025-12-02T12:33:12.833Z"
+  }
+}

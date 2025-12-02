@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Trong Machine Learning, thuật ngữ nào dùng để chỉ biểu diễn toán học của một tập dữ liệu, được huấn luyện để dự đoán?",
+      "options": [
+        "A. Features (Đặc Trưng)",
+        "B. Labels (Nhãn)",
+        "C. Model (Mô Hình)",
+        "D. Training Set (Tập Huấn Luyện)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Model (Mô Hình). Mô hình là một biểu diễn toán học được huấn luyện để dự đoán. A, B và D là các thành phần khác trong quá trình Machine Learning, không phải là biểu diễn toán học của dữ liệu được huấn luyện để dự đoán."
+    },
+    {
+      "question": "Đâu là ví dụ về 'Features (Đặc Trưng)' trong bài toán dự đoán giá nhà?",
+      "options": [
+        "A. Giá của ngôi nhà",
+        "B. Diện tích, số phòng ngủ và vị trí của ngôi nhà",
+        "C. Thuật toán được sử dụng để huấn luyện mô hình",
+        "D. Hiệu suất của mô hình trên tập kiểm tra"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Diện tích, số phòng ngủ và vị trí của ngôi nhà. Đặc trưng là các thuộc tính đầu vào được sử dụng để huấn luyện mô hình. A là nhãn (label), C là một phần của quá trình huấn luyện, và D là một phương pháp đánh giá mô hình."
+    },
+    {
+      "question": "Trong bài toán phân loại ảnh mèo và chó, thuật ngữ nào đại diện cho 'mèo' hoặc 'chó'?",
+      "options": [
+        "A. Features (Đặc Trưng)",
+        "B. Labels (Nhãn)",
+        "C. Model (Mô Hình)",
+        "D. Training Set (Tập Huấn Luyện)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Labels (Nhãn). Nhãn là kết quả hoặc giá trị mục tiêu mà chúng ta muốn mô hình dự đoán, trong trường hợp này là phân loại ảnh mèo và chó. A là các thuộc tính đầu vào, C là biểu diễn toán học của dữ liệu và D là tập dữ liệu dùng để huấn luyện."
+    },
+    {
+      "question": "Tập dữ liệu nào được sử dụng để đánh giá hiệu suất của mô hình sau khi đã được huấn luyện?",
+      "options": [
+        "A. Training Set (Tập Huấn Luyện)",
+        "B. Test Set (Tập Kiểm Tra)",
+        "C. Validation Set (Tập Xác Thực)",
+        "D. Feature Set (Tập Đặc Trưng)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Test Set (Tập Kiểm Tra). Tập kiểm tra được sử dụng để đánh giá khả năng tổng quát hóa của mô hình trên dữ liệu mới. A được dùng để huấn luyện, C được dùng để điều chỉnh siêu tham số và D không phải là thuật ngữ chuẩn trong Machine Learning."
+    },
+    {
+      "question": "Mục đích chính của việc sử dụng 'Training Set (Tập Huấn Luyện)' là gì?",
+      "options": [
+        "A. Đánh giá hiệu suất của mô hình",
+        "B. Huấn luyện mô hình để dự đoán chính xác",
+        "C. Điều chỉnh các siêu tham số của mô hình",
+        "D. Thu thập dữ liệu mới"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là B. Huấn luyện mô hình để dự đoán chính xác. Tập huấn luyện được sử dụng để mô hình 'học' mối quan hệ giữa các đặc trưng và nhãn. A là mục đích của tập kiểm tra, C là mục đích của tập xác thực, và D không liên quan đến tập huấn luyện."
+    },
+    {
+      "question": "Trong quá trình huấn luyện mô hình, tập dữ liệu nào được sử dụng để điều chỉnh các siêu tham số (hyperparameters)?",
+      "options": [
+        "A. Training Set (Tập Huấn Luyện)",
+        "B. Test Set (Tập Kiểm Tra)",
+        "C. Validation Set (Tập Xác Thực)",
+        "D. Production Set"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Validation Set (Tập Xác Thực). Tập xác thực được sử dụng để tinh chỉnh các siêu tham số giúp mô hình đạt hiệu suất tốt nhất. Tập huấn luyện dùng để huấn luyện mô hình, tập kiểm tra dùng để đánh giá, và Production Set không nằm trong nội dung đã cho."
+    },
+    {
+      "question": "Điều gì xảy ra trong quá trình 'huấn luyện' một mô hình Machine Learning?",
+      "options": [
+        "A. Mô hình được đánh giá trên dữ liệu mới",
+        "B. Các tham số của mô hình được điều chỉnh để dự đoán chính xác hơn",
+        "C. Dữ liệu mới được thu thập và thêm vào tập huấn luyện",
+        "D. Các đặc trưng của dữ liệu được chọn lọc và loại bỏ"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Các tham số của mô hình được điều chỉnh để dự đoán chính xác hơn. Quá trình huấn luyện là quá trình điều chỉnh nội bộ của mô hình để khớp với dữ liệu. A là việc sử dụng tập kiểm tra, C là quá trình thu thập dữ liệu, và D là một phần của feature engineering, không phải là quá trình huấn luyện trực tiếp."
+    },
+    {
+      "question": "Tại sao việc lựa chọn 'Features (Đặc Trưng)' phù hợp lại quan trọng trong Machine Learning?",
+      "options": [
+        "A. Để mô hình có thể huấn luyện nhanh hơn",
+        "B. Để mô hình có thể dự đoán chính xác hơn",
+        "C. Để giảm dung lượng lưu trữ của mô hình",
+        "D. Tất cả các đáp án trên"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Để mô hình có thể dự đoán chính xác hơn. Đặc trưng là những thông tin mà mô hình sử dụng để đưa ra dự đoán, do đó, việc chọn đặc trưng phù hợp là rất quan trọng. Mặc dù A và C có thể là những lợi ích phụ, nhưng mục tiêu chính là cải thiện độ chính xác."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "terminology",
+    "createdAt": "2025-12-02T12:31:37.450Z"
+  }
+}

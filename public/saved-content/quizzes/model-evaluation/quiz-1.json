@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Bước nào sau đây là quan trọng trong quy trình xây dựng mô hình Machine Learning để đảm bảo mô hình hoạt động tốt trên dữ liệu thực tế?",
+      "options": [
+        "A. Thu thập dữ liệu",
+        "B. Xây dựng mô hình",
+        "C. Đánh giá mô hình",
+        "D. Triển khai mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đánh giá mô hình giúp xác định hiệu suất, so sánh các mô hình và đảm bảo hoạt động tốt trên dữ liệu thực tế. Các bước khác (thu thập, xây dựng, triển khai) quan trọng nhưng không trực tiếp đánh giá hiệu suất."
+    },
+    {
+      "question": "Trong Confusion Matrix, ô nào thể hiện số lượng mẫu được dự đoán là âm tính và thực tế là âm tính?",
+      "options": [
+        "A. True Positive (TP)",
+        "B. True Negative (TN)",
+        "C. False Positive (FP)",
+        "D. False Negative (FN)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "True Negative (TN) đại diện cho số lượng mẫu được dự đoán là âm tính và thực tế cũng là âm tính. TP là dương tính và dự đoán dương tính, FP là dự đoán dương tính nhưng thực tế âm tính, FN là dự đoán âm tính nhưng thực tế dương tính."
+    },
+    {
+      "question": "Nếu một mô hình dự đoán bệnh ung thư có Confusion Matrix như sau: TP = 80, TN = 90, FP = 10, FN = 20. Accuracy của mô hình là bao nhiêu?",
+      "options": [
+        "A. 0.75",
+        "B. 0.80",
+        "C. 0.85",
+        "D. 0.90"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Accuracy = (TP + TN) / (TP + TN + FP + FN) = (80 + 90) / (80 + 90 + 10 + 20) = 170 / 200 = 0.85. Do đó, đáp án đúng là C."
+    },
+    {
+      "question": "Công thức nào sau đây dùng để tính Accuracy?",
+      "options": [
+        "A. TP / (TP + FN)",
+        "B. TN / (TN + FP)",
+        "C. (TP + TN) / (TP + TN + FP + FN)",
+        "D. (TP + FP) / (TP + TN + FP + FN)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Accuracy được tính bằng tổng số dự đoán đúng (TP và TN) chia cho tổng số dự đoán (TP, TN, FP, FN). Các công thức còn lại không phản ánh định nghĩa của Accuracy."
+    },
+    {
+      "question": "Trong bài toán phân loại, độ đo nào không phù hợp khi dữ liệu bị mất cân bằng (imbalanced dataset)?",
+      "options": [
+        "A. Precision",
+        "B. Recall",
+        "C. F1-score",
+        "D. Accuracy"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Accuracy có thể bị đánh lừa trong trường hợp dữ liệu mất cân bằng. Một mô hình có thể đạt accuracy cao chỉ bằng cách dự đoán lớp chiếm đa số. Precision, Recall và F1-score cung cấp thông tin chi tiết hơn về hiệu suất của mô hình trên từng lớp, do đó phù hợp hơn trong trường hợp này."
+    },
+    {
+      "question": "Lỗi Loại I còn được gọi là gì trong Confusion Matrix?",
+      "options": [
+        "A. True Positive",
+        "B. True Negative",
+        "C. False Positive",
+        "D. False Negative"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Lỗi Loại I là khi mô hình dự đoán một mẫu là dương tính, nhưng thực tế nó là âm tính. Điều này tương ứng với False Positive (FP) trong Confusion Matrix."
+    },
+    {
+      "question": "Cho đoạn code Python sau: `cm = confusion_matrix(y_true, y_pred)`. `y_true` và `y_pred` lần lượt đại diện cho điều gì?",
+      "options": [
+        "A. Dữ liệu dự đoán và dữ liệu huấn luyện",
+        "B. Dữ liệu huấn luyện và dữ liệu kiểm tra",
+        "C. Dữ liệu thực tế và dữ liệu dự đoán",
+        "D. Dữ liệu dự đoán và dữ liệu thực tế"
+      ],
+      "correctAnswer": 2,
+      "explanation": "`y_true` đại diện cho giá trị thực tế (ground truth), và `y_pred` đại diện cho giá trị dự đoán của mô hình. Hàm `confusion_matrix` sử dụng hai mảng này để xây dựng ma trận nhầm lẫn."
+    },
+    {
+      "question": "Mục đích chính của việc sử dụng heatmap để hiển thị Confusion Matrix là gì?",
+      "options": [
+        "A. Giảm kích thước của Confusion Matrix",
+        "B. Cải thiện độ chính xác của Confusion Matrix",
+        "C. Trực quan hóa Confusion Matrix một cách dễ hiểu hơn",
+        "D. Thay thế Confusion Matrix bằng một biểu đồ khác"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Heatmap giúp trực quan hóa các giá trị trong Confusion Matrix bằng màu sắc, giúp người xem dễ dàng nhận biết và so sánh các giá trị, từ đó hiểu rõ hơn về hiệu suất của mô hình. Các lựa chọn khác không đúng vì heatmap không ảnh hưởng đến kích thước, độ chính xác hoặc thay thế Confusion Matrix."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "model-evaluation",
+    "createdAt": "2025-12-02T12:49:02.858Z"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Bước nào sau đây là bước đầu tiên trong một ML Pipeline?",
+      "options": [
+        "A. Huấn luyện Mô hình",
+        "B. Tiền Xử lý Dữ liệu",
+        "C. Thu thập Dữ liệu",
+        "D. Đánh giá Mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Bước đầu tiên trong ML Pipeline luôn là thu thập dữ liệu (Data Collection). Các bước khác như tiền xử lý, huấn luyện và đánh giá mô hình diễn ra sau khi dữ liệu đã được thu thập."
+    },
+    {
+      "question": "Vấn đề nào sau đây KHÔNG phải là một vấn đề thường gặp trong quá trình thu thập dữ liệu?",
+      "options": [
+        "A. Thiếu dữ liệu",
+        "B. Dữ liệu nhiễu",
+        "C. Dữ liệu cân bằng",
+        "D. Tính bảo mật"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dữ liệu cân bằng là một trạng thái lý tưởng. Các vấn đề thường gặp là thiếu dữ liệu (missing values), dữ liệu nhiễu (sai lệch) và các vấn đề liên quan đến bảo mật dữ liệu."
+    },
+    {
+      "question": "Mục đích chính của việc tiền xử lý dữ liệu là gì?",
+      "options": [
+        "A. Tăng tốc độ huấn luyện mô hình",
+        "B. Giảm kích thước bộ dữ liệu",
+        "C. Làm sạch và chuẩn hóa dữ liệu để mô hình học tốt hơn",
+        "D. Chọn ra các đặc trưng quan trọng nhất"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tiền xử lý dữ liệu nhằm mục đích làm sạch (xử lý missing values, outliers) và chuẩn hóa dữ liệu (scaling, normalization) để cải thiện hiệu suất của mô hình. Các lựa chọn khác có thể là kết quả phụ nhưng không phải mục đích chính."
+    },
+    {
+      "question": "Kỹ thuật nào sau đây thường được sử dụng để xử lý giá trị thiếu (missing values) trong quá trình tiền xử lý dữ liệu?",
+      "options": [
+        "A. Feature Engineering",
+        "B. Loại bỏ hàng/cột chứa giá trị thiếu",
+        "C. Mô hình hóa dữ liệu",
+        "D. Triển khai mô hình"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Việc loại bỏ hàng hoặc cột chứa giá trị thiếu là một trong những phương pháp phổ biến để xử lý missing values. Các phương pháp khác bao gồm điền giá trị trung bình, trung vị, hoặc sử dụng các thuật toán imputation. Feature engineering là một bước khác trong pipeline, mô hình hóa và triển khai là các bước sau tiền xử lý."
+    },
+    {
+      "question": "Điều gì xảy ra nếu mô hình không đạt yêu cầu sau khi đánh giá trong ML Pipeline?",
+      "options": [
+        "A. Triển khai mô hình ngay lập tức",
+        "B. Quay lại bước thu thập dữ liệu",
+        "C. Quay lại bước Feature Engineering",
+        "D. Dừng quy trình ML Pipeline"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Nếu mô hình không đạt yêu cầu sau khi đánh giá, thường ta sẽ quay lại bước Feature Engineering để tinh chỉnh các đặc trưng hoặc tạo ra các đặc trưng mới, nhằm cải thiện hiệu suất của mô hình. Việc quay lại bước thu thập dữ liệu có thể xảy ra nhưng ít phổ biến hơn, và dừng quy trình là không hợp lý."
+    },
+    {
+      "question": "Tại sao việc ghi chép nguồn gốc dữ liệu (data lineage) lại quan trọng trong bước thu thập dữ liệu?",
+      "options": [
+        "A. Để tăng tốc độ huấn luyện mô hình",
+        "B. Để giảm dung lượng lưu trữ dữ liệu",
+        "C. Để dễ dàng kiểm tra và tái tạo dữ liệu",
+        "D. Để bảo vệ dữ liệu khỏi bị mất"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Ghi chép nguồn gốc dữ liệu giúp chúng ta hiểu rõ dữ liệu đến từ đâu, cách nó được thu thập và xử lý, từ đó dễ dàng kiểm tra, tái tạo và gỡ lỗi khi cần thiết. Các lựa chọn khác không liên quan trực tiếp đến việc ghi chép nguồn gốc dữ liệu."
+    },
+    {
+      "question": "Trong sơ đồ ML Pipeline được cung cấp, bước 'Giám sát Mô hình' dẫn đến bước nào?",
+      "options": [
+        "A. Tiền Xử lý Dữ liệu",
+        "B. Huấn luyện Mô hình",
+        "C. Thu thập Dữ liệu",
+        "D. Đánh giá Mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Trong sơ đồ, bước 'Giám sát Mô hình' (I) có mũi tên quay trở lại 'Thu thập Dữ liệu' (A), cho thấy một vòng lặp liên tục để cải thiện mô hình dựa trên dữ liệu mới thu thập được sau khi triển khai."
+    },
+    {
+      "question": "Giả sử bạn đang xây dựng một hệ thống phân loại email spam. Dữ liệu của bạn bị mất cân bằng nghiêm trọng: 95% email là không phải spam, chỉ 5% là spam. Kỹ thuật nào sau đây có thể giúp bạn giải quyết vấn đề này trong quá trình tiền xử lý?",
+      "options": [
+        "A. Loại bỏ tất cả các email không phải spam",
+        "B. Sử dụng thuật toán oversampling hoặc undersampling",
+        "C. Chuyển đổi tất cả các email sang chữ in hoa",
+        "D. Chỉ sử dụng các đặc trưng có giá trị lớn"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Khi dữ liệu bị mất cân bằng, các thuật toán oversampling (tăng số lượng mẫu của lớp thiểu số) hoặc undersampling (giảm số lượng mẫu của lớp đa số) có thể giúp cải thiện hiệu suất của mô hình. Loại bỏ phần lớn dữ liệu sẽ làm mất thông tin quan trọng, chuyển đổi sang chữ in hoa không ảnh hưởng đến sự cân bằng, và chỉ sử dụng các đặc trưng có giá trị lớn có thể bỏ qua các đặc trưng quan trọng khác."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "ml-pipeline",
+    "createdAt": "2025-12-02T12:40:25.886Z"
+  }
+}

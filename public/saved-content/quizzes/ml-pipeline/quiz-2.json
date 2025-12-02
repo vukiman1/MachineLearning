@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Mục đích chính của ML Pipeline là gì?",
+      "options": [
+        "A. Tạo ra một mô hình Machine Learning duy nhất.",
+        "B. Tối ưu hóa tốc độ huấn luyện mô hình.",
+        "C. Tự động hóa quy trình xây dựng, huấn luyện và triển khai mô hình Machine Learning.",
+        "D. Giảm kích thước dữ liệu huấn luyện."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. ML Pipeline được thiết kế để tự động hóa toàn bộ quy trình từ thu thập dữ liệu đến triển khai mô hình. Các đáp án khác không bao quát hết phạm vi của ML Pipeline. A chỉ tập trung vào việc tạo mô hình, B tập trung vào tốc độ, và D tập trung vào kích thước dữ liệu."
+    },
+    {
+      "question": "Bước đầu tiên và quan trọng nhất trong ML Pipeline là gì?",
+      "options": [
+        "A. Huấn luyện Mô hình",
+        "B. Tiền Xử lý Dữ liệu",
+        "C. Thu thập Dữ liệu",
+        "D. Đánh giá Mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Thu thập Dữ liệu là bước đầu tiên, vì chất lượng dữ liệu đầu vào ảnh hưởng trực tiếp đến hiệu suất của mô hình. Các bước còn lại (A, B, D) đều diễn ra sau khi dữ liệu đã được thu thập."
+    },
+    {
+      "question": "Loại dữ liệu nào sau đây KHÔNG được liệt kê là nguồn dữ liệu 'có sẵn' trong bài?",
+      "options": [
+        "A. Cơ sở dữ liệu",
+        "B. File CSV",
+        "C. Nhật ký (log) hệ thống",
+        "D. API công khai"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Nhật ký (log) hệ thống được liệt kê là nguồn 'dữ liệu tự thu thập', không phải 'dữ liệu có sẵn'. Các đáp án A, B, D đều thuộc nguồn dữ liệu có sẵn."
+    },
+    {
+      "question": "Vấn đề nào sau đây KHÔNG được đề cập đến như một vấn đề thường gặp trong quá trình thu thập dữ liệu?",
+      "options": [
+        "A. Dữ liệu nhiễu",
+        "B. Dữ liệu không cân bằng",
+        "C. Thiếu bộ nhớ RAM",
+        "D. Thiếu dữ liệu"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Thiếu bộ nhớ RAM không phải là vấn đề liên quan trực tiếp đến bản chất của dữ liệu, mà là vấn đề về tài nguyên phần cứng. Các đáp án A, B, D đều là những vấn đề liên quan đến chất lượng và đặc tính của dữ liệu."
+    },
+    {
+      "question": "Phương pháp nào sau đây được sử dụng để xử lý giá trị thiếu trong dữ liệu?",
+      "options": [
+        "A. Feature Scaling",
+        "B. One-Hot Encoding",
+        "C. KNN Imputation",
+        "D. Principal Component Analysis (PCA)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. KNN Imputation là một thuật toán dùng để điền giá trị thiếu bằng cách sử dụng các điểm dữ liệu gần nhất. A (Feature Scaling), B (One-Hot Encoding) và D (PCA) là các kỹ thuật tiền xử lý khác, không trực tiếp xử lý giá trị thiếu."
+    },
+    {
+      "question": "Tại sao việc ghi chép nguồn gốc dữ liệu lại quan trọng trong quá trình thu thập dữ liệu?",
+      "options": [
+        "A. Để giảm dung lượng lưu trữ của dữ liệu.",
+        "B. Để tăng tốc độ huấn luyện mô hình.",
+        "C. Để dễ dàng kiểm tra và tái tạo quy trình.",
+        "D. Để bảo vệ dữ liệu khỏi virus."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Ghi chép nguồn gốc dữ liệu giúp chúng ta theo dõi quá trình thu thập, kiểm tra tính chính xác và tái tạo lại quy trình nếu cần. Các đáp án A, B, D không liên quan đến việc ghi chép nguồn gốc dữ liệu."
+    },
+    {
+      "question": "Trong sơ đồ tổng quan ML Pipeline, điều gì xảy ra nếu mô hình không đạt yêu cầu sau bước đánh giá?",
+      "options": [
+        "A. Mô hình được triển khai ngay lập tức.",
+        "B. Quy trình quay lại bước thu thập dữ liệu.",
+        "C. Quy trình quay lại bước Feature Engineering.",
+        "D. Mô hình bị loại bỏ."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Trong sơ đồ, nếu mô hình không đạt yêu cầu, quy trình sẽ quay lại bước Feature Engineering để cải thiện đặc trưng hoặc thử các đặc trưng khác, nhằm nâng cao hiệu suất của mô hình. Việc quay lại bước thu thập dữ liệu (B) thường không cần thiết trừ khi dữ liệu hiện tại hoàn toàn không phù hợp."
+    },
+    {
+      "question": "Giả sử bạn có một cột dữ liệu chứa nhiều giá trị bị thiếu. Bạn quyết định điền các giá trị thiếu này bằng giá trị trung bình (mean) của cột. Kỹ thuật này thuộc bước nào trong ML Pipeline?",
+      "options": [
+        "A. Thu thập dữ liệu",
+        "B. Feature Engineering",
+        "C. Tiền xử lý dữ liệu",
+        "D. Đánh giá mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Việc điền giá trị thiếu (missing values) bằng giá trị trung bình là một phần của quá trình Tiền Xử lý Dữ liệu (Data Preprocessing). Bước này tập trung vào việc làm sạch và chuẩn hóa dữ liệu."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "ml-pipeline",
+    "createdAt": "2025-12-02T12:40:51.989Z"
+  }
+}

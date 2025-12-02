@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Unsupervised Learning khác biệt so với Supervised Learning ở điểm nào?",
+      "options": [
+        "A. Sử dụng dữ liệu đã được gán nhãn để huấn luyện mô hình.",
+        "B. Không sử dụng dữ liệu đã được gán nhãn để huấn luyện mô hình.",
+        "C. Luôn cho kết quả chính xác hơn Supervised Learning.",
+        "D. Chỉ áp dụng cho dữ liệu văn bản."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Unsupervised Learning hoạt động trên dữ liệu *chưa được gán nhãn*, trong khi Supervised Learning cần dữ liệu đã được gán nhãn để học. Các lựa chọn khác không đúng vì Unsupervised learning không phải lúc nào cũng chính xác hơn và không chỉ giới hạn ở dữ liệu văn bản."
+    },
+    {
+      "question": "Mục tiêu chính của Unsupervised Learning là gì?",
+      "options": [
+        "A. Dự đoán kết quả dựa trên dữ liệu đầu vào đã được gán nhãn.",
+        "B. Khám phá cấu trúc ẩn trong dữ liệu chưa được gán nhãn.",
+        "C. Phân loại dữ liệu thành các nhóm đã được định nghĩa trước.",
+        "D. Tạo ra các mô hình có khả năng tự sửa lỗi."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mục tiêu của Unsupervised Learning là tìm ra các mẫu, nhóm hoặc mối quan hệ ẩn trong dữ liệu mà không có sự hướng dẫn từ nhãn. Các lựa chọn khác mô tả các khía cạnh của Supervised Learning hoặc các khái niệm chung chung."
+    },
+    {
+      "question": "Phương pháp nào sau đây thuộc về Unsupervised Learning?",
+      "options": [
+        "A. Regression",
+        "B. Classification",
+        "C. Clustering",
+        "D. Reinforcement Learning"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Clustering (Phân cụm) là một kỹ thuật Unsupervised Learning được sử dụng để nhóm các điểm dữ liệu tương tự lại với nhau. Regression và Classification là các kỹ thuật Supervised Learning, còn Reinforcement Learning là một nhánh riêng trong Machine Learning."
+    },
+    {
+      "question": "Trong thuật toán K-Means Clustering, 'k' đại diện cho điều gì?",
+      "options": [
+        "A. Số lượng features trong dữ liệu.",
+        "B. Số lượng iterations tối đa của thuật toán.",
+        "C. Số lượng cụm mà dữ liệu sẽ được chia thành.",
+        "D. Khoảng cách Euclidean giữa các điểm dữ liệu."
+      ],
+      "correctAnswer": 2,
+      "explanation": "'k' trong K-Means Clustering chỉ định số lượng cụm mong muốn mà thuật toán sẽ cố gắng tạo ra. Các lựa chọn khác không liên quan trực tiếp đến ý nghĩa của 'k'."
+    },
+    {
+      "question": "Bước nào sau đây không thuộc thuật toán K-Means Clustering?",
+      "options": [
+        "A. Khởi tạo ngẫu nhiên k centroids ban đầu.",
+        "B. Gán mỗi điểm dữ liệu cho centroid gần nhất.",
+        "C. Tính toán độ chính xác của mô hình.",
+        "D. Cập nhật centroid của mỗi cụm."
+      ],
+      "correctAnswer": 2,
+      "explanation": "K-Means là một thuật toán Unsupervised Learning, vì vậy nó không có khái niệm 'độ chính xác' như trong Supervised Learning. Các bước còn lại (khởi tạo centroid, gán điểm dữ liệu, cập nhật centroid) đều là các bước cơ bản của thuật toán K-Means."
+    },
+    {
+      "question": "Ưu điểm nào sau đây không phải là ưu điểm của thuật toán K-Means?",
+      "options": [
+        "A. Đơn giản và dễ hiểu.",
+        "B. Hiệu quả về mặt tính toán.",
+        "C. Không yêu cầu xác định số lượng cụm trước.",
+        "D. Hoạt động tốt với dữ liệu số."
+      ],
+      "correctAnswer": 2,
+      "explanation": "K-Means *yêu cầu* xác định số lượng cụm 'k' trước khi chạy thuật toán. Đây là một nhược điểm của K-Means. Các lựa chọn khác là các ưu điểm chính của thuật toán."
+    },
+    {
+      "question": "Điều gì có thể xảy ra nếu centroids ban đầu trong thuật toán K-Means được khởi tạo không tốt?",
+      "options": [
+        "A. Thuật toán sẽ hội tụ nhanh hơn.",
+        "B. Thuật toán sẽ tìm ra các cụm tối ưu hơn.",
+        "C. Thuật toán có thể hội tụ vào một kết quả cục bộ (local optimum).",
+        "D. Thuật toán sẽ không hoạt động."
+      ],
+      "correctAnswer": 2,
+      "explanation": "K-Means nhạy cảm với việc khởi tạo centroids ban đầu. Nếu centroids được khởi tạo không tốt, thuật toán có thể bị mắc kẹt trong một local optimum, nghĩa là nó tìm ra một giải pháp tốt, nhưng không phải là giải pháp tốt nhất có thể."
+    },
+    {
+      "question": "Trong đoạn code Python ví dụ, `kmeans = KMeans(n_clusters=2, random_state=0, n_init='auto')`, tham số `n_init='auto'` có ý nghĩa gì?",
+      "options": [
+        "A. Chỉ định thuật toán khởi tạo centroid ban đầu.",
+        "B. Tự động xác định số lượng cụm (k).",
+        "C. Tự động chọn số lần chạy thuật toán K-Means với các khởi tạo centroid khác nhau để tìm kết quả tốt nhất.",
+        "D. Tắt tính năng khởi tạo ngẫu nhiên centroids."
+      ],
+      "correctAnswer": 2,
+      "explanation": "`n_init='auto'` trong scikit-learn KMeans (phiên bản mới) cho phép thuật toán tự động chọn số lần chạy K-Means với các khởi tạo centroids khác nhau và chọn kết quả tốt nhất.  Điều này giúp giảm thiểu tác động của việc khởi tạo centroids ngẫu nhiên kém, dẫn đến kết quả phân cụm ổn định hơn.  Nó không chỉ định thuật toán khởi tạo cụ thể (A), không xác định số lượng cụm (B), và không tắt tính năng khởi tạo ngẫu nhiên (D)."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "unsupervised-learning",
+    "createdAt": "2025-12-02T12:36:56.601Z"
+  }
+}

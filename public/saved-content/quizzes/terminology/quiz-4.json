@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Trong Machine Learning, khái niệm nào sau đây được định nghĩa là một biểu diễn toán học của tập dữ liệu, được huấn luyện để dự đoán?",
+      "options": [
+        "A. Features (Đặc Trưng)",
+        "B. Labels (Nhãn)",
+        "C. Model (Mô Hình)",
+        "D. Training Set (Tập Huấn Luyện)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Model (Mô Hình) là một biểu diễn toán học được huấn luyện. A. Features là các thuộc tính đầu vào. B. Labels là giá trị mục tiêu cần dự đoán. D. Training set là tập dữ liệu dùng để huấn luyện."
+    },
+    {
+      "question": "Đâu là ví dụ về một 'Features' (Đặc Trưng) trong bài toán dự đoán giá nhà?",
+      "options": [
+        "A. Giá của ngôi nhà",
+        "B. 'Mèo' hoặc 'Chó' trong bài toán phân loại ảnh",
+        "C. Diện tích của ngôi nhà",
+        "D. Hiệu suất của mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Diện tích của ngôi nhà là một thuộc tính đầu vào, do đó là một đặc trưng. A. Giá nhà là nhãn. B. 'Mèo' hoặc 'Chó' là nhãn trong bài toán phân loại ảnh. D. Hiệu suất mô hình không phải là một đặc trưng."
+    },
+    {
+      "question": "Tập dữ liệu nào sau đây được sử dụng để đánh giá hiệu suất của mô hình sau khi đã được huấn luyện?",
+      "options": [
+        "A. Training Set (Tập Huấn Luyện)",
+        "B. Validation Set (Tập Xác Thực)",
+        "C. Test Set (Tập Kiểm Tra)",
+        "D. Feature Set (Tập Đặc Trưng)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Test Set (Tập Kiểm Tra) được sử dụng để đánh giá hiệu suất cuối cùng của mô hình. A. Training Set dùng để huấn luyện. B. Validation Set dùng để điều chỉnh siêu tham số. D. Feature Set không phải là thuật ngữ chuẩn để chỉ một tập dữ liệu."
+    },
+    {
+      "question": "Trong Machine Learning, 'Nhãn' (Label) hay 'Mục tiêu' (Target) đại diện cho điều gì?",
+      "options": [
+        "A. Thuật toán sử dụng để huấn luyện mô hình",
+        "B. Kết quả hoặc giá trị mục tiêu mà chúng ta muốn mô hình dự đoán",
+        "C. Các thuộc tính hoặc biến đầu vào được sử dụng để huấn luyện mô hình",
+        "D. Cách mô hình được triển khai trong thực tế"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Nhãn là kết quả hoặc giá trị mục tiêu mà mô hình cố gắng dự đoán. A. Thuật toán là phương pháp huấn luyện. C. Đặc trưng là các thuộc tính đầu vào. D. Triển khai không liên quan đến định nghĩa của nhãn."
+    },
+    {
+      "question": "Mục đích chính của việc sử dụng 'Tập kiểm tra' (Test set) là gì?",
+      "options": [
+        "A. Để huấn luyện mô hình",
+        "B. Để điều chỉnh các tham số của mô hình",
+        "C. Để đánh giá khả năng tổng quát hóa của mô hình trên dữ liệu mới",
+        "D. Để xác định các đặc trưng quan trọng nhất"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Tập kiểm tra đánh giá khả năng của mô hình trên dữ liệu chưa từng thấy, tức khả năng tổng quát hóa. A. Tập huấn luyện dùng để huấn luyện. B. Tập xác thực dùng để điều chỉnh tham số. D. Có các phương pháp khác để xác định độ quan trọng của đặc trưng."
+    },
+    {
+      "question": "Quá trình 'huấn luyện' mô hình trong Machine Learning có nghĩa là gì?",
+      "options": [
+        "A. Sao chép dữ liệu từ tập huấn luyện vào mô hình",
+        "B. Điều chỉnh các tham số của mô hình để giảm thiểu sai số giữa dự đoán và nhãn thực tế",
+        "C. Kiểm tra hiệu suất của mô hình trên tập kiểm tra",
+        "D. Xác định các đặc trưng quan trọng nhất trong dữ liệu"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Huấn luyện là quá trình điều chỉnh tham số để mô hình dự đoán chính xác hơn. A. Huấn luyện không chỉ là sao chép dữ liệu. C. Kiểm tra hiệu suất là một bước khác. D. Xác định đặc trưng quan trọng là một phần của tiền xử lý dữ liệu, không phải huấn luyện."
+    },
+    {
+      "question": "Trong bài toán phân loại ảnh chó và mèo, yếu tố nào sau đây được coi là 'Nhãn' (Label)?",
+      "options": [
+        "A. Số lượng pixel trong ảnh",
+        "B. Thuật toán phân loại được sử dụng",
+        "C. 'Mèo' hoặc 'Chó'",
+        "D. Kích thước của ảnh"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. 'Mèo' hoặc 'Chó' là giá trị mục tiêu mà mô hình cần dự đoán. A, D là đặc trưng. B là phương pháp."
+    },
+    {
+      "question": "Sự khác biệt chính giữa 'Tập huấn luyện' (Training Set) và 'Tập kiểm tra' (Test Set) là gì?",
+      "options": [
+        "A. Tập huấn luyện lớn hơn tập kiểm tra",
+        "B. Tập huấn luyện chứa nhãn, tập kiểm tra thì không",
+        "C. Mô hình được huấn luyện trên tập huấn luyện và đánh giá trên tập kiểm tra",
+        "D. Tập kiểm tra được sử dụng để điều chỉnh các siêu tham số, tập huấn luyện thì không"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Mô hình được huấn luyện trên tập huấn luyện và sau đó đánh giá hiệu suất trên tập kiểm tra để xem khả năng tổng quát hóa của nó. A. Kích thước không phải là điểm khác biệt chính. B. Cả hai tập đều cần nhãn. D. Tập xác thực (Validation Set) dùng để điều chỉnh siêu tham số."
+    }
+  ],
+  "metadata": {
+    "version": 4,
+    "topicId": "terminology",
+    "createdAt": "2025-12-02T12:34:10.432Z"
+  }
+}

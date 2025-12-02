@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Machine Learning khác biệt so với lập trình truyền thống như thế nào?",
+      "options": [
+        "A. Machine Learning yêu cầu lập trình viên viết mọi quy tắc một cách rõ ràng.",
+        "B. Machine Learning cho phép máy tính học từ dữ liệu mà không cần được lập trình cụ thể.",
+        "C. Machine Learning chỉ có thể xử lý dữ liệu có cấu trúc.",
+        "D. Machine Learning không thể tự động hóa các tác vụ."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B vì Machine Learning cho phép máy tính học từ dữ liệu, tự tìm ra các mẫu thay vì được lập trình cụ thể. A sai vì mô tả lập trình truyền thống. C sai vì Machine Learning có thể xử lý nhiều loại dữ liệu. D sai vì Machine Learning có khả năng tự động hóa."
+    },
+    {
+      "question": "Lợi ích nào sau đây KHÔNG phải là một ứng dụng chính của Machine Learning?",
+      "options": [
+        "A. Tự động hóa các tác vụ",
+        "B. Phân tích dữ liệu quy mô lớn",
+        "C. Dự đoán xu hướng trong tương lai",
+        "D. Thay thế hoàn toàn con người trong mọi công việc."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D vì Machine Learning giúp con người chứ không thay thế hoàn toàn. A, B, và C đều là những ứng dụng quan trọng của Machine Learning được đề cập trong nội dung."
+    },
+    {
+      "question": "Loại Machine Learning nào sử dụng dữ liệu đã được gán nhãn (labeled data) để huấn luyện mô hình?",
+      "options": [
+        "A. Unsupervised Learning",
+        "B. Reinforcement Learning",
+        "C. Supervised Learning",
+        "D. Semi-supervised Learning"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C (Supervised Learning) vì nó sử dụng dữ liệu đã được gán nhãn (labeled data) để huấn luyện mô hình. A (Unsupervised Learning) sử dụng dữ liệu chưa được gán nhãn. B (Reinforcement Learning) học thông qua tương tác với môi trường. D (Semi-supervised Learning) sử dụng cả dữ liệu đã được gán nhãn và chưa được gán nhãn."
+    },
+    {
+      "question": "Bài toán phân loại (Classification) trong Supervised Learning dùng để làm gì?",
+      "options": [
+        "A. Dự đoán một giá trị số liên tục.",
+        "B. Dự đoán một lớp hoặc danh mục mà một đối tượng thuộc về.",
+        "C. Tìm các cấu trúc ẩn trong dữ liệu.",
+        "D. Học thông qua tương tác với môi trường."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B vì bài toán phân loại (Classification) dùng để dự đoán lớp hoặc danh mục. A là định nghĩa của bài toán hồi quy (Regression). C là mục tiêu của Unsupervised Learning. D là cách hoạt động của Reinforcement Learning."
+    },
+    {
+      "question": "Thuật toán nào sau đây KHÔNG thuộc nhóm các thuật toán phân loại (Classification)?",
+      "options": [
+        "A. Logistic Regression",
+        "B. Support Vector Machines (SVM)",
+        "C. K-Nearest Neighbors (KNN)",
+        "D. Linear Regression"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D (Linear Regression) vì nó là một thuật toán hồi quy (Regression), được sử dụng để dự đoán giá trị số liên tục. A, B, và C đều là các thuật toán phân loại."
+    },
+    {
+      "question": "Trong bài toán phân loại, thuật toán nào tìm một siêu phẳng (hyperplane) để phân tách các lớp một cách tốt nhất?",
+      "options": [
+        "A. Logistic Regression",
+        "B. Decision Trees",
+        "C. Support Vector Machines (SVM)",
+        "D. Naive Bayes"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C (Support Vector Machines - SVM). SVM sử dụng siêu phẳng để phân tách các lớp. Các đáp án còn lại sử dụng các phương pháp khác để phân loại."
+    },
+    {
+      "question": "Ưu điểm chính của việc sử dụng Random Forest so với một cây quyết định (Decision Tree) duy nhất là gì?",
+      "options": [
+        "A. Random Forest dễ diễn giải hơn.",
+        "B. Random Forest yêu cầu ít dữ liệu hơn.",
+        "C. Random Forest có độ chính xác cao hơn và ít bị overfitting hơn.",
+        "D. Random Forest nhanh hơn trong quá trình huấn luyện."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Random Forest là một tập hợp các cây quyết định, giúp cải thiện độ chính xác và giảm overfitting. Các đáp án khác không đúng vì Random Forest thường khó diễn giải hơn, cần nhiều dữ liệu hơn và có thể chậm hơn trong quá trình huấn luyện so với một cây quyết định duy nhất."
+    },
+    {
+      "question": "Ứng dụng thực tế nào sau đây thể hiện việc sử dụng Machine Learning để phân tích cảm xúc (Sentiment Analysis)?",
+      "options": [
+        "A. Dự đoán giá cổ phiếu dựa trên dữ liệu lịch sử.",
+        "B. Phân loại email là spam hay không spam.",
+        "C. Chẩn đoán bệnh dựa trên kết quả xét nghiệm.",
+        "D. Xác định mức độ hài lòng của khách hàng về một sản phẩm dựa trên đánh giá trực tuyến."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D. Phân tích cảm xúc (Sentiment Analysis) tập trung vào việc xác định cảm xúc (ví dụ: hài lòng, không hài lòng) từ văn bản, như đánh giá trực tuyến. B là ví dụ về phân loại spam. A là ví dụ về hồi quy. C là ví dụ về chẩn đoán bệnh, có thể sử dụng cả phân loại và hồi quy."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "learning-types",
+    "createdAt": "2025-12-02T12:39:28.551Z"
+  }
+}

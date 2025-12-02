@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Đâu là đơn vị tính toán cơ bản của một mạng Neural?",
+      "options": [
+        "A. Layer (Lớp)",
+        "B. Weight (Trọng số)",
+        "C. Neuron (Nơ-ron)",
+        "D. Bias (Độ lệch)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Nơ-ron là đơn vị tính toán cơ bản của mạng Neural. Các lớp là tập hợp các nơ-ron, trọng số và độ lệch là các tham số của nơ-ron."
+    },
+    {
+      "question": "Chức năng chính của trọng số (weights) trong mạng Neural là gì?",
+      "options": [
+        "A. Cộng thêm một giá trị vào tổng đầu vào.",
+        "B. Quyết định mức độ quan trọng của một đầu vào.",
+        "C. Áp dụng một hàm phi tuyến tính lên tổng đầu vào.",
+        "D. Tạo ra kết quả dự đoán cuối cùng."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Trọng số (weights) quyết định mức độ quan trọng của một đầu vào đến nơ-ron. Độ lệch (bias) cộng thêm một giá trị, hàm kích hoạt áp dụng phi tuyến tính, và lớp đầu ra tạo ra kết quả."
+    },
+    {
+      "question": "Lớp nào trong mạng Neural trực tiếp nhận dữ liệu đầu vào?",
+      "options": [
+        "A. Lớp ẩn (Hidden Layer)",
+        "B. Lớp đầu ra (Output Layer)",
+        "C. Lớp đầu vào (Input Layer)",
+        "D. Tất cả các lớp"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Lớp đầu vào (Input Layer) là lớp đầu tiên nhận dữ liệu từ bên ngoài. Các lớp ẩn thực hiện các phép toán trung gian, và lớp đầu ra tạo ra kết quả dự đoán."
+    },
+    {
+      "question": "Vai trò của độ lệch (bias) trong một nơ-ron là gì?",
+      "options": [
+        "A. Ngăn chặn nơ-ron kích hoạt.",
+        "B. Giúp nơ-ron kích hoạt ngay cả khi tất cả các đầu vào bằng 0.",
+        "C. Nhân các đầu vào với các trọng số.",
+        "D. Loại bỏ tính phi tuyến tính."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Độ lệch (bias) giúp nơ-ron kích hoạt ngay cả khi tất cả các đầu vào bằng 0. Điều này cho phép nơ-ron học các mẫu dữ liệu mà không cần phải dựa hoàn toàn vào các đầu vào khác."
+    },
+    {
+      "question": "Điều gì sẽ xảy ra nếu mạng Neural không có hàm kích hoạt phi tuyến tính?",
+      "options": [
+        "A. Mạng Neural sẽ có thể học các mối quan hệ phức tạp hơn.",
+        "B. Mạng Neural chỉ có thể mô hình hóa các mối quan hệ tuyến tính.",
+        "C. Mạng Neural sẽ hoạt động nhanh hơn.",
+        "D. Mạng Neural sẽ không cần đến trọng số."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Hàm kích hoạt phi tuyến tính cho phép mạng Neural học các mối quan hệ phức tạp. Nếu không có chúng, mạng chỉ có thể mô hình hóa các mối quan hệ tuyến tính, làm hạn chế khả năng học của mạng."
+    },
+    {
+      "question": "Trong công thức 'output = activation_function(sum(weight_i * input_i) + bias)', thành phần nào giới thiệu tính phi tuyến vào mạng Neural?",
+      "options": [
+        "A. weight_i",
+        "B. input_i",
+        "C. bias",
+        "D. activation_function"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Hàm kích hoạt (activation_function) là thành phần giới thiệu tính phi tuyến vào mạng Neural, cho phép nó mô hình hóa các mối quan hệ phức tạp hơn."
+    },
+    {
+      "question": "Quá trình 'học' trong mạng Neural chủ yếu liên quan đến việc điều chỉnh tham số nào?",
+      "options": [
+        "A. Số lượng nơ-ron trong lớp đầu vào.",
+        "B. Số lượng lớp ẩn.",
+        "C. Trọng số (weights) và độ lệch (biases).",
+        "D. Hàm kích hoạt."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Quá trình học trong mạng Neural liên quan đến việc điều chỉnh các trọng số (weights) và độ lệch (biases) để giảm thiểu sai số giữa dự đoán của mạng và giá trị thực tế."
+    },
+    {
+      "question": "Số lượng nơ-ron trong lớp đầu ra (Output Layer) của mạng Neural phụ thuộc vào yếu tố nào sau đây?",
+      "options": [
+        "A. Số lượng lớp ẩn.",
+        "B. Số lượng đặc trưng (features) của dữ liệu đầu vào.",
+        "C. Loại bài toán (ví dụ: hồi quy, phân loại).",
+        "D. Tốc độ học (learning rate)."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Số lượng nơ-ron trong lớp đầu ra (Output Layer) phụ thuộc vào loại bài toán. Ví dụ, bài toán hồi quy thường có 1 nơ-ron, trong khi bài toán phân loại có thể có nhiều nơ-ron, mỗi nơ-ron đại diện cho một lớp."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "neural-networks",
+    "createdAt": "2025-12-02T12:47:44.851Z"
+  }
+}

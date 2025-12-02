@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "ML Pipeline là gì?",
+      "options": [
+        "A. Một thuật toán Machine Learning cụ thể.",
+        "B. Một quy trình tự động hóa việc xây dựng, huấn luyện và triển khai mô hình Machine Learning.",
+        "C. Một thư viện Python để xử lý dữ liệu.",
+        "D. Một phương pháp trực quan hóa dữ liệu."
+      ],
+      "correctAnswer": 1,
+      "explanation": "ML Pipeline là một chuỗi các bước liên tiếp nhau, được thiết kế để tự động hóa quy trình xây dựng, huấn luyện và triển khai mô hình Machine Learning. Các đáp án khác không chính xác vì chúng mô tả các khái niệm khác trong Machine Learning."
+    },
+    {
+      "question": "Bước nào sau đây là bước đầu tiên trong ML Pipeline?",
+      "options": [
+        "A. Huấn luyện Mô hình.",
+        "B. Đánh giá Mô hình.",
+        "C. Thu thập Dữ liệu.",
+        "D. Tiền Xử lý Dữ liệu."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thu thập Dữ liệu là bước đầu tiên và quan trọng nhất trong ML Pipeline vì chất lượng dữ liệu đầu vào ảnh hưởng trực tiếp đến hiệu suất của mô hình. Các bước còn lại diễn ra sau khi dữ liệu đã được thu thập."
+    },
+    {
+      "question": "Vấn đề nào sau đây thường gặp trong quá trình thu thập dữ liệu?",
+      "options": [
+        "A. Mô hình huấn luyện quá nhanh.",
+        "B. Thiếu dữ liệu (missing values).",
+        "C. Thuật toán không hội tụ.",
+        "D. Feature Engineering quá phức tạp."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thiếu dữ liệu (missing values) là một vấn đề phổ biến trong quá trình thu thập dữ liệu. Các lựa chọn khác liên quan đến các giai đoạn khác trong ML Pipeline hoặc các vấn đề trong quá trình huấn luyện mô hình."
+    },
+    {
+      "question": "Mục tiêu chính của bước Tiền Xử lý Dữ liệu là gì?",
+      "options": [
+        "A. Tìm ra thuật toán Machine Learning phù hợp nhất.",
+        "B. Tăng tốc độ huấn luyện mô hình.",
+        "C. Làm sạch và chuẩn hóa dữ liệu.",
+        "D. Triển khai mô hình lên server."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mục tiêu của bước Tiền Xử lý Dữ liệu là làm sạch và chuẩn hóa dữ liệu để mô hình có thể học được tốt hơn. Các đáp án còn lại không liên quan đến mục tiêu chính của bước này."
+    },
+    {
+      "question": "Kỹ thuật nào sau đây KHÔNG thuộc về Tiền Xử lý Dữ liệu?",
+      "options": [
+        "A. Xử lý giá trị thiếu (Missing Values).",
+        "B. Xử lý dữ liệu ngoại lai (Outliers).",
+        "C. Lựa chọn Mô hình (Model Selection).",
+        "D. Chuẩn hóa dữ liệu (Data Normalization)."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Lựa chọn Mô hình (Model Selection) là một bước riêng biệt trong quy trình ML, thường diễn ra sau khi dữ liệu đã được tiền xử lý và trước khi huấn luyện mô hình. Các lựa chọn còn lại đều là các kỹ thuật phổ biến trong Tiền Xử lý Dữ liệu."
+    },
+    {
+      "question": "Tại sao cần ghi chép nguồn gốc dữ liệu trong quá trình thu thập dữ liệu?",
+      "options": [
+        "A. Để tăng tốc độ huấn luyện mô hình.",
+        "B. Để dễ dàng kiểm tra và tái tạo quá trình thu thập dữ liệu.",
+        "C. Để giảm dung lượng dữ liệu.",
+        "D. Để tăng tính bảo mật cho dữ liệu."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Ghi chép nguồn gốc dữ liệu giúp dễ dàng kiểm tra và tái tạo quá trình thu thập dữ liệu, đảm bảo tính minh bạch và khả năng tái sản xuất của quy trình. Các đáp án còn lại không phải là lý do chính."
+    },
+    {
+      "question": "Trong sơ đồ ML Pipeline, điều gì xảy ra nếu mô hình không đạt yêu cầu sau bước Đánh giá Mô hình?",
+      "options": [
+        "A. Mô hình sẽ được triển khai ngay lập tức.",
+        "B. Quy trình quay lại bước Thu thập Dữ liệu.",
+        "C. Quy trình quay lại bước Feature Engineering.",
+        "D. Mô hình sẽ bị loại bỏ."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Nếu mô hình không đạt yêu cầu sau bước Đánh giá Mô hình, quy trình thường quay lại bước Feature Engineering để cải thiện các đặc trưng hoặc thử các kỹ thuật khác. Việc quay lại bước Thu thập Dữ liệu thường không cần thiết trừ khi có vấn đề nghiêm trọng với dữ liệu gốc."
+    },
+    {
+      "question": "Loại dữ liệu nào sau đây KHÔNG được đề cập đến như một nguồn dữ liệu tiềm năng?",
+      "options": [
+        "A. API công khai",
+        "B. Dữ liệu từ khảo sát",
+        "C. Dữ liệu từ mạng xã hội (Social Media)",
+        "D. File Excel"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mặc dù dữ liệu từ mạng xã hội có thể là một nguồn dữ liệu, nhưng nó không được đề cập cụ thể trong nội dung được cung cấp. Các lựa chọn khác (API công khai, dữ liệu từ khảo sát và File Excel) đều được liệt kê như các nguồn dữ liệu tiềm năng."
+    }
+  ],
+  "metadata": {
+    "version": 3,
+    "topicId": "ml-pipeline",
+    "createdAt": "2025-12-02T12:41:14.571Z"
+  }
+}

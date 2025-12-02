@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Mục tiêu chính của Feature Engineering là gì?",
+      "options": [
+        "A. Tăng tốc độ huấn luyện mô hình.",
+        "B. Giảm dung lượng lưu trữ dữ liệu.",
+        "C. Cải thiện độ chính xác dự đoán của mô hình.",
+        "D. Đơn giản hóa quá trình triển khai mô hình."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mục tiêu chính của Feature Engineering là tạo ra các đặc trưng mới, phù hợp hơn, giúp các mô hình Machine Learning học hỏi và dự đoán chính xác hơn. Các lựa chọn khác có thể là kết quả phụ nhưng không phải là mục tiêu chính."
+    },
+    {
+      "question": "Điều gì xảy ra khi áp dụng Feature Engineering một cách hiệu quả?",
+      "options": [
+        "A. Mô hình trở nên phức tạp hơn và khó diễn giải hơn.",
+        "B. Mô hình có thể học nhanh hơn, chính xác hơn và tổng quát hóa tốt hơn.",
+        "C. Quá trình thu thập dữ liệu trở nên đơn giản hơn.",
+        "D. Số lượng dữ liệu huấn luyện cần thiết giảm đáng kể."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Các đặc trưng được thiết kế tốt giúp mô hình học nhanh hơn, chính xác hơn và tổng quát hóa tốt hơn. Các lựa chọn khác không đúng vì Feature Engineering giúp đơn giản hóa mô hình, không ảnh hưởng đến việc thu thập dữ liệu và không nhất thiết làm giảm số lượng dữ liệu huấn luyện."
+    },
+    {
+      "question": "Trong trường hợp dữ liệu chứa nhiều outlier, phương pháp điền giá trị thiếu nào được khuyến nghị sử dụng?",
+      "options": [
+        "A. Điền bằng giá trị trung bình (Mean Imputation).",
+        "B. Điền bằng giá trị thường xuyên nhất (Mode Imputation).",
+        "C. Điền bằng giá trị trung vị (Median Imputation).",
+        "D. Điền bằng hằng số (Constant Imputation)."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Giá trị trung vị (Median) ít bị ảnh hưởng bởi các outlier hơn so với giá trị trung bình (Mean). Mode phù hợp cho categorical data và hằng số thì không xem xét đến phân phối của dữ liệu. Do đó, Median Imputation là lựa chọn tốt nhất khi có outlier."
+    },
+    {
+      "question": "Khi nào thì việc xóa các hàng hoặc cột chứa giá trị thiếu là một lựa chọn không tốt?",
+      "options": [
+        "A. Khi dữ liệu thiếu chỉ chiếm một phần nhỏ trong tập dữ liệu.",
+        "B. Khi việc xóa không ảnh hưởng đến phân phối của dữ liệu.",
+        "C. Khi việc xóa giúp đơn giản hóa quá trình tính toán.",
+        "D. Khi việc xóa dẫn đến mất mát thông tin quan trọng."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Việc xóa các hàng/cột chứa giá trị thiếu có thể dẫn đến mất mát thông tin quan trọng, đặc biệt khi dữ liệu thiếu chiếm tỷ lệ lớn hoặc chứa thông tin quan trọng cho mô hình. Các lựa chọn khác là những trường hợp có thể chấp nhận được việc xóa."
+    },
+    {
+      "question": "Phương pháp 'Mode Imputation' thường được sử dụng cho loại dữ liệu nào?",
+      "options": [
+        "A. Dữ liệu số liên tục (Continuous numerical data).",
+        "B. Dữ liệu số rời rạc (Discrete numerical data).",
+        "C. Dữ liệu phân loại (Categorical data).",
+        "D. Dữ liệu thời gian (Time series data)."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mode (giá trị thường xuyên nhất) là một thống kê phù hợp cho dữ liệu phân loại (categorical data) vì nó đại diện cho danh mục xuất hiện nhiều nhất. Các loại dữ liệu khác có các phương pháp imputation phù hợp hơn."
+    },
+    {
+      "question": "Giả sử bạn có một cột dữ liệu về tuổi của khách hàng. Bạn quyết định tạo một đặc trưng mới bằng cách chia tuổi thành các nhóm (ví dụ: trẻ em, thanh niên, trung niên, người cao tuổi). Kỹ thuật này được gọi là gì?",
+      "options": [
+        "A. Standardization.",
+        "B. Normalization.",
+        "C. Binning.",
+        "D. One-Hot Encoding."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Việc chia dữ liệu thành các nhóm (bins) được gọi là Binning. Standardization và Normalization là các kỹ thuật scale dữ liệu. One-Hot Encoding dùng để chuyển đổi dữ liệu categorical sang dạng số."
+    },
+    {
+      "question": "Lợi ích của việc giảm độ phức tạp của mô hình thông qua Feature Engineering là gì?",
+      "options": [
+        "A. Tăng độ chính xác trên dữ liệu huấn luyện.",
+        "B. Giảm nguy cơ overfitting.",
+        "C. Tăng thời gian huấn luyện mô hình.",
+        "D. Giảm số lượng dữ liệu cần thiết để huấn luyện."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Một mô hình đơn giản hơn, nhờ Feature Engineering, ít có khả năng overfitting hơn so với một mô hình phức tạp với nhiều đặc trưng không cần thiết. Các lựa chọn khác không đúng vì mô hình đơn giản thường có thời gian huấn luyện nhanh hơn và không tự động làm giảm số lượng dữ liệu cần thiết."
+    },
+    {
+      "question": "Điều gì KHÔNG phải là một lợi ích trực tiếp của Feature Engineering?",
+      "options": [
+        "A. Cải thiện hiệu suất mô hình.",
+        "B. Giảm độ phức tạp của mô hình.",
+        "C. Cung cấp thông tin cho mô hình.",
+        "D. Tự động chọn thuật toán Machine Learning tốt nhất."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Feature Engineering giúp cải thiện hiệu suất, giảm độ phức tạp và cung cấp thêm thông tin cho mô hình. Tuy nhiên, nó không tự động chọn thuật toán Machine Learning phù hợp; việc lựa chọn thuật toán vẫn phụ thuộc vào người thực hiện."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "feature-engineering",
+    "createdAt": "2025-12-02T12:54:03.870Z"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Bước đầu tiên và quan trọng nhất trong quy trình xây dựng dự án Machine Learning là gì?",
+      "options": [
+        "A. Thu thập dữ liệu",
+        "B. Xây dựng mô hình",
+        "C. Xác định bài toán và mục tiêu",
+        "D. Triển khai mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Xác định bài toán và mục tiêu là bước quan trọng nhất vì nó định hướng toàn bộ dự án. Thu thập dữ liệu (A) và xây dựng mô hình (B) chỉ có thể thực hiện khi đã biết bài toán cần giải quyết. Triển khai (D) là bước cuối cùng."
+    },
+    {
+      "question": "Đâu KHÔNG phải là một nguồn dữ liệu thường được sử dụng trong Machine Learning?",
+      "options": [
+        "A. Cơ sở dữ liệu (MySQL, PostgreSQL)",
+        "B. API (REST, GraphQL)",
+        "C. Truyền thông qua sóng não",
+        "D. File (CSV, Excel, JSON)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Truyền thông qua sóng não hiện tại chưa phải là một nguồn dữ liệu phổ biến và dễ tiếp cận để sử dụng trong Machine Learning. Các lựa chọn A, B, và D đều là các nguồn dữ liệu phổ biến."
+    },
+    {
+      "question": "MAE (Mean Absolute Error) được sử dụng để đánh giá điều gì trong ví dụ dự đoán giá nhà?",
+      "options": [
+        "A. Độ chính xác của việc thu thập dữ liệu",
+        "B. Sai số trung bình của mô hình dự đoán",
+        "C. Mức độ phù hợp của dữ liệu với bài toán",
+        "D. Tốc độ xử lý dữ liệu của mô hình"
+      ],
+      "correctAnswer": 1,
+      "explanation": "MAE (Mean Absolute Error) là một thước đo đánh giá sai số trung bình giữa giá trị dự đoán và giá trị thực tế. Nó được sử dụng để đo lường hiệu suất của mô hình dự đoán giá nhà. Các lựa chọn A, C, và D không liên quan đến việc sử dụng MAE."
+    },
+    {
+      "question": "Thư viện Python nào thường được sử dụng để đọc dữ liệu từ file CSV?",
+      "options": [
+        "A. BeautifulSoup",
+        "B. Scrapy",
+        "C. pandas",
+        "D. matplotlib"
+      ],
+      "correctAnswer": 2,
+      "explanation": "pandas là thư viện Python rất mạnh mẽ và phổ biến để làm việc với dữ liệu dạng bảng (như CSV, Excel). BeautifulSoup (A) và Scrapy (B) được sử dụng cho web scraping. matplotlib (D) được sử dụng để trực quan hóa dữ liệu."
+    },
+    {
+      "question": "Mục đích chính của EDA (Exploratory Data Analysis) là gì?",
+      "options": [
+        "A. Xây dựng mô hình Machine Learning",
+        "B. Triển khai mô hình Machine Learning",
+        "C. Thu thập dữ liệu",
+        "D. Khám phá và hiểu dữ liệu"
+      ],
+      "correctAnswer": 3,
+      "explanation": "EDA (Exploratory Data Analysis) là quá trình khám phá và phân tích dữ liệu để hiểu rõ hơn về cấu trúc, phân phối và mối quan hệ giữa các biến. Các lựa chọn A, B, và C là các bước khác trong quy trình Machine Learning, không phải mục đích của EDA."
+    },
+    {
+      "question": "Kỹ thuật nào KHÔNG thuộc về EDA?",
+      "options": [
+        "A. Thống kê mô tả",
+        "B. Trực quan hóa dữ liệu",
+        "C. Huấn luyện mô hình (model training)",
+        "D. Phân tích tương quan"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Huấn luyện mô hình (model training) là một bước trong quá trình xây dựng mô hình Machine Learning, không thuộc về quá trình khám phá dữ liệu (EDA). Thống kê mô tả (A), Trực quan hóa dữ liệu (B), và Phân tích tương quan (D) đều là các kỹ thuật phổ biến trong EDA."
+    },
+    {
+      "question": "Trong bối cảnh xử lý dữ liệu bị thiếu (missing values), điều quan trọng cần lưu ý là gì?",
+      "options": [
+        "A. Missing values không ảnh hưởng đến kết quả phân tích.",
+        "B. Luôn loại bỏ tất cả các dòng chứa missing values.",
+        "C. Cần xác định và xử lý missing values một cách phù hợp để tránh sai lệch.",
+        "D. Chỉ cần quan tâm đến missing values khi số lượng quá lớn."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Missing values có thể gây sai lệch trong phân tích dữ liệu. Việc xử lý missing values (ví dụ: điền giá trị, loại bỏ dòng/cột) cần được thực hiện cẩn thận để tránh ảnh hưởng tiêu cực đến kết quả. Việc bỏ qua (A) hoặc luôn loại bỏ (B) có thể dẫn đến mất thông tin quan trọng. Chỉ quan tâm khi số lượng lớn (D) là không chính xác, vì ngay cả một vài missing values cũng có thể ảnh hưởng."
+    },
+    {
+      "question": "Điều gì quan trọng nhất khi thu thập dữ liệu cho dự án Machine Learning?",
+      "options": [
+        "A. Thu thập càng nhiều dữ liệu càng tốt, không quan trọng chất lượng.",
+        "B. Chỉ thu thập dữ liệu từ một nguồn duy nhất để đảm bảo tính nhất quán.",
+        "C. Đảm bảo dữ liệu phù hợp với bài toán, chú ý đến chất lượng và lưu trữ an toàn.",
+        "D. Sử dụng các phương pháp thu thập dữ liệu phức tạp nhất để có được dữ liệu tốt nhất."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Chất lượng dữ liệu quan trọng hơn số lượng. Dữ liệu phải phù hợp với bài toán cần giải quyết, cần chú ý đến các vấn đề như missing values, outliers, và cần được lưu trữ an toàn để bảo vệ thông tin. Việc thu thập từ nhiều nguồn (B) có thể cần thiết. Phương pháp phức tạp (D) không đảm bảo chất lượng nếu dữ liệu không phù hợp."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "practical-project",
+    "createdAt": "2025-12-02T12:57:49.673Z"
+  }
+}

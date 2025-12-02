@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Hiện tượng nào sau đây xảy ra khi mô hình học quá kỹ dữ liệu huấn luyện, bao gồm cả nhiễu?",
+      "options": [
+        "A. Underfitting",
+        "B. Overfitting",
+        "C. Generalization",
+        "D. Regularization"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Overfitting xảy ra khi mô hình học quá chi tiết dữ liệu huấn luyện, bao gồm cả nhiễu, dẫn đến khả năng tổng quát hóa kém. Underfitting (A) là khi mô hình học không đủ tốt. Generalization (C) là mục tiêu mong muốn, không phải là vấn đề. Regularization (D) là một kỹ thuật để giảm overfitting."
+    },
+    {
+      "question": "Đâu là dấu hiệu nhận biết rõ ràng nhất của Overfitting?",
+      "options": [
+        "A. Độ chính xác thấp trên cả dữ liệu huấn luyện và kiểm tra",
+        "B. Độ chính xác cao trên dữ liệu kiểm tra, độ chính xác thấp trên dữ liệu huấn luyện",
+        "C. Độ chính xác cao trên dữ liệu huấn luyện, độ chính xác thấp trên dữ liệu kiểm tra",
+        "D. Độ chính xác tương đương trên dữ liệu huấn luyện và dữ liệu kiểm tra"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Độ chính xác cao trên dữ liệu huấn luyện và thấp trên dữ liệu kiểm tra là dấu hiệu điển hình của overfitting, cho thấy mô hình đã học thuộc lòng dữ liệu huấn luyện nhưng không thể áp dụng cho dữ liệu mới. Các đáp án khác không phản ánh đúng bản chất của overfitting."
+    },
+    {
+      "question": "Điều gì KHÔNG phải là nguyên nhân gây ra Overfitting?",
+      "options": [
+        "A. Mô hình quá phức tạp",
+        "B. Dữ liệu huấn luyện quá ít",
+        "C. Huấn luyện quá lâu",
+        "D. Dữ liệu huấn luyện rất lớn và đa dạng"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Dữ liệu huấn luyện rất lớn và đa dạng thường giúp mô hình học tốt hơn và giảm nguy cơ Overfitting. Các đáp án A, B, và C đều là những nguyên nhân phổ biến dẫn đến Overfitting."
+    },
+    {
+      "question": "Trong đồ thị học tập (learning curve), dấu hiệu nào cho thấy mô hình đang bị Overfitting?",
+      "options": [
+        "A. Độ chính xác trên cả dữ liệu huấn luyện và kiểm tra đều tăng dần",
+        "B. Độ chính xác trên dữ liệu huấn luyện tăng, trong khi độ chính xác trên dữ liệu kiểm tra giảm hoặc ổn định",
+        "C. Độ chính xác trên cả dữ liệu huấn luyện và kiểm tra đều giảm dần",
+        "D. Độ chính xác trên dữ liệu huấn luyện giảm, trong khi độ chính xác trên dữ liệu kiểm tra tăng"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Khi mô hình Overfitting, độ chính xác trên dữ liệu huấn luyện tiếp tục tăng do mô hình cố gắng 'học thuộc lòng', nhưng độ chính xác trên dữ liệu kiểm tra lại giảm hoặc ổn định do mô hình không thể tổng quát hóa tốt. Các đáp án khác không phản ánh đúng dấu hiệu của Overfitting trên learning curve."
+    },
+    {
+      "question": "Kỹ thuật nào sau đây được sử dụng để giảm độ phức tạp của mô hình và ngăn ngừa Overfitting bằng cách thêm 'hình phạt' vào hàm mất mát?",
+      "options": [
+        "A. Feature Engineering",
+        "B. Regularization",
+        "C. Cross-validation",
+        "D. Ensemble Learning"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Regularization là kỹ thuật thêm một 'hình phạt' vào hàm mất mát để khuyến khích mô hình có các tham số nhỏ hơn, từ đó giảm độ phức tạp và ngăn ngừa Overfitting. Feature Engineering (A) là quá trình chọn lọc và biến đổi các đặc trưng. Cross-validation (C) là kỹ thuật đánh giá mô hình. Ensemble Learning (D) là kỹ thuật kết hợp nhiều mô hình."
+    },
+    {
+      "question": "Mục tiêu chính của việc xây dựng một mô hình Machine Learning là gì?",
+      "options": [
+        "A. Đạt độ chính xác cao nhất trên dữ liệu huấn luyện",
+        "B. Đạt độ chính xác cao nhất trên dữ liệu kiểm tra",
+        "C. Tổng quát hóa tốt trên dữ liệu mới chưa từng thấy",
+        "D. Học thuộc lòng dữ liệu huấn luyện"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mục tiêu chính là khả năng tổng quát hóa tốt, tức là dự đoán chính xác trên dữ liệu mới. Độ chính xác cao trên dữ liệu huấn luyện (A) có thể là dấu hiệu của Overfitting. Học thuộc lòng (D) là điều cần tránh."
+    },
+    {
+      "question": "Điều gì xảy ra nếu bạn tiếp tục huấn luyện một mô hình sau khi nó đã đạt được độ chính xác rất cao trên dữ liệu huấn luyện?",
+      "options": [
+        "A. Mô hình sẽ tổng quát hóa tốt hơn",
+        "B. Mô hình có thể bắt đầu Overfitting",
+        "C. Mô hình sẽ trở nên đơn giản hơn",
+        "D. Mô hình sẽ hoạt động tốt hơn trên dữ liệu huấn luyện và kiểm tra"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tiếp tục huấn luyện sau khi mô hình đã đạt độ chính xác cao trên dữ liệu huấn luyện có thể dẫn đến việc nó bắt đầu học thuộc lòng dữ liệu (Overfitting) thay vì tổng quát hóa. Các đáp án khác không chính xác."
+    },
+    {
+      "question": "Sử dụng quá nhiều đặc trưng (features) không liên quan hoặc nhiễu có thể dẫn đến điều gì?",
+      "options": [
+        "A. Mô hình Underfitting",
+        "B. Mô hình Overfitting",
+        "C. Mô hình tổng quát hóa tốt hơn",
+        "D. Mô hình hoạt động nhanh hơn"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Sử dụng quá nhiều đặc trưng không liên quan hoặc nhiễu có thể khiến mô hình tập trung vào những thông tin không quan trọng, dẫn đến Overfitting. Các đáp án khác không liên quan hoặc không chính xác."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "overfitting",
+    "createdAt": "2025-12-02T12:48:48.959Z"
+  }
+}

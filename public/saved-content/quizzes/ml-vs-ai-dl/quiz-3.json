@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Khái niệm nào sau đây là lĩnh vực rộng lớn nhất, bao trùm cả Học máy (Machine Learning) và Học sâu (Deep Learning)?",
+      "options": [
+        "A. Học sâu (Deep Learning)",
+        "B. Học máy (Machine Learning)",
+        "C. Trí tuệ Nhân tạo (Artificial Intelligence)",
+        "D. Thống kê (Statistics)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Trí tuệ Nhân tạo (AI) là một lĩnh vực rộng lớn, bao gồm Học máy (ML) và Học sâu (DL) như là những nhánh con. AI tập trung vào việc tạo ra các hệ thống có khả năng mô phỏng trí thông minh của con người. ML là một cách để đạt được AI bằng cách cho phép máy tính học từ dữ liệu, và DL là một cách tiếp cận ML cụ thể sử dụng mạng nơ-ron sâu. Do đó, A và B đều là những phần nhỏ hơn của AI. D không liên quan trực tiếp đến phân cấp này."
+    },
+    {
+      "question": "Học máy (Machine Learning) khác biệt so với lập trình truyền thống như thế nào?",
+      "options": [
+        "A. Học máy yêu cầu lập trình viên viết code cho mọi tình huống.",
+        "B. Học máy cho phép máy tính học từ dữ liệu mà không cần được lập trình rõ ràng cho từng nhiệm vụ.",
+        "C. Lập trình truyền thống sử dụng mạng nơ-ron sâu, còn học máy thì không.",
+        "D. Học máy không liên quan đến việc sử dụng dữ liệu."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Học máy cho phép máy tính tự học từ dữ liệu, tìm ra các mẫu và quy luật mà không cần phải được lập trình một cách rõ ràng cho từng trường hợp cụ thể. Lập trình truyền thống yêu cầu lập trình viên phải viết code để xử lý mọi tình huống có thể xảy ra. A sai vì học máy không cần lập trình viên viết code cho mọi tình huống. C sai vì mạng nơ-ron sâu là một phần của học sâu, một nhánh của học máy. D sai vì học máy dựa trên việc sử dụng dữ liệu."
+    },
+    {
+      "question": "Trong ví dụ về Linear Regression (Hồi quy tuyến tính), biến nào là biến độc lập (biến đầu vào)?",
+      "options": [
+        "A. y (giá nhà)",
+        "B. m (hệ số góc)",
+        "C. x (diện tích nhà)",
+        "D. b (giao điểm với trục y)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Trong công thức y = mx + b, 'x' (diện tích nhà) là biến độc lập, tức là biến đầu vào dùng để dự đoán 'y' (giá nhà). 'y' là biến phụ thuộc, giá trị của nó phụ thuộc vào 'x'. 'm' và 'b' là các tham số của mô hình, không phải biến đầu vào."
+    },
+    {
+      "question": "Mục tiêu chính của Linear Regression là gì?",
+      "options": [
+        "A. Tìm đường cong phù hợp nhất với dữ liệu.",
+        "B. Tìm đường thẳng phù hợp nhất với dữ liệu.",
+        "C. Phân loại dữ liệu thành các nhóm khác nhau.",
+        "D. Giảm số lượng chiều của dữ liệu."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Linear Regression tìm cách tìm ra đường thẳng (y = mx + b) phù hợp nhất với dữ liệu, sao cho khoảng cách từ các điểm dữ liệu đến đường thẳng là nhỏ nhất. A sai vì Linear Regression tìm đường thẳng, không phải đường cong. C và D là mục tiêu của các thuật toán khác, không phải Linear Regression."
+    },
+    {
+      "question": "Ví dụ nào sau đây thể hiện ứng dụng của Học sâu (Deep Learning)?",
+      "options": [
+        "A. Bộ lọc thư rác (spam filter).",
+        "B. Hệ thống đề xuất sản phẩm của Amazon.",
+        "C. Xe tự lái Tesla.",
+        "D. Dự đoán giá nhà dựa trên diện tích."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Xe tự lái Tesla sử dụng Học sâu (Deep Learning) để xử lý hình ảnh và video từ camera, giúp xe nhận diện biển báo, vạch kẻ đường và các phương tiện khác. Bộ lọc thư rác (A) và hệ thống đề xuất sản phẩm (B) có thể sử dụng Machine Learning nhưng không nhất thiết phải là Deep Learning. Dự đoán giá nhà (D) thường được thực hiện bằng Linear Regression hoặc các thuật toán Machine Learning đơn giản hơn."
+    },
+    {
+      "question": "Công thức toán học nào sau đây thường được sử dụng trong Học sâu (Deep Learning) như một hàm kích hoạt (activation function)?",
+      "options": [
+        "A. y = mx + b",
+        "B. E = mc^2",
+        "C. ReLU (Rectified Linear Unit)",
+        "D. a^2 + b^2 = c^2"
+      ],
+      "correctAnswer": 2,
+      "explanation": "ReLU (Rectified Linear Unit) là một hàm kích hoạt phổ biến được sử dụng trong các mạng nơ-ron sâu (Deep Learning). Các đáp án còn lại là các công thức toán học nổi tiếng nhưng không liên quan đến hàm kích hoạt trong Deep Learning. A là công thức của đường thẳng (Linear Regression). B là công thức tương đương khối lượng-năng lượng của Einstein. D là định lý Pythagore."
+    },
+    {
+      "question": "Điều gì làm cho Học sâu (Deep Learning) trở nên mạnh mẽ trong việc giải quyết các vấn đề phức tạp?",
+      "options": [
+        "A. Khả năng xử lý dữ liệu với số lượng nhỏ.",
+        "B. Khả năng tự động học các biểu diễn phức tạp của dữ liệu thông qua nhiều lớp mạng nơ-ron.",
+        "C. Yêu cầu ít tài nguyên tính toán hơn so với các phương pháp học máy khác.",
+        "D. Dễ dàng giải thích kết quả đầu ra hơn so với các phương pháp học máy khác."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Học sâu (Deep Learning) sử dụng các mạng nơ-ron với nhiều lớp (deep), cho phép nó tự động học và trích xuất các biểu diễn phức tạp từ dữ liệu. Điều này làm cho nó mạnh mẽ trong việc giải quyết các vấn đề phức tạp như nhận dạng hình ảnh, xử lý ngôn ngữ tự nhiên. A sai vì DL thường cần lượng lớn dữ liệu. C sai vì DL đòi hỏi nhiều tài nguyên tính toán. D sai vì kết quả của DL thường khó giải thích."
+    },
+    {
+      "question": "Nếu bạn có một bài toán mà dữ liệu có cấu trúc tốt và cần một mô hình đơn giản để dự đoán, thuật toán nào có thể là lựa chọn tốt nhất?",
+      "options": [
+        "A. Mạng nơ-ron sâu (Deep Neural Network)",
+        "B. Hồi quy tuyến tính (Linear Regression)",
+        "C. Mạng nơ-ron tích chập (Convolutional Neural Network)",
+        "D. Mạng nơ-ron hồi quy (Recurrent Neural Network)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Hồi quy tuyến tính (Linear Regression) là một mô hình đơn giản và hiệu quả cho các bài toán dự đoán với dữ liệu có cấu trúc tốt. Khi dữ liệu có mối quan hệ tuyến tính rõ ràng, Linear Regression có thể cung cấp kết quả tốt mà không cần đến sự phức tạp của các mô hình học sâu. A, C, và D là các mô hình học sâu thường được sử dụng cho các bài toán phức tạp hơn như xử lý ảnh, video, hoặc chuỗi thời gian."
+    }
+  ],
+  "metadata": {
+    "version": 3,
+    "topicId": "ml-vs-ai-dl",
+    "createdAt": "2025-12-02T12:41:33.752Z"
+  }
+}

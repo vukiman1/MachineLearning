@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Machine Learning (ML) là gì?",
+      "options": [
+        "A. Một phương pháp lập trình máy tính truyền thống.",
+        "B. Một nhánh của Trí tuệ Nhân tạo (AI) cho phép máy tính học hỏi từ dữ liệu mà không cần được lập trình một cách rõ ràng.",
+        "C. Một hệ thống chỉ có thể hoạt động với dữ liệu có cấu trúc.",
+        "D. Một công cụ chỉ được sử dụng trong lĩnh vực tài chính."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Machine Learning cho phép máy tính học từ dữ liệu mà không cần lập trình rõ ràng. A sai vì ML không phải là lập trình truyền thống. C sai vì ML có thể xử lý nhiều loại dữ liệu. D sai vì ML được ứng dụng rộng rãi trong nhiều lĩnh vực."
+    },
+    {
+      "question": "Thuật toán Machine Learning nào được phát triển vào những năm 1950?",
+      "options": [
+        "A. Decision Trees.",
+        "B. Support Vector Machines (SVM).",
+        "C. Perceptron.",
+        "D. Deep Neural Networks."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Perceptron được phát triển vào những năm 1950. A, B, và D đều là những thuật toán phát triển sau này."
+    },
+    {
+      "question": "Đâu là một trong những lợi ích quan trọng của Machine Learning?",
+      "options": [
+        "A. Làm tăng sự nhàm chán trong công việc.",
+        "B. Giảm độ chính xác của các dự đoán.",
+        "C. Tự động hóa các tác vụ lặp đi lặp lại.",
+        "D. Chỉ có thể áp dụng cho các vấn đề đơn giản."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Machine Learning giúp tự động hóa các tác vụ lặp đi lặp lại. A sai vì ML giúp giảm sự nhàm chán bằng cách tự động hóa. B sai vì ML giúp tăng độ chính xác của các dự đoán. D sai vì ML có thể giải quyết các vấn đề phức tạp."
+    },
+    {
+      "question": "Trong lĩnh vực y tế, Machine Learning được ứng dụng để làm gì?",
+      "options": [
+        "A. Chỉ để phát hiện thuốc mới.",
+        "B. Chỉ để chẩn đoán bệnh.",
+        "C. Chẩn đoán bệnh, phát hiện thuốc mới, dự đoán nguy cơ bệnh tật.",
+        "D. Chỉ để quản lý hồ sơ bệnh nhân."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Machine Learning được ứng dụng rộng rãi trong y tế để chẩn đoán bệnh, phát hiện thuốc mới và dự đoán nguy cơ bệnh tật. Các đáp án còn lại chỉ là một phần ứng dụng của ML trong y tế."
+    },
+    {
+      "question": "Sự bùng nổ của Deep Learning diễn ra vào giai đoạn nào?",
+      "options": [
+        "A. Những năm 1950.",
+        "B. Những năm 1980.",
+        "C. Những năm 1990-2000.",
+        "D. Những năm 2010 đến nay."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D. Sự bùng nổ của Deep Learning diễn ra từ những năm 2010 đến nay, nhờ vào sự phát triển của mạng nơ-ron sâu và sự sẵn có của dữ liệu lớn."
+    },
+    {
+      "question": "Yếu tố nào sau đây KHÔNG góp phần vào sự phát triển mạnh mẽ của Machine Learning trong những năm gần đây?",
+      "options": [
+        "A. Sự tăng trưởng mạnh mẽ về dữ liệu (Big Data).",
+        "B. Sự phát triển của các thuật toán phức tạp hơn.",
+        "C. Sự giảm sút về sức mạnh tính toán.",
+        "D. Sự phát triển của mạng nơ-ron sâu (Deep Neural Networks)."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Sự tăng trưởng về sức mạnh tính toán, chứ không phải sự giảm sút, là một yếu tố quan trọng thúc đẩy sự phát triển của Machine Learning. Các đáp án A, B, và D đều là các yếu tố góp phần vào sự phát triển này."
+    },
+    {
+      "question": "Ứng dụng nào sau đây KHÔNG phải là ứng dụng của Machine Learning trong lĩnh vực bán lẻ?",
+      "options": [
+        "A. Đề xuất sản phẩm cho khách hàng.",
+        "B. Cá nhân hóa trải nghiệm mua sắm.",
+        "C. Dự đoán nhu cầu của khách hàng.",
+        "D. Điều khiển máy móc sản xuất trong nhà máy."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D. Điều khiển máy móc sản xuất trong nhà máy thuộc về lĩnh vực sản xuất, không phải bán lẻ. Các đáp án A, B, và C đều là các ứng dụng phổ biến của ML trong lĩnh vực bán lẻ."
+    },
+    {
+      "question": "Trong lĩnh vực giao thông vận tải, Machine Learning giúp ích gì?",
+      "options": [
+        "A. Chỉ giúp xe tự lái.",
+        "B. Chỉ giúp tối ưu hóa lộ trình.",
+        "C. Xe tự lái, tối ưu hóa lộ trình, dự đoán lưu lượng giao thông.",
+        "D. Chỉ giúp cải thiện chất lượng đường xá."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Machine Learning được sử dụng trong giao thông vận tải cho nhiều mục đích, bao gồm phát triển xe tự lái, tối ưu hóa lộ trình và dự đoán lưu lượng giao thông. Các đáp án còn lại chỉ là một phần của ứng dụng."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "what-is-ml",
+    "createdAt": "2025-12-02T12:42:45.127Z"
+  }
+}

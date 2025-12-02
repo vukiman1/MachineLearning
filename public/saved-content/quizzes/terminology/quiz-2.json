@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Trong Machine Learning, thuật ngữ nào dùng để chỉ biểu diễn toán học của dữ liệu, được huấn luyện để dự đoán?",
+      "options": [
+        "A. Feature",
+        "B. Label",
+        "C. Model",
+        "D. Training Set"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Model. Model là biểu diễn toán học của dữ liệu được huấn luyện để dự đoán. Feature là thuộc tính đầu vào, Label là giá trị mục tiêu và Training Set là tập dữ liệu để huấn luyện."
+    },
+    {
+      "question": "Đâu là ví dụ về một 'feature' trong bài toán dự đoán giá nhà?",
+      "options": [
+        "A. Giá của ngôi nhà",
+        "B. Diện tích của ngôi nhà",
+        "C. Mô hình dự đoán",
+        "D. Tập kiểm tra dữ liệu"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Diện tích của ngôi nhà. Diện tích là một thuộc tính đầu vào dùng để huấn luyện mô hình. Giá nhà là 'label', mô hình dự đoán là 'model' và tập kiểm tra là dùng để đánh giá hiệu suất."
+    },
+    {
+      "question": "Trong bài toán phân loại ảnh mèo và chó, đâu là 'label'?",
+      "options": [
+        "A. Ảnh chứa mèo hoặc chó",
+        "B. Thuật toán phân loại",
+        "C. 'mèo' hoặc 'chó'",
+        "D. Độ phân giải của ảnh"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. 'mèo' hoặc 'chó'. Label là kết quả mục tiêu mà mô hình cố gắng dự đoán, trong trường hợp này là phân loại ảnh thành 'mèo' hoặc 'chó'."
+    },
+    {
+      "question": "Tập dữ liệu nào được sử dụng để đánh giá hiệu suất của mô hình sau khi đã huấn luyện?",
+      "options": [
+        "A. Training Set",
+        "B. Validation Set",
+        "C. Test Set",
+        "D. Feature Set"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Test Set. Tập kiểm tra được sử dụng để đánh giá khả năng tổng quát hóa của mô hình trên dữ liệu mới. Training Set dùng để huấn luyện, Validation Set để điều chỉnh siêu tham số."
+    },
+    {
+      "question": "Mục đích chính của việc sử dụng 'Training Set' là gì?",
+      "options": [
+        "A. Đánh giá hiệu suất của mô hình",
+        "B. Điều chỉnh siêu tham số của mô hình",
+        "C. Huấn luyện mô hình để dự đoán",
+        "D. Chọn đặc trưng phù hợp"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Huấn luyện mô hình để dự đoán. Training Set cung cấp dữ liệu để mô hình học và điều chỉnh các tham số của nó. A là mục đích của Test Set, B là mục đích của Validation Set."
+    },
+    {
+      "question": "Sự khác biệt chính giữa 'Training Set' và 'Test Set' là gì?",
+      "options": [
+        "A. Training Set lớn hơn Test Set",
+        "B. Training Set chứa 'labels', Test Set thì không",
+        "C. Mô hình 'học' từ Training Set và được 'đánh giá' trên Test Set",
+        "D. Cả A và C"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Mô hình 'học' từ Training Set và được 'đánh giá' trên Test Set.  Mô hình được huấn luyện trên Training Set và sau đó Test Set được sử dụng để đo lường hiệu suất của mô hình trên dữ liệu chưa từng thấy. Cả hai set đều cần labels để quá trình huấn luyện và đánh giá diễn ra."
+    },
+    {
+      "question": "Vai trò của 'Validation Set' trong quá trình huấn luyện Machine Learning là gì?",
+      "options": [
+        "A. Cung cấp dữ liệu để mô hình học các đặc trưng.",
+        "B. Đánh giá hiệu suất cuối cùng của mô hình trước khi triển khai.",
+        "C. Điều chỉnh các siêu tham số (hyperparameters) của mô hình.",
+        "D. Xác định độ chính xác của dữ liệu đầu vào."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Điều chỉnh các siêu tham số (hyperparameters) của mô hình. Validation Set được sử dụng để tinh chỉnh các thông số không được học trực tiếp từ dữ liệu, giúp tối ưu hóa hiệu suất mô hình. A là vai trò của Training Set, B là vai trò của Test Set."
+    },
+    {
+      "question": "Trong bối cảnh Machine Learning, điều gì xảy ra nếu một mô hình được huấn luyện quá kỹ trên 'Training Set' mà không có 'Validation Set' và 'Test Set'?",
+      "options": [
+        "A. Mô hình sẽ có độ chính xác cao trên dữ liệu mới.",
+        "B. Mô hình có thể bị 'overfitting' và hoạt động kém trên dữ liệu mới.",
+        "C. Mô hình sẽ tự động điều chỉnh để hoạt động tốt hơn.",
+        "D. Mô hình sẽ không thể đưa ra bất kỳ dự đoán nào."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Mô hình có thể bị 'overfitting' và hoạt động kém trên dữ liệu mới. Overfitting xảy ra khi mô hình học quá chi tiết dữ liệu huấn luyện, bao gồm cả nhiễu, dẫn đến khả năng tổng quát hóa kém trên dữ liệu mới. Validation Set và Test Set giúp phát hiện và ngăn chặn overfitting."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "terminology",
+    "createdAt": "2025-12-02T12:33:00.232Z"
+  }
+}

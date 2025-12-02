@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Mục đích chính của việc đánh giá mô hình Machine Learning là gì?",
+      "options": [
+        "A. Để tăng tốc độ huấn luyện mô hình.",
+        "B. Để xác định hiệu suất của mô hình và đảm bảo nó hoạt động tốt trên dữ liệu thực tế.",
+        "C. Để giảm kích thước của bộ dữ liệu.",
+        "D. Để làm cho code trở nên dễ đọc hơn."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Đánh giá mô hình giúp chúng ta hiểu rõ khả năng của mô hình, so sánh với các mô hình khác và đảm bảo tính ứng dụng trên thực tế. A, C, và D không phải là mục đích chính của việc đánh giá mô hình."
+    },
+    {
+      "question": "Trong Confusion Matrix, giá trị True Negative (TN) biểu thị điều gì?",
+      "options": [
+        "A. Số lượng mẫu được dự đoán là dương tính và thực tế là dương tính.",
+        "B. Số lượng mẫu được dự đoán là âm tính và thực tế là âm tính.",
+        "C. Số lượng mẫu được dự đoán là dương tính nhưng thực tế là âm tính.",
+        "D. Số lượng mẫu được dự đoán là âm tính nhưng thực tế là dương tính."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. True Negative (TN) là số lượng mẫu mà mô hình dự đoán là âm tính và thực tế chúng cũng là âm tính. Các đáp án A, C, và D mô tả các giá trị khác trong Confusion Matrix."
+    },
+    {
+      "question": "Công thức nào sau đây dùng để tính Accuracy?",
+      "options": [
+        "A. (TP + FP) / (TP + TN + FP + FN)",
+        "B. (TP + TN) / (TP + TN + FP + FN)",
+        "C. (TP + FN) / (TP + TN + FP + FN)",
+        "D. (TN + FN) / (TP + TN + FP + FN)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Accuracy được tính bằng tổng số dự đoán đúng (TP và TN) chia cho tổng số dự đoán (TP + TN + FP + FN). Các đáp án A, C, và D sử dụng các công thức sai."
+    },
+    {
+      "question": "Trong bài toán phân loại, khi nào thì Accuracy không phải là một độ đo tốt để đánh giá mô hình?",
+      "options": [
+        "A. Khi dữ liệu được chuẩn hóa.",
+        "B. Khi dữ liệu mất cân bằng (imbalanced dataset).",
+        "C. Khi sử dụng thuật toán phân loại tuyến tính.",
+        "D. Khi mô hình có độ phức tạp cao."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. Accuracy không phù hợp với dữ liệu mất cân bằng vì mô hình có thể đạt độ chính xác cao bằng cách chỉ dự đoán lớp chiếm đa số. Các đáp án A, C, và D không trực tiếp ảnh hưởng đến tính hiệu quả của Accuracy trong trường hợp dữ liệu mất cân bằng."
+    },
+    {
+      "question": "False Positive (FP) còn được gọi là lỗi loại mấy?",
+      "options": [
+        "A. Lỗi Loại I",
+        "B. Lỗi Loại II",
+        "C. Lỗi Loại III",
+        "D. Lỗi Loại IV"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Đáp án đúng là A. False Positive (FP) còn được gọi là lỗi loại I. Nó xảy ra khi mô hình dự đoán một mẫu là dương tính, nhưng thực tế nó là âm tính. Đáp án B mô tả lỗi Loại II (False Negative)."
+    },
+    {
+      "question": "Giả sử bạn có một Confusion Matrix như sau: [[80, 20], [10, 90]]. Giá trị Accuracy của mô hình là bao nhiêu?",
+      "options": [
+        "A. 0.80",
+        "B. 0.90",
+        "C. 0.85",
+        "D. 0.875"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Đáp án đúng là D. Accuracy = (TP + TN) / (TP + TN + FP + FN) = (80 + 90) / (80 + 90 + 20 + 10) = 170/200 = 0.85.  80 là TP, 90 là TN, 20 là FP, và 10 là FN."
+    },
+    {
+      "question": "Trong đoạn code Python cung cấp, thư viện nào được sử dụng để tạo heatmap cho Confusion Matrix?",
+      "options": [
+        "A. scikit-learn",
+        "B. matplotlib",
+        "C. numpy",
+        "D. seaborn"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D. Thư viện Seaborn (sns) được sử dụng để tạo heatmap cho Confusion Matrix, cung cấp khả năng trực quan hóa dữ liệu một cách trực quan và đẹp mắt. Matplotlib được sử dụng để tùy chỉnh hình ảnh, nhưng Seaborn trực tiếp tạo heatmap."
+    },
+    {
+      "question": "Khi nào việc sử dụng Confusion Matrix trở nên đặc biệt quan trọng trong đánh giá mô hình phân loại?",
+      "options": [
+        "A. Khi muốn đánh giá tốc độ huấn luyện mô hình.",
+        "B. Khi muốn so sánh hiệu suất giữa các thuật toán hồi quy.",
+        "C. Khi muốn hiểu rõ hơn về loại lỗi mà mô hình đang mắc phải, đặc biệt là trong các bài toán có chi phí khác nhau cho từng loại lỗi.",
+        "D. Khi muốn giảm dung lượng bộ nhớ sử dụng."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C. Confusion Matrix giúp chúng ta hiểu rõ các loại lỗi mà mô hình mắc phải (False Positive, False Negative) và số lượng của từng loại. Điều này đặc biệt quan trọng khi chi phí của từng loại lỗi khác nhau, ví dụ như trong y học (bỏ sót bệnh nghiêm trọng sẽ gây hậu quả lớn hơn là chẩn đoán nhầm bệnh)."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "model-evaluation",
+    "createdAt": "2025-12-02T12:49:29.520Z"
+  }
+}

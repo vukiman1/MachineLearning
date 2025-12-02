@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Trong Supervised Learning, dữ liệu huấn luyện cần có đặc điểm gì?",
+      "options": [
+        "A. Dữ liệu không cần nhãn",
+        "B. Dữ liệu được gắn nhãn với đầu ra mong muốn",
+        "C. Dữ liệu chỉ chứa các đặc trưng đầu vào",
+        "D. Dữ liệu được thu thập ngẫu nhiên không theo quy tắc"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án B đúng vì Supervised Learning dựa vào dữ liệu được gắn nhãn để học cách ánh xạ đầu vào sang đầu ra. Các đáp án khác sai vì dữ liệu không nhãn là đặc trưng của Unsupervised Learning (A), dữ liệu chỉ chứa đầu vào thì không thể huấn luyện mô hình dự đoán (C) và dữ liệu ngẫu nhiên không có cấu trúc sẽ không hiệu quả (D)."
+    },
+    {
+      "question": "Bước nào sau đây KHÔNG thuộc quy trình hoạt động của Supervised Learning?",
+      "options": [
+        "A. Thu thập dữ liệu",
+        "B. Chia dữ liệu thành tập huấn luyện và tập kiểm tra",
+        "C. Lựa chọn thuật toán phù hợp",
+        "D. Tìm kiếm các mẫu ẩn trong dữ liệu không nhãn"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án D đúng vì tìm kiếm các mẫu ẩn trong dữ liệu không nhãn là đặc trưng của Unsupervised Learning, không phải Supervised Learning. Các đáp án A, B, C đều là các bước quan trọng trong quy trình Supervised Learning."
+    },
+    {
+      "question": "Mục đích chính của việc chia dữ liệu thành tập huấn luyện và tập kiểm tra là gì?",
+      "options": [
+        "A. Để tăng kích thước tập dữ liệu",
+        "B. Để huấn luyện mô hình nhanh hơn",
+        "C. Để đánh giá khả năng tổng quát hóa của mô hình trên dữ liệu mới",
+        "D. Để đơn giản hóa quá trình huấn luyện"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì tập kiểm tra được sử dụng để đánh giá hiệu suất của mô hình trên dữ liệu chưa từng thấy, từ đó ước lượng khả năng tổng quát hóa của mô hình. Các đáp án khác sai vì việc chia dữ liệu không làm tăng kích thước tập dữ liệu (A), không trực tiếp làm huấn luyện nhanh hơn (B), và không đơn giản hóa quá trình huấn luyện (D)."
+    },
+    {
+      "question": "Thuật toán nào sau đây thuộc loại Supervised Learning?",
+      "options": [
+        "A. K-means Clustering",
+        "B. Principal Component Analysis (PCA)",
+        "C. Linear Regression",
+        "D. Association Rule Learning"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì Linear Regression là một thuật toán Supervised Learning sử dụng dữ liệu được gắn nhãn để dự đoán giá trị liên tục. Các đáp án khác sai vì K-means Clustering (A), PCA (B) và Association Rule Learning (D) là các thuật toán Unsupervised Learning."
+    },
+    {
+      "question": "Trong Linear Regression, ý nghĩa của hệ số 'm' trong phương trình y = mx + b là gì?",
+      "options": [
+        "A. Giao điểm của đường thẳng với trục x",
+        "B. Giá trị dự đoán của y khi x = 0",
+        "C. Độ dốc của đường thẳng",
+        "D. Sai số của mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì 'm' đại diện cho độ dốc của đường thẳng, cho biết mức độ thay đổi của y khi x thay đổi một đơn vị. Các đáp án khác sai vì giao điểm với trục x không phải là 'm' (A), giá trị y khi x=0 là 'b' (B) và 'm' không đại diện cho sai số (D)."
+    },
+    {
+      "question": "Ưu điểm chính của Linear Regression là gì?",
+      "options": [
+        "A. Có thể xử lý dữ liệu phi tuyến tính rất tốt",
+        "B. Khó giải thích và triển khai",
+        "C. Dễ hiểu, dễ triển khai và tính toán nhanh",
+        "D. Yêu cầu lượng dữ liệu rất lớn để huấn luyện"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì Linear Regression nổi tiếng với tính đơn giản và hiệu quả tính toán. Các đáp án khác sai vì Linear Regression không phù hợp với dữ liệu phi tuyến tính (A), dễ giải thích và triển khai (B), và không nhất thiết yêu cầu lượng dữ liệu quá lớn (D)."
+    },
+    {
+      "question": "Khi nào thì việc sử dụng Linear Regression không phù hợp?",
+      "options": [
+        "A. Khi mối quan hệ giữa các biến là tuyến tính",
+        "B. Khi muốn dự đoán giá trị liên tục",
+        "C. Khi dữ liệu có nhiều nhiễu và ngoại lệ",
+        "D. Khi cần một mô hình dễ giải thích"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì Linear Regression dễ bị ảnh hưởng bởi các giá trị ngoại lệ và nhiễu trong dữ liệu, dẫn đến kết quả không chính xác. Các đáp án khác sai vì Linear Regression phù hợp khi mối quan hệ là tuyến tính (A), dự đoán giá trị liên tục (B) và cần một mô hình dễ giải thích (D)."
+    },
+    {
+      "question": "Trong quy trình Supervised Learning, bước nào có vai trò quan trọng nhất trong việc đảm bảo mô hình hoạt động tốt trong thực tế?",
+      "options": [
+        "A. Thu thập dữ liệu",
+        "B. Huấn luyện mô hình",
+        "C. Đánh giá mô hình",
+        "D. Chọn mô hình"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án C đúng vì việc đánh giá mô hình trên tập kiểm tra giúp xác định khả năng tổng quát hóa của mô hình và đảm bảo nó hoạt động tốt trên dữ liệu mới. Nếu không đánh giá kỹ, mô hình có thể bị overfitting và hoạt động kém trong thực tế. Các bước khác đều quan trọng nhưng đánh giá là bước kiểm chứng cuối cùng."
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "topicId": "supervised-learning",
+    "createdAt": "2025-12-02T12:37:37.573Z"
+  }
+}

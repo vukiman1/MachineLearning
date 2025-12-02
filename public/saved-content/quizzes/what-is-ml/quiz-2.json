@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "question": "Machine Learning (ML) là gì?",
+      "options": [
+        "A. Một phương pháp lập trình máy tính thủ công.",
+        "B. Một nhánh của Trí tuệ Nhân tạo cho phép máy tính học hỏi từ dữ liệu mà không cần được lập trình rõ ràng.",
+        "C. Một loại phần cứng máy tính đặc biệt.",
+        "D. Một ngôn ngữ lập trình mới."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B vì ML cho phép máy tính học hỏi từ dữ liệu mà không cần lập trình rõ ràng. A sai vì ML không phải là lập trình thủ công. C sai vì ML là một khái niệm, không phải phần cứng. D sai vì ML không phải là một ngôn ngữ lập trình."
+    },
+    {
+      "question": "Đâu là một trong những đặc điểm chính của Machine Learning?",
+      "options": [
+        "A. Yêu cầu lập trình viên viết mọi quy tắc một cách rõ ràng.",
+        "B. Khả năng cải thiện hiệu suất theo thời gian khi có thêm dữ liệu.",
+        "C. Chỉ hoạt động tốt với dữ liệu có cấu trúc.",
+        "D. Không thể đưa ra dự đoán hoặc quyết định."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B vì ML có khả năng cải thiện hiệu suất khi có thêm dữ liệu. A sai vì ML học từ dữ liệu thay vì được lập trình rõ ràng. C sai vì ML có thể làm việc với nhiều loại dữ liệu. D sai vì ML có thể đưa ra dự đoán."
+    },
+    {
+      "question": "Thuật toán nào sau đây được phát triển vào những năm 1950 và được xem là một trong những thuật toán đầu tiên trong Machine Learning?",
+      "options": [
+        "A. Support Vector Machines (SVM)",
+        "B. Deep Neural Networks",
+        "C. Perceptron",
+        "D. Decision Trees"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C vì Perceptron được phát triển vào những năm 1950. A, B và D được phát triển sau này."
+    },
+    {
+      "question": "Sự bùng nổ của Deep Learning trong những năm 2010 đến nay được thúc đẩy bởi yếu tố nào?",
+      "options": [
+        "A. Sự suy giảm về dữ liệu lớn.",
+        "B. Sự phát triển của mạng nơ-ron nông.",
+        "C. Sự sẵn có của dữ liệu lớn (Big Data) và sự phát triển của mạng nơ-ron sâu (Deep Neural Networks).",
+        "D. Sự hạn chế về sức mạnh tính toán."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đáp án đúng là C vì sự bùng nổ của Deep Learning được thúc đẩy bởi dữ liệu lớn và mạng nơ-ron sâu. A, B, và D đều là những yếu tố ngược lại với sự thật."
+    },
+    {
+      "question": "Ứng dụng nào sau đây KHÔNG phải là ứng dụng phổ biến của Machine Learning trong lĩnh vực tài chính?",
+      "options": [
+        "A. Phát hiện gian lận.",
+        "B. Dự đoán thị trường chứng khoán.",
+        "C. Đánh giá rủi ro tín dụng.",
+        "D. Thiết kế phần cứng máy tính."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D vì thiết kế phần cứng không liên quan đến ứng dụng của ML trong tài chính. A, B, và C là các ứng dụng phổ biến."
+    },
+    {
+      "question": "Lợi ích nào sau đây KHÔNG phải là lợi ích chính của Machine Learning?",
+      "options": [
+        "A. Tự động hóa các tác vụ lặp đi lặp lại.",
+        "B. Dự đoán chính xác các xu hướng và hành vi.",
+        "C. Cá nhân hóa trải nghiệm cho người dùng.",
+        "D. Tạo ra năng lượng sạch."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D vì tạo ra năng lượng sạch không phải là lợi ích trực tiếp của ML. A, B, và C là những lợi ích chính."
+    },
+    {
+      "question": "Trong lĩnh vực y tế, Machine Learning có thể được sử dụng để làm gì?",
+      "options": [
+        "A. Chẩn đoán bệnh.",
+        "B. Phát hiện thuốc mới.",
+        "C. Dự đoán nguy cơ bệnh tật.",
+        "D. Tất cả các đáp án trên."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đáp án đúng là D vì ML có thể được sử dụng cho tất cả các ứng dụng được liệt kê trong lĩnh vực y tế."
+    },
+    {
+      "question": "Theo nội dung, mục đích chính của việc sử dụng Machine Learning trong lĩnh vực bán lẻ là gì?",
+      "options": [
+        "A. Giảm chi phí thuê nhân viên.",
+        "B. Đề xuất sản phẩm, cá nhân hóa trải nghiệm mua sắm và dự đoán nhu cầu của khách hàng.",
+        "C. Tăng giá sản phẩm.",
+        "D. Thay thế hoàn toàn các cửa hàng truyền thống."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đáp án đúng là B. ML trong bán lẻ tập trung vào cải thiện trải nghiệm khách hàng và tăng doanh số bằng cách đề xuất sản phẩm, cá nhân hóa và dự đoán nhu cầu. Các đáp án khác không phản ánh đúng mục đích sử dụng ML trong lĩnh vực này."
+    }
+  ],
+  "metadata": {
+    "version": 2,
+    "topicId": "what-is-ml",
+    "createdAt": "2025-12-02T12:43:01.164Z"
+  }
+}
